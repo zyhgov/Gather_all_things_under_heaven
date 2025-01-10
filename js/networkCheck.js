@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const isSafeNetwork = (orgName && orgName.toLowerCase().includes('vpn')) ? false : true;
 
         if (isSafeNetwork) {
-            showAlert('网络安全 Network Security', `您的网络连接安全。&nbsp;IP地址: ${ip} &nbsp;,&nbsp;国家或地区是: <span class="fi fi-${country.toLowerCase()}"></span>&nbsp;${country}<br>网络运营商: ${orgName}`, 'safe');
+            showAlert('网络安全 Network Security', `您的网络连接安全。&nbsp;IP地址: <strong>${ip}</strong> &nbsp;,&nbsp;国家或地区是: <span class="fi fi-${country.toLowerCase()}"></span>&nbsp;<strong>${country}</strong><br>网络运营商:<strong>${orgName}</strong>`, 'safe');
         } else {
-            showAlert('网络不安全 Network Insecurity', `检测到您使用了VPN或不安全的网络。&nbsp;IP地址: ${ip} &nbsp;,&nbsp;国家或地区是: <span class="fi fi-${country.toLowerCase()}"></span>&nbsp;${country}<br>网络运营商:  ${orgName}`, 'warning');
+            showAlert('网络不安全 Network Insecurity', `检测到您使用了VPN或不安全的网络。&nbsp;IP地址: <strong>${ip}</strong> &nbsp;,&nbsp;国家或地区是: <span class="fi fi-${country.toLowerCase()}"></span>&nbsp;<strong>${country}</strong><br>网络运营商:<strong>${orgName}</strong>`, 'warning');
         }
     }
 
@@ -38,13 +38,16 @@ document.addEventListener('DOMContentLoaded', function () {
     function showAlert(title, message, type) {
         alertTitle.textContent = title;
         alertMessage.innerHTML = message; // 使用 innerHTML 以便插入 HTML 内容
-        alertBox.className = `alert-box ${type}`;
-        alertBox.style.display = 'block';
-
-        // 5秒后隐藏提示框
+        alertBox.className = `alert-box ${type} show`; // 添加 'show' 类以启动进入动画
+    
+        // 等待动画完成后，设置定时器隐藏提示框
         setTimeout(() => {
-            alertBox.style.display = 'none';
-        }, 8000);
+            alertBox.classList.add('hide'); // 添加 'hide' 类以启动退出动画
+            // 确保在动画完成后再将元素设为不可见
+            setTimeout(() => {
+                alertBox.classList.remove('show', 'hide', type); // 移除所有类以准备下一次显示
+            }, 2000); // 动画持续时间应与CSS中定义的时间相匹配
+        }, 5000); // 3秒后隐藏
     }
 
     // 执行网络检查
