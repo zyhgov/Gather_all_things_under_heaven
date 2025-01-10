@@ -6,13 +6,12 @@
     font-weight: normal;
     font-style: normal;
   }
-.alert-box {
+  .alert-box {
     position: fixed;
-    top: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40%;
-    /* max-width: 500px; */
+    top: 20px;
+    right: -600px; /* 起始位置在右侧外 */
+    width: 90%;
+    max-width: 500px;
     background-color: #f8d7da;
     color: #721c24;
     border: 1px solid #f5c6cb;
@@ -20,9 +19,20 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000000;
-    display: none;
+    display: block; /* 默认显示，但会在右侧外 */
     font-family: "PingFang";
-    }
+    transition: transform 0.5s ease-out, right 0.5s ease-out;
+}
+
+.alert-box.show {
+    right: 0px; /* 显示时的位置 */
+    transform: translateX(0); /* 向左滑入 */
+}
+
+.alert-box.hide {
+    right: -600px; /* 隐藏时的位置 */
+    transform: translateX(100%); /* 向右滑出 */
+}
 .alert-box.safe {
     background-color: #d4edda;
     color: #155724;
@@ -38,11 +48,11 @@
 .alert-box h4 {
     margin: 0 0 8px;
     font-weight: bold;
-    font-size: 1.25em;
+    font-size: 1.4em;
     font-family: "PingFang";
 }
 .alert-message{
-    font-size: 25px;
+    font-size: 1.2em;
     font-family: "PingFang";
 }
 .fib .fi{
