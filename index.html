@@ -40,10 +40,32 @@
         <link rel="stylesheet" href="/css/aos-overrides.css" media="screen, print"/>
         <link rel="stylesheet" href="/css/step-zero.css" media="screen, print"/>
         <link rel="stylesheet" href="/css/as-store.css" media="screen, print"/>
+        <link rel="stylesheet" href="/css/networkCheck.css">
         <script crossorigin="anonymous">
             window.irOn = true;
         </script>
-
+    <!-- 结构化数据：Schema.org标记 -->
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "CollegeOrUniversity",
+          "name": "联合库UNHub",
+          "url": "",
+          "logo": "favicon.ico",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "湖北省武汉市",
+            "addressLocality": "武汉",
+            "addressRegion": "湖北",
+            "postalCode": "430000"
+          },
+          "sameAs": [
+            "https://www.facebook.com/zyhorg",
+            "https://twitter.com/zyhorg",
+            "https://www.linkedin.com/school/zyhorg"
+          ]
+        }
+        </script>
         <script data-srs src="/js/unsupportedBrowser.min.js" nomodule crossorigin="anonymous"></script>
         <script data-srs src="/js/echo.min.js" async crossorigin="anonymous" type="module"></script>
         <script data-srs src="/js/external.js" crossorigin="anonymous"></script>
@@ -55,12 +77,32 @@
         <script data-srs src="/js/store-home.js" crossorigin="anonymous"></script>
         <script data-srs src="/js/ac-globalnav.umd.js" defer crossorigin="anonymous"></script>
         <script data-srs src="/js/globalelements.js" crossorigin="anonymous"></script>
-
+        <!-- <script type="text/javascript" src="/js/jquery.min.js"></script> -->
+        <script type="text/javascript" src="/js/networkCheck.js"></script>
+        <script type="text/javascript" src="/js/set.js"></script>
+        <script src="https://zyhorg.cn/statics/js/axios.min.js"></script>
+        <script src="/js/axios.min.js"></script>
+        <link rel="stylesheet" href="https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com/flag-icons-main/css/flag-icons.min.css">
+        <!-- 引入不蒜子计数 -->
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script type="text/javascript">
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "pnjcz18od3");
+        </script>
     </head>
     <body class="dd-cny-gifting-theme-202501">
 
         <div id="page">
-
+    <!-- 网络检测 -->
+    <div id="alert-box" class="alert-box">
+        <h4 id="alert-title"></h4>
+        <p id="alert-message"></p>
+    </div>
+    <div class="alert-bar"></div>
+    <!-- 网络检测 -->
             <meta name="aos-gn-template" content="2.12.2 - Fri Nov 22 2024 15:59:33 GMT-0800 (Pacific Standard Time)"/>
             <meta name="globalnav-store-key" content="SJHJUH4YFCTTPD4F4"/>
             <meta name="globalnav-search-field[action]" content="/search"/>
@@ -2917,6 +2959,12 @@
 
 
         <div class="as-globalfooter-mini" data-nosnippet data-autom="global-footer-mini" typeof="Organization">
+            <center style="text-align: left;font-size: 1.2em;">
+                浏览量：<span id="busuanzi_value_site_pv">
+                <i class="fa fa-spinner fa-spin"></i></span>👀
+                访客数：<span id="busuanzi_value_site_uv">
+                    <i class="fa fa-spinner fa-spin"></i></span>👦
+            </center>
             <div class="as-globalfooter-mini-shop" x-ms-format-detection="none">
                 <p>
                     更多邮箱联系方式：
@@ -2928,6 +2976,7 @@
                     。
                 </p>
             </div>
+            
             <div class="as-globalfooter-mini-locale"></div>
             <div class="as-globalfooter-mini-legal">
                 <div class="as-globalfooter-mini-legal-copyright">Copyright &copy;2025 zyhorg.cn | zyhorg.ac.cn | UNHub. 保留所有权利。
