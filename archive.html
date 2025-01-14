@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>存档检索页面 | Archive | Global News | 联合库UNHub</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="css/archive.css">
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "pnjcz18od3");
+    </script>
+</head>
+<body>
+    
+    <div class="wrapper">
+        <!-- Top Navigation -->
+        <header class="navbar">
+            <div class="logo">
+                <img src="/asset/icon_logo/hei_by_y_1.png" alt="UNHub logo" class="unhub_logo">
+                <div class="text-container">
+                    <span>Global News</span>
+                    <!-- <span class="of"><em>of</em></span> -->
+                    <span>UNHub</span>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="/index.html">联合库UNHub</a>
+                <a href="/globalnews.html">Global News</a>
+                <a href="/archive.html" style="margin-right: 25px; ">存档页面</a>
+            </div>
+        </header>
+
+<!-- 搜索框 -->
+<div class="search-box">
+    <div class="filter-container">
+        <div class="filter-row">
+            <input type="text" placeholder="搜索 Global News" id="search-input" onkeyup="searchNews()">
+            <button type="button" class="search-btn" onclick="searchNews()">搜索</button>
+        </div>
+        
+        <div class="filter-options">
+            <div class="filter">
+                <select id="topic-select">
+                    <option value="">所有话题</option>
+                    <option value="international">国际新闻</option>
+                    <option value="politics">政治</option>
+                    <option value="economy">经济</option>
+                </select>
+            </div>
+            <div class="filter">
+                <select id="year-select">
+                    <option value="">所有年份</option>
+                    <option value="2025">2025</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                </select>
+            </div>
+            <div class="filter">
+                <select id="month-select">
+                    <option value="">所有月份</option>
+                    <option value="1">一月</option>
+                    <option value="2">二月</option>
+                    <option value="3">三月</option>
+                    <option value="4">四月</option>
+                    <option value="5">五月</option>
+                    <option value="6">六月</option>
+                    <option value="7">七月</option>
+                    <option value="8">八月</option>
+                    <option value="9">九月</option>
+                    <option value="10">十月</option>
+                    <option value="11">十一月</option>
+                    <option value="12">十二月</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div id="recommendations">
+</div> -->
+
+        <!-- news -->
+        <div class="main-content">
+            <div id="news-container"></div>
+        </div>
+        
+
+        <div class="pagination" id="pagination"></div>
+
+
+        <!-- Footer -->
+        <footer class="footer" style="margin-top: 6%;">
+            <img src="/asset/icon_logo/hei_b_y_1.png" alt="Logo" class="footer-logo">
+            <div class="footer-info">Global News &copy; 2025 | 保留所有权利
+                <br>
+                zyhorg zyhgov 联合库UNHub 监制
+            </div>
+        </footer>
+    </div>
+    <script src="js/daotaicharu.js"></script>
+    
+</body>
+</html>
