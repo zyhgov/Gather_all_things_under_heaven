@@ -7,101 +7,58 @@
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://zyhorg.ac.cn/news/</loc>
-      <lastmod>2024-12-30</lastmod>
+      <loc>https://zyhorg.ac.cn/textbook.html/</loc>
+      <lastmod>2024-12-31</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/globalnews.html/</loc>
+      <lastmod>2024-12-31</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>https://zyhorg.ac.cn/about/</loc>
-      <lastmod>2024-12-25</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-   </url>
-   <url>
-      <loc>https://zyhorg.ac.cn/teachingunit/</loc>
-      <lastmod>2024-12-20</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
-   </url>
-   <!-- 添加其他页面 -->
-   <url>
-      <loc>https://zyhorg.ac.cn/contact/</loc>
+      <loc>https://zyhorg.ac.cn/archive.html/</loc>
       <lastmod>2024-12-31</lastmod>
-      <changefreq>yearly</changefreq>
-      <priority>0.5</priority>
-   </url>
-   <url>
-      <loc>https://zyhorg.ac.cn/events/</loc>
-      <lastmod>2024-12-28</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.6</priority>
-   </url>
-   <url>
-      <loc>https://zyhorg.ac.cn/resources/</loc>
-      <lastmod>2024-12-27</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.4</priority>
-   </url>
-   <url>
-      <loc>https://zyhorg.ac.cn/news/202501/襄阳职业技术大学网站标识系统.html</loc>
-      <lastmod>2025-01-01</lastmod>
-      <changefreq>monthly</changefreq>
+      <changefreq>daily</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>https://zyhorg.ac.cn/news/202501/襄阳职业技术学院简介.html</loc>
-      <lastmod>2025-01-01</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
-   <url>
-      <loc>https://zyhorg.ac.cn/news/202501/2024yxxgknb.html</loc>
-      <lastmod>2024-11-12</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
-   <url>
-      <loc>https://zyhorg.ac.cn/news/202501/2024yxxkxfzzfxbl.html</loc>
-      <lastmod>2024-06-25</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
-   <url>
-      <loc>https://zyhorg.ac.cn/news/202501/2024ysjjxxfzzxfbl.html</loc>
-      <lastmod>2024-06-25</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
-   <url>
-      <loc>https://zyhorg.ac.cn/news/202501/2024yqxkskczms.html</loc>
-      <lastmod>2024-06-25</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
-   <url>
-      <loc>https://zyhorg.ac.cn/news/202501/2025010301.html</loc>
-      <lastmod>2025-01-03</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
-   <url>
-      <loc>https://zyhorg.ac.cn/news/202501/2025010302.html</loc>
-      <lastmod>2025-01-02</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
-   <url>
-      <loc>https://zyhorg.ac.cn/news/202501/2024123101.html</loc>
+      <loc>https://zyhorg.ac.cn/news/2024/12/ny2025.html</loc>
       <lastmod>2024-12-31</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>https://zyhorg.ac.cn/news/001/WebsiteTechnologyStack.html</loc>
-      <lastmod>2025-01-04</lastmod>
+      <loc>https://zyhorg.ac.cn/news/2025/1/test.html/</loc>
+      <lastmod>2025-01-14</lastmod>
       <changefreq>monthly</changefreq>
-      <priority>1.0</priority>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/2025/1/Safety-Statement.html/</loc>
+      <lastmod>2025-01-14</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/2025/1/20250114_zffr.html/</loc>
+      <lastmod>2025-01-14</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/2025/1/Conan2025.html/</loc>
+      <lastmod>2025-01-15</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/2025/1/sgp_20250114_001.html/</loc>
+      <lastmod>2025-01-15</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
    </url>
    <!-- 继续添加更多页面 -->
 </urlset>
