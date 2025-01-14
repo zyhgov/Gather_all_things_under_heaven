@@ -1,0 +1,608 @@
+/* Global Styles */
+@font-face {
+    font-family: 'PingFang SC Medium';
+    src: url('../font/PingFangSC-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'PingFang SC Medium','San Francisco', Helvetica, Arial, sans-serif;
+    background-color: #f5f5f7;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 0 20px;  /* body 保持左右内边距 */
+    box-sizing: border-box;  /* 确保 padding 不会影响布局 */
+}
+.wide-box-link {
+    text-decoration: none;
+    color: inherit; /* 继承父元素的颜色 */
+    display: block; /* 使 a 标签像块级元素一样工作 */
+}
+.wrapper {
+    width: 100%;
+    max-width: 1200px;
+}
+.news-box-link {
+    text-decoration: none;
+    color: inherit; /* 继承父元素的颜色 */
+    display: block; /* 使 a 标签像块级元素一样工作 */
+}
+/* Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: rgba(252, 252, 253, 0.9);  /* 半透明背景 */
+    padding: 20px 0;  /* 只设置上下 padding */
+    width: 100%;  /* 确保导航栏宽度是100% */
+    margin: 0;  /* 去除任何外边距 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;  /* 背景色和磨砂效果的过渡 */
+    border-radius: 0 0 20px 20px;
+}
+
+.navbar.scrolled {
+    background-color: rgba(252, 252, 253, 0.8);  /* 滚动后的半透明背景 */
+    backdrop-filter: blur(10px);  /* 添加磨砂效果 */
+}
+
+/* 其他样式不变 */
+
+.navbar .logo img.unhub_logo {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    margin-left: 20px;
+}
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    gap: 10px; /* 图片与文本间的间隔 */
+}
+.navbar .logo .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.navbar .nav-links a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #666;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    /* margin-right: 20px; */
+}
+
+.navbar .nav-links a:hover {
+    color: #0073e6;
+}
+
+/* Main Content */
+.main-content {
+    padding: 0 60px;
+    margin-top: 40px;
+}
+
+/* 搜索框样式 */
+.search-box {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* margin-top: 20px; */
+    align-items: center;  /* 居中对齐 */
+}
+
+/* 过滤器容器 */
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* 垂直居中 */
+    width: 100%;
+    /* gap: 20px; */
+}
+
+/* 搜索框和按钮的排布 */
+.filter-row {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 水平居中 */
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 20px; /* 增加底部间距 */
+    font-family: 'PingFang SC Medium','San Francisco', Helvetica, Arial, sans-serif;
+}
+
+.search-box input {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 30px;
+    border: 1px solid #ddd;
+    outline: none;
+    width: 70%;
+    transition: border-color 0.3s ease;
+    font-family: 'PingFang SC Medium','San Francisco', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+.search-box input:focus {
+    border-color: #0073e6;
+}
+
+.search-btn {
+    padding: 12px 25px;
+    background-color: #0073e6;
+    color: white;
+    font-size: 15px;
+    border-radius: 30px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    letter-spacing: 2px;
+}
+
+.search-btn:hover {
+    background-color: #005bb5;
+}
+
+/* 筛选项容器 */
+.filter-options {
+    display: flex;
+    justify-content: center;  /* 水平居中 */
+    gap: 5px;
+    width: 100%;
+    font-family: 'PingFang SC Medium','San Francisco', Helvetica, Arial, sans-serif;
+    font-size: 5px;
+}
+
+/* 单个筛选项 */
+.filter {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px; /* 限制最大宽度 */
+    font-family: 'PingFang SC Medium','San Francisco', Helvetica, Arial, sans-serif;
+}
+
+.filter label {
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* 输入框、选择框和按钮样式 */
+.filter input,
+.filter select,
+.filter button {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+    font-family: 'PingFang SC Medium','San Francisco', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+.filter input:focus,
+.filter select:focus,
+.filter button:focus {
+    border-color: #0073e6;
+    outline: none;
+}
+
+.filter button {
+    background-color: #0073e6;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter button:hover {
+    background-color: #005bb5;
+}
+
+/* Filter Buttons */
+.apply-btn {
+    background-color: #0073e6;
+    color: white;
+    margin-right: 10px;
+}
+
+.reset-btn {
+    background-color: #e8e8ed;
+    color: #333;
+}
+
+.apply-btn:hover {
+    background-color: #005bb5;
+}
+
+.reset-btn:hover {
+    background-color: #d2d2d7;
+}
+
+/* Recommendation Items */
+.recommendation-item {
+    padding: 15px;
+    margin: 10px 0;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.recommendation-item:hover {
+    transform: translateY(-2px);
+}
+
+.recommendation-item .title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.recommendation-item .topic {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* News Items */
+.news-item {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.news-item h3 {
+    font-size: 20px;
+    color: #0073e6;
+    margin-bottom: 10px;
+}
+
+.news-item p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.news-item .topic {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: #e8e8ed;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #666;
+    margin-right: 10px;
+}
+
+.news-item .date {
+    font-size: 14px;
+    color: #999;
+}
+
+/* 调整选择框的样式 */
+.filter select {
+    background-color: #f8f8f8;
+    color: #333;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+.filter select option {
+    padding: 10px;
+}
+
+/* 响应式调整：小屏幕下调整布局 */
+@media (max-width: 768px) {
+    .filter-container {
+        flex-direction: column;  /* 筛选项垂直排列 */
+    }
+    
+    .filter-row {
+        flex-direction: column;  /* 搜索框和按钮垂直排列 */
+        gap: 15px;
+    }
+
+    .search-box input,
+    .search-btn {
+        width: 100%;  /* 当屏幕宽度变小时，宽度为100% */
+    }
+
+}
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+.recommendation-item {
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+}
+
+.recommendation-item .title {
+    font-weight: bold;
+}
+
+.recommendation-item .topic {
+    color: gray;
+    font-size: 0.9em;
+}
+
+/* Section 1: Wide Box */
+.news-box {
+    display: flex;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* 添加过渡效果 */
+    margin-top: 25px;
+}
+/* 当鼠标悬停时，给整个盒子添加轻微的阴影和缩放效果 */
+.news-box-link:hover .news-box {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.01); /* 轻微放大 */
+}
+.news_title_a{
+    color: inherit; /* 继承父元素的颜色 */
+    text-decoration: none; /* 去掉下划线 */
+}
+.news-box .image{
+    width: 25%;  /* 调整图片宽度为70% */
+    object-fit: cover;
+    border-radius: 20px 0 0 20px;
+}
+.news-box .image img {
+    width: 100%;  /* 调整图片宽度为70% */
+    height: 100%;
+    object-fit: cover;
+}
+
+.news-box .content {
+    padding: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.news-box .content .topic{
+    font-size: 18px;
+    font-weight: 600;
+}
+.news-box .content .title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px; /* 增加间距 */
+}
+
+.news-box .content .topic {
+    color: #0073e6;
+}
+
+.news-box .content .title {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.news-box .content .time {
+    color: #999;
+    font-size: 14px;
+    margin-top: 20px; /* 使时间行离上面更远 */
+}
+
+.date-container {
+    display: flex;
+    align-items: center; /* 垂直居中对齐 */
+    gap: 10px;           /* 元素之间的间距 */
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.m {
+    margin: 0; /* 移除默认的段落上下外边距 */
+    font-size: 25px; /* 统一字体大小 */
+    font-weight: bold; /* 可选：加粗文本 */
+}
+.y {
+
+    font-size: 25px; /* 统一字体大小 */
+    font-weight: bold; /* 可选：加粗文本 */
+}
+.filter input,
+.filter select,
+.filter button {
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+    font-family: 'PingFang SC Medium','San Francisco', Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+/* 如果需要进一步调整样式，可以根据需求添加更多样式 */
+#m, #y {
+    white-space: nowrap; /* 确保文本不会换行 */
+}
+@media (max-width: 600px) {
+    .date-container {
+        flex-direction: column;
+        align-items: flex-start; /* 或者根据需要调整 */
+    }
+}
+
+
+/* Read More Button */
+.read-more {
+    
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.read-more .read-more-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #e8e8ed;
+    border-radius: 50px;
+    color: #333;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.read-more .read-more-btn:hover {
+    background-color: #d2d2d7;
+}
+.no{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.0em;
+    margin-top: 45px;
+    margin-bottom: 50px;
+}
+
+/* =============================================== */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-family: 'PingFang SC Medium','San Francisco', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+.pagination button {
+    margin: 0 25px;
+    margin-top: 5%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    border-radius: 40px;
+    font-size: 1.2em;
+    font-family: 'PingFang SC Medium','San Francisco', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+}
+
+.pagination button.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.pagination button:disabled {
+    background-color: #eee;
+    cursor: not-allowed;
+}
+
+
+/* Footer */
+.footer {
+    padding: 0 60px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 50px;
+    border-top: 1px solid #eaeaea;
+}
+
+.footer-logo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-right: 20px;
+}
+
+.footer-info {
+    font-size: 15px;
+}
+
+/* 响应式调整：小屏幕下调整布局 */
+@media (max-width: 768px) {
+    .navbar .logo img.unhub_logo {
+        width: 25px;
+        height: 25px;
+        object-fit: contain;
+        margin-left: 10px;
+    }
+    .navbar .logo {
+        display: flex;
+        align-items: center;
+        font-size: 8px;
+        font-weight: 600;
+        color: #333;
+        gap: 5px; /* 图片与文本间的间隔 */
+    }
+    .navbar .logo .text-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .navbar .nav-links a {
+        margin-left: 5px;
+        text-decoration: none;
+        color: #666;
+        font-size: 10px;
+        font-weight: bold;
+        transition: color 0.3s ease;
+        /* margin-right: 20px; */
+    }
+    .main-content {
+        padding: 0;
+        margin-top: 40px;
+    }
+        /* Footer */
+        .footer {
+            padding: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: 50px;
+            border-top: 1px solid #eaeaea;
+        }
+    
+        .footer-logo {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            margin-right: 20px; 
+        }
+    
+        .footer-info {
+            font-size: 15px;
+        }
+}
