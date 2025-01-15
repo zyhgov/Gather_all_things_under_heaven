@@ -14,6 +14,22 @@ const newsData = [
     {
         month: "一月",
         year: "2025",
+        imageUrl: "../news/news_img/W020250115386588485834.jpg",
+        topic: "审查调查",
+        title: "重庆市铜梁区委书记谭庆接受纪律审查和监察调查",
+        time: "2025-01-15",
+        link: "/news/2025/1/20250115_GN_003.html"
+    },{
+        month: "一月",
+        year: "2025",
+        imageUrl: "../news/news_img/screen-shot-preview.jpg",
+        topic: "GitHub",
+        title: "通过在线拖拽模块快速生成简历",
+        time: "2025-01-15",
+        link: "/news/2025/1/20250115_GN_002.html"
+    },{
+        month: "一月",
+        year: "2025",
         imageUrl: "../news/news_img/gongshi.jpg",
         topic: "教育部",
         title: "教育部关于拟同意设置本科高等学校的公示",
