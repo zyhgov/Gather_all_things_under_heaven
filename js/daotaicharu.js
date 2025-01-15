@@ -14,6 +14,14 @@ const newsData = [
     {
         month: "一月",
         year: "2025",
+        imageUrl: "http://www.news.cn/20250115/65877e3f8d884a349be2fbe2c6fd2917/eMLnTUZe4irzR4LC.jpg",
+        topic: "国际快讯",
+        title: "尹锡悦今日10时33分被捕",
+        time: "2025-01-15",
+        link: "/news/2025/1/20250115_GJ_001.html"
+    },{
+        month: "一月",
+        year: "2025",
         imageUrl: "/news/news_img/sgp.jpg",
         topic: "历史课堂",
         title: "石国鹏 : 人文精神的起源",
