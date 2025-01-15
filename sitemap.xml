@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
-      <loc>https://zyhorg.ac.cn/</loc>
+      <loc>https://zyhorg.ac.cn</loc>
       <lastmod>2024-12-31</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://zyhorg.ac.cn/textbook.html/</loc>
+      <loc>https://zyhorg.ac.cn/textbook.html</loc>
       <lastmod>2024-12-31</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>https://zyhorg.ac.cn/globalnews.html/</loc>
+      <loc>https://zyhorg.ac.cn/globalnews.html</loc>
       <lastmod>2024-12-31</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>https://zyhorg.ac.cn/archive.html/</loc>
+      <loc>https://zyhorg.ac.cn/archive.html</loc>
       <lastmod>2024-12-31</lastmod>
       <changefreq>daily</changefreq>
       <priority>0.8</priority>
@@ -31,31 +31,55 @@
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>https://zyhorg.ac.cn/news/2025/1/test.html/</loc>
+      <loc>https://zyhorg.ac.cn/news/2025/1/test.html</loc>
       <lastmod>2025-01-14</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>https://zyhorg.ac.cn/news/2025/1/Safety-Statement.html/</loc>
+      <loc>https://zyhorg.ac.cn/news/2025/1/Safety-Statement.html</loc>
       <lastmod>2025-01-14</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>https://zyhorg.ac.cn/news/2025/1/20250114_zffr.html/</loc>
+      <loc>https://zyhorg.ac.cn/news/2025/1/20250114_zffr.html</loc>
       <lastmod>2025-01-14</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>https://zyhorg.ac.cn/news/2025/1/Conan2025.html/</loc>
+      <loc>https://zyhorg.ac.cn/news/2025/1/Conan2025.html</loc>
       <lastmod>2025-01-15</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>https://zyhorg.ac.cn/news/2025/1/sgp_20250114_001.html/</loc>
+      <loc>https://zyhorg.ac.cn/news/2025/1/sgp_20250114_001.html</loc>
+      <lastmod>2025-01-15</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/2025/1/20250115_GJ_001.html</loc>
+      <lastmod>2025-01-15</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/2025/1/20250115_GN_001.html</loc>
+      <lastmod>2025-01-15</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/2025/1/20250115_GN_002.html</loc>
+      <lastmod>2025-01-15</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/2025/1/20250115_GN_003.html</loc>
       <lastmod>2025-01-15</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
