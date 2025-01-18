@@ -14,6 +14,22 @@ const newsData = [
     {
         month: "一月",
         year: "2025",
+        imageUrl: "../news/news_img/hanzheng.jpeg",
+        topic: "国际快讯",
+        title: "中国派出副主席韩正出席特朗普就职典礼",
+        time: "2025-01-18",
+        link: "/news/2025/1/20250118_GJ_001.html"
+    },{
+        month: "一月",
+        year: "2025",
+        imageUrl: "../news/news_img/Donald J. Trump.jpeg",
+        topic: "国际快讯",
+        title: "唐纳德·约翰·特朗普官方肖像发布",
+        time: "2025-01-16",
+        link: "/news/2025/1/20250116_GJ_001.html"
+    },{
+        month: "一月",
+        year: "2025",
         imageUrl: "../news/news_img/W020250115386588485834.jpg",
         topic: "审查调查",
         title: "重庆市铜梁区委书记谭庆接受纪律审查和监察调查",
