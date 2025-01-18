@@ -54,7 +54,7 @@ const newsData = [
     },{
         month: "一月",
         year: "2025",
-        imageUrl: "http://www.news.cn/20250115/65877e3f8d884a349be2fbe2c6fd2917/eMLnTUZe4irzR4LC.jpg",
+        imageUrl: "../news/news_img/eMLnTUZe4irzR4LC.jpg",
         topic: "国际快讯",
         title: "尹锡悦今日10时33分被捕",
         time: "2025-01-15",
