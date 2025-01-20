@@ -33,7 +33,7 @@ function wrapDivWithLink(divId, linkUrl) {
 }
 
 // 示例调用：给ID为news-1的div添加超链接
-wrapDivWithLink('znews-1', '/news/2025/1/MyWebsiteInfo.html');
+wrapDivWithLink('znews-1', '/news/2025/1/test.html');
 wrapDivWithLink('znews-2', '/news/2024/12/ny2025.html');
 wrapDivWithLink('znews-3', '/news/2025/1/Conan2025.html');
 wrapDivWithLink('znews-4', '/news/2025/1/20250114_zffr.html');
