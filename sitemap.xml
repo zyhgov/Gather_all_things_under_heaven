@@ -96,5 +96,65 @@
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/2025/1/20250120_kt.html</loc>
+      <lastmod>2025-01-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/2025/1/20250120_jng.html</loc>
+      <lastmod>2025-01-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/2025/1/20250120_xhl.html</loc>
+      <lastmod>2025-01-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/2025/1/20250120_kdy.html</loc>
+      <lastmod>2025-01-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/2025/1/20250120_mll.html</loc>
+      <lastmod>2025-01-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/2025/1/20250120_gtxy.html</loc>
+      <lastmod>2025-01-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/2025/1/20250120_mickey.html</loc>
+      <lastmod>2025-01-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/2025/1/20250120_garfield.html</loc>
+      <lastmod>2025-01-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/2025/1/20250120_melody.html</loc>
+      <lastmod>2025-01-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/2025/1/20250120_stitch.html</loc>
+      <lastmod>2025-01-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
    <!-- 继续添加更多页面 -->
 </urlset>
