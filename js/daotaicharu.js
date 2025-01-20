@@ -22,7 +22,7 @@ const newsData = [
     },{
         month: "一月",
         year: "2025",
-        imageUrl: "../news/news_img/r/jng (1).jpg",
+        imageUrl: "../news/news_img/r/jng (2).jpg",
         topic: "小红书",
         title: "中国十二生肖杰尼龟限定版头像",
         time: "2025-01-20",
