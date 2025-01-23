@@ -14,6 +14,14 @@ const newsData = [
     {
         month: "一月",
         year: "2025",
+        imageUrl: "../news/news_img/benchmark.jpg",
+        topic: "DeepSeek",
+        title: "DeepSeek-R1 发布，性能对标 OpenAI o1 正式版",
+        time: "2025-01-20",
+        link: "/news/2025/1/20250120_GN_001.html"
+    },{
+        month: "一月",
+        year: "2025",
         imageUrl: "../news/news_img/info01.jpg",
         topic: "联合库UNHub",
         title: "联合库UNHub网站信息公示",
