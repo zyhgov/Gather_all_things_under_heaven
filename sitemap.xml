@@ -162,5 +162,11 @@
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/organization/index.html</loc>
+      <lastmod>2025-01-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
    <!-- 继续添加更多页面 -->
 </urlset>
