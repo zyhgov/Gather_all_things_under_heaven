@@ -41,6 +41,7 @@
         <link rel="stylesheet" href="/css/step-zero.css" media="screen, print"/>
         <link rel="stylesheet" href="/css/as-store.css" media="screen, print"/>
         <link rel="stylesheet" href="/css/networkCheck.css">
+        <link rel="stylesheet" href="/css/loading.css">
         <script crossorigin="anonymous">
             window.irOn = true;
         </script>
@@ -82,6 +83,7 @@
         <script type="text/javascript" src="/js/set.js"></script>
         <script src="https://zyhorg.cn/statics/js/axios.min.js"></script>
         <script src="/js/axios.min.js"></script>
+        <script src="/js/jquery.min.js"></script>
         <link rel="stylesheet" href="https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com/flag-icons-main/css/flag-icons.min.css">
         <!-- 引入不蒜子计数 -->
         <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -96,7 +98,16 @@
         <script>LA.init({id:"Kg8KQJs3VUpgJFYj",ck:"Kg8KQJs3VUpgJFYj",autoTrack:true,hashMode:true,screenRecord:true})</script>
     </head>
     <body class="dd-cny-gifting-theme-202501">
-
+    <!-- ▼loading -->
+    <div class="loadingOverlay js-loading">
+        <div class="loadingLogo"></div>
+        <!-- <div class="loader"></div> -->
+        <div class="container">
+            <div class="loader"></div>
+        </div>
+    </div>
+    <script src="/js/loading.js"></script>
+    <!-- ▲loading -->
         <div id="page">
     <!-- 网络检测 -->
     <div id="alert-box" class="alert-box">
