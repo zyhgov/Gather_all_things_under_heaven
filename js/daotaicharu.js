@@ -14,6 +14,22 @@ const newsData = [
     {
         month: "一月",
         year: "2025",
+        imageUrl: "../news/news_img/JFK_limousine.png",
+        topic: "国际快讯",
+        title: "特朗普总统下令解密肯尼迪总统遇刺案所有文件",
+        time: "2025-01-23",
+        link: "/news/2025/1/20250123_GJ_002.html"
+    },{
+        month: "一月",
+        year: "2025",
+        imageUrl: "../news/news_img/kejie.jpg",
+        topic: "国际快讯",
+        title: "中国围棋协会关于第29届LG杯决赛的声明",
+        time: "2025-01-23",
+        link: "/news/2025/1/20250123_GJ_001.html"
+    },{
+        month: "一月",
+        year: "2025",
         imageUrl: "../news/news_img/benchmark.jpg",
         topic: "DeepSeek",
         title: "DeepSeek-R1 发布，性能对标 OpenAI o1 正式版",
