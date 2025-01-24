@@ -180,5 +180,17 @@
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/2025/1/20250123_GJ_001.html</loc>
+      <lastmod>2025-01-23</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/2025/1/20250123_GJ_002.html</loc>
+      <lastmod>2025-01-23</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
    <!-- 继续添加更多页面 -->
 </urlset>
