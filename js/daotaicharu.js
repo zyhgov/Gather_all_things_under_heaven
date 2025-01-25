@@ -14,6 +14,14 @@ const newsData = [
     {
         month: "一月",
         year: "2025",
+        imageUrl: "../news/news_img/she_2025.jpg",
+        topic: "RockstarGames",
+        title: "在线模式中欢庆农历新年",
+        time: "2025-01-23",
+        link: "/news/2025/1/20250123_GJ_003.html"
+    },{
+        month: "一月",
+        year: "2025",
         imageUrl: "../news/news_img/JFK_limousine.png",
         topic: "国际快讯",
         title: "特朗普总统下令解密肯尼迪总统遇刺案所有文件",
