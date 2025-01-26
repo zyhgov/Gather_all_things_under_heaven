@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNHub Music - 网页播放器</title>
+    <meta name="description" content="畅听数百万首歌曲，观看音乐视频，体验现场表演，一切尽在 UNHub Music。订阅后即可在WEB网页、App 或 Android 设备上播放。">
+    <link rel="icon" href="/favicon.ico" sizes="64x64" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com/oolong-music/music.css"> -->
+    <link rel="stylesheet" href="./css/music.css">
+    <!-- <link rel="stylesheet" href="css/sidebar.css"> -->
+    <link rel="stylesheet" href="./css/playlist.css">
+    <script src="https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com/oolong-music/color-thief.min.js"></script>
+
+</head>
+<body>
+
+    <div id="container">
+
+
+        <div id="left-panel">
+            <img id="album-art" src="" alt="Album Art">
+            <div id="song-info">
+                <h2 id="song-title">Song Name</h2>
+                <h3 id="singer-name">Singer Name</h3>
+            </div>
+            <div id="progress-bar-container">
+                <span id="current-time">00:00</span>
+                <input type="range" id="progress-bar" min="0" max="100" value="0">
+                <span id="duration">00:00</span>
+            </div>
+            <div id="playlist-container" class="playlist-hidden">
+                <div id="playlist-header">
+                    <span id="close-playlist">✖</span>
+                    <h3>音乐列表 Music List</h3>
+                </div>
+                <div id="playlist">
+                    <!-- 音乐列表项将会动态插入到这里 -->
+                </div>
+            </div>
+            
+            
+            <div id="controls">
+                <img src="https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com/oolong-music/but-icon/返回.svg" id="repeat" alt="Repeat">
+                <img src="https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com/oolong-music/but-icon/上一曲_go-start.svg" id="previous" alt="Previous">
+                <img src="https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com/oolong-music/but-icon/声波_acoustic.svg" id="play-pause" alt="Play/Pause" >
+                <img src="https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com/oolong-music/but-icon/下一曲_go-end.svg" id="next" alt="Next" >
+                <!-- <img src="/but-icon/洗牌_shuffle-one.svg" id="shuffle" alt="Shuffle"> -->
+                <img src="https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com/oolong-music/but-icon/音乐菜单_music-list.svg" id="list" alt="list">
+            </div>
+        </div>
+        <div id="right-panel">
+            <div id="lyrics-container">
+                <!-- Lyrics will be loaded here -->
+            </div>
+        </div>
+        <!-- <img src="/but-icon/下_down.svg" alt="xiangxia"> -->
+    </div>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <!-- jQuery UI -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    
+    <!-- <script src="music.js"></script> -->
+    <!-- <script src="https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com/oolong-music/music2.js"></script> -->
+    <script src="./js/music2.js"></script>
+    <!-- <script src="js/sidebar.js"></script> -->
+    <script src="https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com/music/js/responsive.js"></script>
+    <script>
+        document.getElementById('repeat').addEventListener('click', function() {
+          window.location.href = './index.html'; // 替换为你想要跳转的URL
+        });
+    </script>
+</body>
+</html>

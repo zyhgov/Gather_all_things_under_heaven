@@ -1,0 +1,82 @@
+
+/* 音乐列表容器 */
+#playlist-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background: #1a1a2ec4;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    z-index: 1000;
+    border-radius: 25px 0px 0px 25px;
+    color: #fff;
+}
+
+/* 音乐列表顶部 */
+#playlist-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #444;
+    position: relative;
+    background: #2e2e3e;
+}
+
+/* 收起按钮 */
+#close-playlist {
+    cursor: pointer;
+    font-size: 18px;
+    margin-right: 10px;
+    color: #fff;
+}
+
+/* 音乐列表标题 */
+#playlist-header h3 {
+    margin: 0;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+/* 音乐列表项 */
+.playlist-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #444;
+    cursor: move;
+    position: relative;
+    transition: background 0.3s;
+}
+
+.playlist-item:hover {
+    background: #333;
+}
+
+/* 专辑图片 */
+.album-art {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+/* 歌曲信息 */
+.song-info {
+    flex: 1;
+    color: #fff;
+}
+
+/* 隐藏音乐列表 */
+.playlist-hidden {
+    display: none;
+}
+/* 删除按钮 */
+.remove-btn {
+    cursor: pointer;
+    color: #ff4d4d;
+    font-size: 20px;
+    margin-left: 10px;
+}

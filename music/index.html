@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN" >
+<head>
+  <meta charset="UTF-8">
+  <title>UNHub Music - 联合库UNHub</title>
+  <link rel="icon" href="/favicon.ico" sizes="64x64" type="image/x-icon">
+  <meta name="description" content="UNHub Music 是一项联合库UNHub开发的自定义流媒体音乐平台服务，让你能尽情聆听数千万首好歌。 它拥有众多精彩功能，包括下载歌曲并离线播放、实时显示歌词、跨设备聆听、根据你的喜好推荐新歌，以及我们编辑精选的歌单等。 ">
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<main>
+  <div class="heading">
+    <h1>UNHub Music<br />自定义流媒体平台</h1>
+    <aside>
+      <p>UNHub Music 是一项联合库UNHub开发的自定义流媒体音乐平台服务，让你能尽情聆听数千万首好歌。 它拥有众多精彩功能，包括下载歌曲并离线播放、实时显示歌词、跨设备聆听、根据你的喜好推荐新歌，以及我们编辑精选的歌单等。
+      </p>
+      <p><a href="/index.html" target="_blank">回到联合库 UNHub 首页</a></p>
+    </aside>
+  </div>
+  <div class="container">
+    <div class="card">
+      <div class="card-inner">
+        <div class="box">
+          <div class="imgBox">
+            <img src="./music2.jpg" alt="Awesome views">
+          </div>
+          <div class="more">
+            <ul>
+              <li><img src="https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com/music/asset/images/zhuanji/syydxb.webp" alt=""></li>
+              <li><img src="https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com/music/asset/images/zhuanji/ljj.webp" alt=""></li>
+              <li><img src="https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com/music/asset/images/zhuanji/我很忙.webp" alt=""></li>
+              <li><img src="https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com/music/asset/images/zhuanji/开始懂了-孙燕姿.webp" alt=""><span>50+</span></li>
+            </ul>
+          </div>
+          <div class="tag">
+            <a href="./musicplay.html">#无乐不欢</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="card video">
+      <div class="card-inner">
+          <div class="box">
+              <div class="videoBox poster" style="position:relative;width:100%;height:100%;">
+                  <video width="100%" height="100%" autoplay muted loop style="object-fit: cover;">
+                      <source src="https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com/statics/MP4/medium_2x.mp4" type="video/mp4">
+                      您的浏览器不支持HTML5视频标签。
+                  </video>
+                  <style>
+                      .videoBox.poster video {
+                          width: 100%;
+                          height: 100%;
+                          object-fit: cover; /* 确保视频铺满容器 */
+                          pointer-events: none; /* 禁用视频上的用户交互 */
+                      }
+                      .videoBox.poster {
+                          position: relative;
+                          width: 100%;
+                          height: 100%;
+                      }
+                      video::-webkit-media-controls {
+                          display: none !important; /* 隐藏所有WebKit浏览器（如Chrome和Safari）中的控件 */
+                      }
+                      video::-internal-media-controls {
+                          display: none !important; /* 尝试隐藏其他浏览器中的控件 */
+                      }
+                  </style>
+              </div>
+  
+              <div class="tag">
+                  <a href="./musicplay.html">#全新视听</a>
+              </div>
+          </div>
+      </div>
+  </div>
+    <div class="card">
+      <p><a href="./musicplay.html">点击此处进入UNHub Music</a> </p>
+      <div class="card-inner">
+        <div class="box">
+          <div class="imgBox">
+            <img src="./music.jpg" alt="Hiking">
+          </div>
+
+          <div class="more">
+            <a href="./musicplay.html" class="arrow"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              </svg></a>
+
+          </div>
+          <div class="tag">
+            <a href="./musicplay.html">#音乐家们</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
