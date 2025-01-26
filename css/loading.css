@@ -12,7 +12,7 @@
     margin: auto;
     z-index: 10000;
     /* background: url("/asset/icon_logo/loading.svg"), linear-gradient(300deg, rgba(6,14,41,1) 0%, rgba(10,39,52,1) 54%, rgba(0,8,3,1) 100%); */
-      background: url("/asset/icon_logo/loading_2025.svg"), linear-gradient(300deg, #80171b 0%, #621013 54%, #911317 100%);
+      background: url("https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com/logo/loading_menshen.svg"), linear-gradient(300deg, #80171b 0%, #621013 54%, #911317 100%);
     background-position: center 40%, left top;
     background-repeat: no-repeat;
     background-size: contain, 100% 100%;
