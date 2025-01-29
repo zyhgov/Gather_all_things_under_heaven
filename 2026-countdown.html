@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 添加了更详细的描述以帮助搜索引擎理解页面的内容 -->
+    <meta name="description" content="欢迎来到UNHub下的2026 公历新年农历马年倒计时页面，这里提供精确到秒的倒计时服务，包括2026年新年和农历新年的倒计时。加入我们，一起期待这些重要时刻的到来！">
+    <!-- 为社交媒体分享优化的Open Graph标签 -->
+    <meta property="og:title" content="2026 公历新年农历马年倒计时 - 联合库UNHub">
+    <meta property="og:description" content="在UNHub中探索2026年倒计时，包含公历新年与农历新年倒计时功能。快来参与吧！">
+    <meta property="og:image" content="https://zyhorg.ac.cn/news/news_img/info01.jpg"> <!-- 替换为您自己的图片链接 -->
+    <meta property="og:url" content="https://zyhorg.ac.cn/2026-countdown">
+    <title>2026 公历新年农历马年倒计时 - 联合库UNHub</title>
+    <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #007AFF;
+            --background-gradient: linear-gradient(180deg, #F5F5F7 0%, #FFFFFF 100%);
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --text-primary: #1D1D1F;
+            --text-secondary: #86868B;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            background: var(--background-gradient);
+            font-family: 'SF Pro Display', sans-serif;
+            color: var(--text-primary);
+        }
+        img.logo {
+            margin-top: 5px; /* 调整位置 */
+            width: 30%;
+        }
+
+        .container {
+            margin: auto;
+            width: min(90%, 680px);
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+        }
+
+        .switch-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .switch-button {
+            padding: 1rem;
+            border: none;
+            border-radius: 12px;
+            background: #F5F5F7;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .switch-button.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .countdown-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .time-unit {
+            background: rgba(245, 245, 247, 0.6);
+            border-radius: 14px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .time-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .time-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            font-size: 2rem;
+        }
+
+        @media (max-width: 480px) {
+            .countdown-container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .time-value {
+                font-size: 2rem;
+            }
+            h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            font-size: 1.6rem;
+        }img.logo {
+            margin-top: 10px; /* 调整位置 */
+            width: 50%;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="/asset/nav_img/%E4%B8%80%E8%B5%B7%E5%8C%96%E8%9B%87%E6%B7%BB%E7%A6%8F.svg" alt="logo" class="logo">
+        <h1>灵蛇献瑞辞旧岁，骏马奔腾迎新春</h1>
+        <h1>2026 公历新年农历马年倒计时</h1>
+        
+        <div class="switch-buttons">
+            <button class="switch-button active" onclick="switchCountdown('year')">公历2026倒计时</button>
+            <button class="switch-button" onclick="switchCountdown('cny')">农历马年倒计时</button>
+        </div>
+
+        <div class="countdown-container">
+            <div class="time-unit">
+                <div class="time-value" id="months">--</div>
+                <div class="time-label">月</div>
+            </div>
+            <div class="time-unit">
+                <div class="time-value" id="weeks">--</div>
+                <div class="time-label">周</div>
+            </div>
+            <div class="time-unit">
+                <div class="time-value" id="days">--</div>
+                <div class="time-label">天</div>
+            </div>
+            <div class="time-unit">
+                <div class="time-value" id="hours">--</div>
+                <div class="time-label">小时</div>
+            </div>
+            <div class="time-unit">
+                <div class="time-value" id="minutes">--</div>
+                <div class="time-label">分钟</div>
+            </div>
+            <div class="time-unit">
+                <div class="time-value" id="seconds">--</div>
+                <div class="time-label">秒</div>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center;">
+        <p>联合库UNHub 祝您新年快乐</p>
+    </div>
+
+    <script>
+        const targets = {
+            year: new Date('2026-01-01T00:00:00+08:00'),
+            cny: new Date('2026-02-17T00:00:00+08:00') // 2026 Lunar New Year
+        };
+
+        let currentMode = 'year';
+
+        function switchCountdown(mode) {
+            currentMode = mode;
+            document.querySelectorAll('.switch-button').forEach(btn => {
+                btn.classList.toggle('active', btn.textContent.includes(mode === 'year' ? '2026' : '农历'));
+            });
+        }
+
+        function updateDisplay(time) {
+            document.getElementById('months').textContent = time.totalMonths;
+            document.getElementById('weeks').textContent = time.totalWeeks;
+            document.getElementById('days').textContent = time.totalDays;
+            document.getElementById('hours').textContent = time.totalHours.toString().padStart(3, '0'); // 总小时数可能超过两位数
+            document.getElementById('minutes').textContent = time.totalMinutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = time.totalSeconds.toString().padStart(2, '0');
+        }
+
+        function calculateTime() {
+            const now = new Date();
+            const diff = targets[currentMode] - now;
+
+            if (diff <= 0) return { 
+                totalMonths: 0, totalWeeks: 0, totalDays: 0,
+                totalHours: 0, totalMinutes: 0, totalSeconds: 0 
+            };
+
+            const seconds = Math.floor(diff / 1000) % 60;
+            const minutes = Math.floor(diff / (1000 * 60)) % 60;
+            const hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const weeks = Math.floor(days / 7);
+            const remainingDays = days % 7;
+            const months = Math.floor(days / 30); // 简单估算，一个月按30天计算
+
+            // 计算总小时数、总分钟数和总秒数
+            const totalHours = (months * 30 * 24) + (weeks * 7 * 24) + (remainingDays * 24) + hours;
+            const totalMinutes = totalHours * 60 + minutes;
+            const totalSeconds = totalMinutes * 60 + seconds;
+
+            return {
+                totalMonths: months,
+                totalWeeks: weeks,
+                totalDays: remainingDays + (weeks * 7),
+                totalHours: totalHours,
+                totalMinutes: totalMinutes,
+                totalSeconds: totalSeconds
+            };
+        }
+
+        function update() {
+            const time = calculateTime();
+            updateDisplay(time);
+            requestAnimationFrame(update);
+        }
+
+        // Initial update
+        update();
+        setInterval(() => {
+            const time = calculateTime();
+            updateDisplay(time);
+        }, 1000);
+    </script>
+</body>
+</html>
