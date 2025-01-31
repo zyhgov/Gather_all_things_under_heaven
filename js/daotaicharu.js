@@ -14,6 +14,22 @@ const newsData = [
     {
         month: "一月",
         year: "2025",
+        imageUrl: "/asset/NextBook.gif",
+        topic: "Notion Wikis",
+        title: "杖雍皓zyhorg 联合库UNHub 公开数据库Wikis百科 - Notion",
+        time: "2025-01-31",
+        link: "/news/2025/1/notion.html"
+    },{
+        month: "一月",
+        year: "2025",
+        imageUrl: "../news/news_img/paper.jpg",
+        topic: "襄阳职业技术学院（毕业）论文",
+        title: "基于 Hadoop 平台的就业趋势预测",
+        time: "2025-01-31",
+        link: "/news/2025/1/20250131_paper.html"
+    },{
+        month: "一月",
+        year: "2025",
         imageUrl: "../news/news_img/she_2025.jpg",
         topic: "RockstarGames",
         title: "在线模式中欢庆农历新年",
