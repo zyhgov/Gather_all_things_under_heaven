@@ -228,5 +228,11 @@
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/2025/1/360apt.html</loc>
+      <lastmod>2025-01-31</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+   </url>
    <!-- 继续添加更多页面 -->
 </urlset>
