@@ -10,6 +10,18 @@
     flex-direction: column; /* 初始为垂直排列 */
     align-items: center; /* 水平居中对齐 */
 }
+.rounded-iframe {
+    border-radius: 20px;
+    background-color: #f5f5f7;
+    margin: 5px auto;
+    padding: 5px;
+    width: 100%;
+    height: 220px;
+    max-width: 1200px;
+    display: flex; /* 使用Flexbox布局 */
+    flex-direction: column; /* 初始为垂直排列 */
+    align-items: center; /* 水平居中对齐 */
+}
 
 .rounded-box h1 {
     font-size: 2em;
@@ -34,6 +46,9 @@ iframe {
 
 @media (max-width: 600px) {
     .rounded-box {
+        width: 90%;
+    }
+    .rounded-iframe {
         width: 90%;
     }
     .current {
