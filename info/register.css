@@ -1,0 +1,138 @@
+body {
+    font-family: 'SF Pro Display','PingFang SC Medium','San Francisco', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('bg.svg');
+    background-size: auto;
+    background-repeat: repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .container {
+    text-align: left; /* 改为左对齐 */
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    /* border-radius: 10px; */
+    width: 100%;
+    max-width: 400px;
+  }
+  .box {
+    display: block;
+  }
+  .logo {
+    width: 160px;
+    height: auto;
+    /* margin-bottom: 20px; */
+  }
+  h2{
+    font-size: 2em;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+  input[type="email"], input[type="text"], input[type="password"], textarea {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    font-family: 'SF Pro Display','PingFang SC Medium','San Francisco', Helvetica, Arial, sans-serif;
+    font-size: 1.25em;
+  }
+  a{
+    text-decoration: none;
+    color: rgb(0, 103, 184);
+  }
+  button {
+    background-color: #0077ED;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 20px;
+    float: right; /* 按钮右对齐 */
+    font-family: 'SF Pro Display','PingFang SC Medium','San Francisco', Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    margin-right: 10px;
+  }
+  button:hover {
+    background-color: #0080ff;
+  }
+  /* 确保textarea不可调整大小 */
+textarea {
+    resize: none; /* 完全禁止调整大小 */
+    width: 100%; /* 设置宽度为100%以适应容器 */
+    max-width: 100%; /* 最大宽度设置为100%，以防超出容器 */
+    min-height: 50px; /* 设置最小高度 */
+    font-family: 'SF Pro Display','PingFang SC Medium','San Francisco', Helvetica, Arial, sans-serif;
+    font-size: 1.25em;
+}
+
+/* 如果您只想针对特定的textarea进行设置，可以使用ID选择器 */
+#bio {
+    resize: none; /* 完全禁止调整大小 */
+    width: 100%; /* 设置宽度为100%以适应容器 */
+    max-width: 100%; /* 最大宽度设置为100%，以防超出容器 */
+    min-height: 50px; /* 设置最小高度 */
+}
+  #error-message,#optional-error-message,#credentials-error-message {
+    color: #ca000e;
+    text-align: left;
+    font-family: 'SF Pro Display','PingFang SC Medium','San Francisco', Helvetica, Arial, sans-serif;
+    font-size: 1.25em;
+  }
+  /* 确保提示信息位于页面底部 */
+  .footer-message {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000; /* 确保提示信息在其他内容之上 */
+  }
+  
+  /* 如果希望提示信息在页面内容下方而不是固定在视口底部 */
+  .footer-message.fixed-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  /* From Uiverse.io by sawantyash11 */
+  .loader {
+    display: block;
+    --height-of-loader: 5px;
+    --loader-color: #0071e3;
+    width: 80%;
+    height: var(--height-of-loader);
+    border-radius: 30px;
+    background-color: #f5f5f8;
+    position: relative;
+    margin: 20px auto; /* 中心对齐加载条 */
+  }
+  
+  .loader::before {
+    content: "";
+    position: absolute;
+    background: var(--loader-color);
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    border-radius: 30px;
+    animation: moving 1s ease-in-out infinite;
+  }
+  
+  @keyframes moving {
+    50% {
+      width: 100%;
+    }
+  
+    100% {
+      width: 0;
+      right: 0;
+      left: unset;
+    }
+  }

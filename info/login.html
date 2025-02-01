@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- 页面标题 -->
+  <title>联合库UNHub - 用户登录 | zyhorg.ac.cn</title>
+
+  <!-- 页面描述 -->
+  <meta name="description" content="联合库UNHub提供安全可靠的用户登录服务。在这里登录到您的账户，享受更多功能和服务。">
+
+  <!-- 关键字 -->
+  <meta name="keywords" content="联合库, UNHub, 用户登录, 账户安全, 安全登录">
+
+
+  <!-- 结构化数据 (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "联合库UNHub",
+    "url": "https://zyhorg.ac.cn/",
+    "logo": "https://zyhorg.ac.cn/favicon.ico",
+    "description": "一站式资源服务平台"
+  }
+  </script>
+
+  <!-- 字体样式 -->
+  <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+
+  <!-- 主样式表 -->
+  <link rel="stylesheet" href="login.css">
+
+  <!-- 异步加载 Supabase JS 库 -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+  <!-- 网站图标 -->
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" href="/asset/icon_logo/hei_by_y_1.svg" type="image/svg+xml">
+
+</head>
+<body>
+<div id="login-container" class="container">
+    
+  <div id="login-box" class="box">
+    
+    <img src="/asset/icon_logo/unhub_verify.svg" alt="Logo" class="logo">
+    <h2>登录</h2>
+    <form id="login-form">
+      <input type="email" id="login-email" placeholder="邮箱📧" required style="border:none;border-bottom:1px solid #ccc;">
+      <div class="loader" style="display:none;"></div>
+      <a href="register.html">还没有用户？创建一个！</a><br>
+      <a href="/index.html">回到联合库UNHub首页</a>
+      <button type="button" onclick="nextStep()">下一步</button>
+    </form>
+    <p id="error-message" style="color:red;"></p>
+  </div>
+  <div id="password-box" class="box" style="display:none;">
+    <img src="/asset/icon_logo/unhub_verify.svg" alt="Logo" class="logo">
+    <p id="user-email"></p>
+    <input type="password" id="login-password" placeholder="密码🗝️" required style="border:none;border-bottom:1px solid #ccc;">
+    <div class="loader" style="display:none;"></div>
+    <a href="#" id="forgot-password-link">忘记了密码？</a>
+    <button type="button" onclick="attemptLogin()">登录</button>
+    <p id="error-message1" style="color:red;"></p>
+</div>
+</div>
+
+<!-- 模态对话框 -->
+<div id="forgot-password-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="close-modal">&times;</span>
+      <p>请联系系统管理员：<a href="mailto:info@zyhorg.cn">info@zyhorg.cn</a></p>
+    </div>
+  </div>
+<!-- 提示信息 -->
+<div class="footer-message">
+    <p>
+        注册用户前请确认邮箱格式，因为我们会验证邮箱域名是否正确！<br>
+        zyhorg.ac.cn | 联合库UNHub | zyhorg
+    </p>
+  </div>
+<script src="auth.js"></script>
+</body>
+</html>
