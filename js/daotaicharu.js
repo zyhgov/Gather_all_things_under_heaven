@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+ // 显示加载提示
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('loading').style.display = 'block';
+});
 // 新闻数据
 const newsData = [
     {
@@ -267,6 +271,7 @@ const newsData = [
 // 插入新闻内容的函数
 function insertNews(data, keyword = "", start = 0, count = 5) {
     const container = document.getElementById('news-container');
+    const loading = document.getElementById('loading');
     
     let currentMonth = ""; // 用来判断是否需要添加月份和年份
 
@@ -312,20 +317,22 @@ function insertNews(data, keyword = "", start = 0, count = 5) {
         container.appendChild(newsLink);
     });
 
+    // 隐藏加载提示
+    loading.style.display = 'none';
+
     // 检查是否还有更多的新闻可以加载
     if (data.length > start + count) {
         addLoadMoreButton(data, keyword, start + count);
     }
 }
 
-// 页面加载时插入前5条新闻
-window.onload = function() {
-    insertNews(newsData, '', 0, 5);
-};
+// 添加加载更多按钮
 function addLoadMoreButton(data, keyword, nextStart) {
     const loadMoreButton = document.createElement('button');
     loadMoreButton.textContent = '加载更多';
     loadMoreButton.onclick = function() {
+        const loading = document.getElementById('loading');
+        loading.style.display = 'block'; // 显示加载提示
         this.remove(); // 移除加载更多按钮
         insertNews(data, keyword, nextStart, 5); // 加载下一批新闻
     };
@@ -341,11 +348,12 @@ function highlightText(text, keyword) {
 
 // 模糊搜索函数
 function searchNews() {
+    const loading = document.getElementById('loading');
     const keyword = document.getElementById('search-input').value.trim();
     const topic = document.getElementById('topic-select').value;
     const year = document.getElementById('year-select').value;
     const month = document.getElementById('month-select').value;
-    
+
     let filteredData = [...newsData];
 
     // 根据选择的筛选条件过滤新闻
@@ -368,50 +376,27 @@ function searchNews() {
                (a.title.toLowerCase().match(keyword.toLowerCase()) || []).length;
     }).slice(0, 5);  // 只取最匹配的5条数据
 
+    // 显示加载提示
+    loading.style.display = 'block';
+
     // 清空现有新闻内容并重新插入
     document.getElementById('news-container').innerHTML = '';
     if (filteredData.length > 0) {
         insertNews(filteredData, keyword);
     } else {
+        // 隐藏加载提示
+        loading.style.display = 'none';
         // 显示提示信息
         document.getElementById('news-container').innerHTML = '<p class="no">没有找到匹配的内容</p>';
     }
-
-    // 更新推荐条目
-    updateRecommendations(filteredData, keyword);
 }
 
-// 更新推荐条目
-function updateRecommendations(filteredData, keyword) {
-    const recommendationContainer = document.getElementById('recommendations');
-    recommendationContainer.innerHTML = ''; // 清空推荐列表
-
-    if (filteredData.length === 0) {
-        const noResults = document.createElement('p');
-        noResults.textContent = "没有找到匹配的内容";
-        recommendationContainer.appendChild(noResults);
-        return;
-    }
-
-    // 显示前5个推荐条目
-    filteredData.slice(0, 5).forEach(news => {
-        const highlightedTitle = highlightText(news.title, keyword);
-
-        const recommendationItem = document.createElement('div');
-        recommendationItem.classList.add('recommendation-item');
-        recommendationItem.innerHTML = `
-            <div class="title">${highlightedTitle}</div>
-            <div class="topic">${news.topic}</div>
-        `;
-        recommendationContainer.appendChild(recommendationItem);
-    });
-}
-
-// 监听输入框变化，实时搜索
-document.getElementById('search-input').addEventListener('keyup', searchNews);
-
-// 页面加载时插入所有新闻（可选）
+// 页面加载时插入前5条新闻
 window.onload = function() {
+    // 隐藏加载提示
+    const loading = document.getElementById('loading');
+    loading.style.display = 'none';
+    
+    // 插入新闻数据
     insertNews(newsData, '');
-    updateRecommendations(newsData, ''); // 加载推荐条目
 };
