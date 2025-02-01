@@ -88,6 +88,7 @@ function attemptLogin() {
         .then(user => {
             if (user) {
                 localStorage.setItem('username', user.username);
+                localStorage.setItem('useremail', email); // 确保这里正确存储了邮箱
                 window.location.href = 'welcome.html';
             } else {
                 // 显示错误信息
@@ -123,8 +124,10 @@ function loginWithEmailAndPassword(email, password) {
 if (window.location.pathname.includes('welcome.html')) {
   document.addEventListener('DOMContentLoaded', () => {  
     const username = localStorage.getItem('username');
-    if (username) {
+    const useremail = localStorage.getItem('useremail');
+    if (username && useremail) { // 使用逻辑与确保两个变量都存在
       document.getElementById('welcome-message').textContent = `欢迎，${username}`;
+      document.getElementById('welcome-email').textContent = `您的邮箱是 ${useremail}`;
     } else {
       window.location.href = 'login.html';
     }
