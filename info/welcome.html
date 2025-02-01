@@ -2,18 +2,63 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>欢迎页面</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNHub - 用户中心</title>
     <link rel="stylesheet" href="welcome.css">
     <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
     <!-- 引入Supabase库 -->
     <script src="supabase-js.js"></script>
-    <!-- 确保 welcome.js 在 Supabase 库之后加载 -->
-    <script src="welcome.js" defer></script>
 </head>
 <body>
+    <nav class="nav-top">
+        <div class="nav-brand">
+            <img src="/asset/icon_logo/red_by_y_1.png" alt="unhublogo" width="30">
+            <span class="bt">联合库UNHub 用户中心</span>
+        </div>
+        <img id="user-avatar" alt="User Avatar" class="nav-avatar" src="/asset/icon_logo/red_by_y_1.png">
+    </nav>
+
     <div class="container">
-        <h1 id="welcome-message">欢迎，某某某</h1>
-        <h1>其他功能正开发中</h1>
+        <div class="main-content">
+            <div class="left-sidebar">
+                <div class="user-info">
+                    <div class="user-avatar-section">
+                        <img id="sidebar-avatar" class="user-avatar" alt="User" src="/asset/icon_logo/red_by_y_1.png">
+                    </div>
+                    <div class="user-detail">
+                        <h2 id="welcome-message">Username</h2>
+                        <p id="welcome-email">user@example.com</p>
+                    </div>
+                </div>
+                <ul class="function-menu">
+                    <li>基本信息</li>
+                    <li>账户安全</li>
+                    <li>通知设置</li>
+                    <li>隐私设置</li>
+                    <li id="logout-link">安全退出</li>
+                </ul>
+            </div>
+            <div class="right-content">
+                <div class="function-content">
+                    <h2>更新头像</h2>
+                    <div class="update-avatar-section">
+                        <img id="current-avatar"  src="/asset/icon_logo/red_by_y_1.png" alt="Current Avatar" style="max-width: 200px; border-radius: 50%">
+                        <label class="update-avatar-label">
+                            <!-- 隐藏文件输入元素 -->
+                            <input type="file" class="file-input" accept="image/*" style="display:none;">
+                            <button class="update-avatar-btn">上传新头像</button>
+                        </label>
+                        <!-- 加载框 -->
+                        <div id="upload-progress-container" style="display:none;">
+                            <progress id="upload-progress" value="0" max="100"></progress>
+                            <p id="upload-message">上传进度: 0%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script src="welcome.js"></script>
 </body>
 </html>
