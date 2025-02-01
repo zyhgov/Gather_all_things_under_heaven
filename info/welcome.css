@@ -1,17 +1,223 @@
-body {
-    font-family: 'SF Pro Display','PingFang SC Medium','San Francisco', Helvetica, Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f4f4f4;
+:root {
+    --primary-color: #006fc9;
+    --background-color: #f2f2f2;
+    --text-color: #333;
+    --nav-height: 48px;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    font-family: 'SF Pro Display', 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    color: var(--text-color);
+}
+
+.nav-top {
+    background-color: var(--primary-color);
+    height: var(--nav-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.bt {
+    font-weight: bold;
+    color: #f2f2f2;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+}
+
+.nav-brand img {
+    margin-right: 10px;
+}
+
+.nav-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
 .container {
-    max-width: 500px;
-    margin: auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.main-content {
+    display: flex;
+    margin-top: var(--nav-height);
+}
+
+.left-sidebar {
+    width: 260px;
+    padding: 0px;
+    border-radius: 8px;
+
+}
+
+
+.right-content {
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* 确保 .user-info 使用 Flexbox 并居中对齐 */
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px; /* 底部外边距 */
+    width: 100%; /* 宽度占满父容器 */
+    justify-content: center; /* 水平居中对齐 */
+}
+
+/* 调整用户头像部分的样式 */
+.user-avatar-section {
+    margin-right:10px; /* 在头像和文字之间添加间距 */
+}
+
+.user-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* 用户详情部分的样式 */
+.user-detail {
+    text-align: left; /* 文字左对齐 */
+}
+
+.user-detail h2, .user-detail p {
+    margin: 0; /* 移除默认的 margin */
+}
+
+.user-detail h2 {
+    font-size: 1.5em; /* 根据需要调整字体大小 */
+    margin-bottom: 5px; /* 调整标题与段落之间的间距 */
+}
+
+.user-detail p {
+    font-size: 1em; /* 根据需要调整字体大小 */
+}
+
+.function-menu {
+    list-style-type: none; /* 移除默认列表样式 */
+    padding: 0;
+    width: 100%; /* 宽度占满父容器 */
+}
+
+.function-menu li {
+    padding: 15px;
+    text-align: center;
+    background-color: #e0e0e0;
+    margin-bottom: 1px; /* 分隔每个菜单项 */
+    cursor: pointer;
+}
+
+.function-menu li:hover {
+    background-color: #d3d3d3; /* 鼠标悬停时改变背景色 */
+}
+
+.function-content {
     background: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-top: 20px;
 }
+
+.update-avatar-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.update-avatar-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.update-avatar-btn:hover {
+    background-color: #0052a3;
+}
+
+.file-input {
+    display: none;
+}
+
+.update-avatar-label {
+    cursor: pointer;
+}
+
 h1 {
     text-align: center;
+    color: var(--text-color);
+}
+
+h2 {
+    margin-top: 0;
+    color: var(--text-color);
+    font-size: 20px;
+}
+
+.function-content h2 {
+    margin-top: 0;
+    color: var(--text-color);
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.update-avatar-section img {
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    transition: border-color 0.3s;
+}
+
+.update-avatar-section img:hover {
+    border-color: var(--primary-color);
+}
+
+.file-input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.update-avatar-label {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.update-avatar-label:hover {
+    background-color: #0052a3;
+}
+
+
+#upload-progress-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+progress {
+    width: 100%;
+    height: 20px;
+}
+
+#upload-message {
+    display: block;
+    margin-top: 10px;
 }
