@@ -3,62 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNHub - 用户中心</title>
-    <link rel="stylesheet" href="welcome.css">
-    <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
-    <!-- 引入Supabase库 -->
+    <title>联合库UNHub - 用户中心</title>
+    <!-- 页面描述 -->
+    <meta name="description" content="联合库UNHub 用户中心为用户提供全面的账户管理功能，包括个人资料编辑、安全设置、通知偏好和隐私控制。轻松管理您的个人信息，确保账户安全与隐私保护。">
+    <!-- 关键字 -->
+    <meta name="keywords" content="联合库, UNHub, 用户中心, 账户信息, 安全设置, 隐私控制, 通知偏好, 个人资料编辑, 账户安全, 数据隐私, 用户体验">
     <script src="supabase-js.js"></script>
+    <!-- 引入自定义字体 -->
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/sf-pro-display">
+    <style>body {font-family: 'SF Pro Display', 'PingFangSC',sans-serif;font-weight: 600;}</style>
+    <link rel="stylesheet" href="sty.css">
+    <!-- Tailwind CSS CDN -->
+    <link href="tailwind.min.css" rel="stylesheet">
+    <!-- 头部元信息保持不变 -->
+    <!-- 网站图标 -->
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" href="/asset/icon_logo/hei_by_y_1.svg" type="image/svg+xml">
 </head>
 <body>
-    <nav class="nav-top">
-        <div class="nav-brand">
-            <img src="/asset/icon_logo/red_by_y_1.png" alt="unhublogo" width="30">
-            <span class="bt">联合库UNHub 用户中心</span>
+    <!-- 修改后的导航栏 -->
+    <nav class="nav-top p-4 flex justify-between items-center fixed w-full top-0 z-50">
+        <div class="nav-brand flex items-center space-x-3">
+            <img src="/asset/icon_logo/red_by_y_1.png" alt="unhublogo" width="28" class="rounded-lg">
+            <span class="font-semibold text-[17px]">联合库UNHub <span style="color: #007AFF;">Beta Version</span></span>
         </div>
-        <img id="user-avatar" alt="User Avatar" class="nav-avatar" src="/asset/icon_logo/red_by_y_1.png">
+        <img id="user-avatar" class="w-9 h-9 rounded-full" src="./用户.svg">
     </nav>
 
-    <div class="container">
-        <div class="main-content">
-            <div class="left-sidebar">
-                <div class="user-info">
-                    <div class="user-avatar-section">
-                        <img id="sidebar-avatar" class="user-avatar" alt="User" src="/asset/icon_logo/red_by_y_1.png">
-                    </div>
-                    <div class="user-detail">
-                        <h2 id="welcome-message">Username</h2>
-                        <p id="welcome-email">user@example.com</p>
+
+    <div class="container mx-auto p-4 mt-20 space-y-6">
+        <div class="main-content flex gap-6">
+            <!-- 优化后的侧边栏 -->
+            <div class="left-sidebar w-72 space-y-2">
+                <div class="user-info flex items-center space-x-4 p-4">
+                    <img id="sidebar-avatar" class="w-14 h-14 rounded-full border-[0.5px] border-gray-200" src="./用户.svg">
+                    <div>
+                        <h2 id="welcome-message" class="font-semibold text-[15px]"></h2>
+                        <p id="welcome-email" class="text-[13px] text-gray-600"></p>
                     </div>
                 </div>
-                <ul class="function-menu">
-                    <li>基本信息</li>
-                    <li>账户安全</li>
-                    <li>通知设置</li>
-                    <li>隐私设置</li>
-                    <li id="logout-link">安全退出</li>
+                <ul class="function-menu space-y-1">
+                    <li id="account-info-link" class="sidebar-item active:bg-[#007AFF]/10">📱 账户信息</li>
+                    <li id="secure" class="sidebar-item cursor-pointer text-green-600 hover:bg-green-100">🔒 安全设置</li>
+                    <li id="notice" class="sidebar-item cursor-pointer text-yellow-600 hover:bg-yellow-100">🔔 通知偏好</li>
+                    <li id="privacy" class="sidebar-item cursor-pointer text-blue-600 hover:bg-blue-100">👤 隐私控制</li>
+                    <li id="logout-link" class="sidebar-item text-red-600 hover:bg-red-100">🚪 退出登录</li>
                 </ul>
+                <div class="user-info flex items-center space-x-4 p-4">
+                    <div>
+                        <h2 class="font-semibold text-xl">UNHub Beta Version</h2>
+                        <p class="text-gray-400 text-sm">当前用户中心界面是测试版版本，当前更新版本号为20250205。<br>当前页面各标签通信逻辑较为复杂，反正我已经看晕😵了，最近不会更新代码了。
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="right-content">
-                <div class="function-content">
-                    <h2>更新头像</h2>
-                    <div class="update-avatar-section">
-                        <img id="current-avatar"  src="/asset/icon_logo/red_by_y_1.png" alt="Current Avatar" style="max-width: 200px; border-radius: 50%">
-                        <label class="update-avatar-label">
-                            <!-- 隐藏文件输入元素 -->
-                            <input type="file" class="file-input" accept="image/*" style="display:none;">
-                            <button class="update-avatar-btn">上传新头像</button>
-                        </label>
-                        <!-- 加载框 -->
-                        <div id="upload-progress-container" style="display:none;">
-                            <progress id="upload-progress" value="0" max="100"></progress>
-                            <p id="upload-message">上传进度: 0%</p>
+
+            <!-- 优化后的内容区域 -->
+            <div class="right-content flex-1 space-y-6">
+                <div id="user-div-avatar" class="update-avatar-section card p-6">
+                    <h2 class="text-[20px] font-semibold mb-4">编辑个人资料</h2>
+                    <div class="flex items-center gap-8">
+                        <div class="relative group">
+                            <img id="current-avatar" class="w-32 h-32 rounded-full border-2 border-gray-100 shadow-md" 
+                                src="./用户.svg">
+                            <div class="absolute inset-0 bg-black/50 rounded-full opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="text-white text-sm">点击预览</span>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <label class="custom-button inline-flex items-center gap-2 px-6 py-3">
+                                更换头像
+                                <input type="file" class="file-input hidden">
+                            </label>
+                            <p class="text-gray-600 text-[13px]">使用双重文件夹选择程序规避机器上传<br>支持 JPG、PNG 等格式，最大支持 5MB</p>
+                            <!-- 动态生成的提示信息 -->
+                            <div id="upload-message-container" class="hidden mt-4">
+                                <p id="upload-message" class="mt-2 text-sm text-gray-600">头像上传中,请稍后...</p>
+                            </div>
                         </div>
                     </div>
+                </div>
+
+                <!-- 默认内容区 -->
+                <div id="default-content" class="card p-6 space-y-5 default-content">
+                    <!-- 默认内容 -->
+                    <p>这里是默认内容。</p>
+                </div>
+                <div class="card p-6 space-y-5 user-management-container" style="display:none;">
+                    <!-- 动态生成的用户管理表格将插入此处 -->
+                    <p>这里是用户管理内容。</p>
+                </div>
+                <!-- 通知内容区 -->
+                <div id="notification-section" class="card p-6 space-y-5" style="display:none;">
+                    <!-- 动态加载的通知内容将插入此处 -->
                 </div>
             </div>
         </div>
     </div>
-
     <script src="welcome.js"></script>
+    <script src="userinfo.js"></script>
+    <script src="manage.js"></script>
+    <script src="secure.js"></script>
+    <script src="notice.js"></script>
+    <script src="privacy.js"></script>
+    <script>
+        // 添加安全退出事件监听器
+        document.getElementById('logout-link').addEventListener('click', () => {
+            // 清除本地存储中的用户名和邮箱信息
+            localStorage.removeItem('username');
+            localStorage.removeItem('useremail');
+
+            // 重定向到登录页面
+            window.location.href = '/index.html';
+        });
+    </script>
 </body>
 </html>
