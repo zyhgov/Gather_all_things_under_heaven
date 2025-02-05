@@ -1,0 +1,141 @@
+
+@font-face {
+    font-family: 'PingFangSC';
+    src: url('/font/PingFangSC-Regular.woff2') format('woff2');
+}
+body {
+    font-family: 'SF Pro Display', 'PingFangSC', Arial, sans-serif;
+    background-color: #f5f5f7;
+    color: #1d1d1f;
+}
+
+/* 导航栏优化 */
+.nav-top {
+    background-color: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(20px);
+    color: #1d1d1f;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* 侧边栏优化 */
+.left-sidebar {
+    background: rgba(255,  ightgray 255, 0.6);
+    backdrop-filter: blur(20px);
+    border-radius: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    margin-right: 20px;
+}
+
+.sidebar-item {
+    padding: 12px 16px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    color: #1d1d1f;
+    font-weight: bold;
+}
+
+.sidebar-item:hover {
+    background: rgba(0, 122, 255, 0.1);
+}
+
+/* 卡片样式优化 */
+.card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    border-radius: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* 按钮样式优化 */
+.custom-button {
+    background: #007AFF;
+    border-radius: 20px;
+    padding: 10px 24px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    font-size: 15px;
+    color: #f5f5f7;
+}
+
+.custom-button:hover {
+    background: #0063CC;
+    transform: scale(0.98);
+}
+
+/* 头像样式优化 */
+#user-avatar, #sidebar-avatar {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease;
+}
+
+#user-avatar:hover {
+    transform: scale(1.05);
+}
+
+/* 上传区域优化 */
+#upload-progress {
+    -webkit-appearance: none;
+    height: 4px;
+    border-radius: 2px;
+    background: #e5e5ea;
+}
+
+#upload-progress::-webkit-progress-value {
+    background: #007AFF;
+    border-radius: 2px;
+}
+
+/* 输入框优化 */
+.file-input {
+    transition: all 0.2s ease;
+}
+
+.file-input:hover {
+    filter: brightness(0.95);
+}
+
+/* 通知卡片样式 */
+.notification-card {
+    background: #FFFFFF; /* 白色背景 */
+    border-radius: 16px;  /* 圆角 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 轻微阴影 */
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.notification-card:hover {
+    transform: translateY(-5px); /* 卡片悬浮效果 */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* 更强的阴影 */
+}
+
+.notification-header {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.notification-content {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+.notification-footer {
+    font-size: 0.875rem;
+    color: #aaa;
+    margin-top: 15px;
+}
+
+.notification-sender {
+    font-weight: 600;
+    color: #007aff; /* Apple 风格的蓝色 */
+}
+
+/* 在你的CSS文件或<style>标签中 */
+.z-top {
+    z-index: 1000;
+}
