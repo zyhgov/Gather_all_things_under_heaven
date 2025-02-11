@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WISDOM - 联合库UNHub & 通义千问Qwen</title>
+  <!-- 网站图标 -->
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" href="wisdom.svg" type="image/svg+xml">
+  <meta name="description" content="联合库UNHub与通义千问Qwen MAX大模型强强联合，推出WISDOM文殊大模型，提供高效、精准、智能化解决方案。探索复杂问题解析、多语言支持及专业领域咨询的强大功能。">
+  <meta name="keywords" content="WISDOM, UNHub, 通义千问, Qwen MAX, 智能化解决方案, 自然语言处理, 知识图谱, 机器学习, 复杂问题解析, 多语言支持, 专业领域咨询">
+  <!-- 引入 Tailwind CSS -->
+  <link rel="stylesheet" href="/info/tailwind.min.css">
+  <link href="https://fonts.cdnfonts.com/css/jetbrains-mono-2" rel="stylesheet">
+  <link rel="stylesheet" href="ai.css">
+  <!-- 自定义字体 -->
+  <style>
+
+  </style>
+</head>
+<body class="bg-gray-100 flex h-screen overflow-hidden">
+  <!-- 左侧侧边栏 -->
+  <aside id="sidebar" class="bg-white w-20 sm:w-64 border-r border-gray-200 flex flex-col transition-all duration-300">
+    <!-- 顶部 Logo 和折叠按钮 -->
+    <div class="flex items-center justify-between p-4 border-b border-gray-200">
+      <img id="cebian_logo" src="wisdom_heng.png" alt="Logo" class="w-15 h-8">
+      <button id="toggle-sidebar" class="text-gray-500 hover:text-gray-700">
+        <img id="sidebar-toggle-icon" src="收起侧边栏.svg" alt="Toggle Sidebar" class="w-6 h-6">
+      </button>
+    </div>
+
+<!-- 对话历史记录列表 -->
+<div id="conversation-list" class="flex-1 overflow-y-auto p-4">
+  <div class="flex items-center space-x-2 mb-4">
+    <button id="new-conversation" class="text-blue-500 hover:text-blue-700">♾️ 开启新对话</button>
+  </div>
+  <div class="mb-4">
+    <button id="clear-cache" class="text-red-500 hover:text-red-700">🚯 清除缓存并重置</button>
+  </div>
+  <div class="mb-4">
+    <button id="go-home" class="text-green-500 hover:text-green-700">🏠 回到联合库UNHub主页</button>
+  </div>
+  <ul id="conversations">
+    <!-- 动态生成对话列表 -->
+  </ul>
+</div>
+
+    <!-- 版本信息 -->
+    <div id="version_di" class="p-4 border-t border-gray-200 text-xs text-gray-500">
+      <img src="/asset/icon_logo/hei_by_y_1.png" alt="unhub" class="w-8 h-8 mb-1">
+      <span style="color: #007AFF;">Beta Version</span><br>联合库UNHub 版权所有<br>info@zyhorg.cn
+    </div>
+  </aside>
+
+  <!-- 右侧主内容区域 -->
+  <main class="flex-1 flex flex-col overflow-hidden">
+    <!-- 聊天窗口 -->
+    <div id="chat-box" class="flex-1 overflow-y-auto p-6 bg-white relative">
+      <!-- 欢迎区域 -->
+      <div id="welcome-area" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+        <img src="unhub_qwen.png" id="zhu_logo" alt="Logo" class="w-200 h-20 mx-auto mb-4">
+        <div id="title-container" class="relative">
+          <h1 id="dynamic-title" class="mb-4 text-4xl font-bold text-gray-800 mb-2 opacity-0 transition-opacity duration-500"></h1>
+        </div>
+        <p id="js" class="text-gray-600 mb-4 text-xl">
+          联合库 UNHub Intelligence 与通义千问 Qwen MAX 大模型强强联合，推出WISDOM文殊大模型，基于云端分布式计算架构，实时响应用户需求。通过深度整合自然语言处理（NLP）、知识图谱、机器学习等前沿技术，我们为用户提供高效、精准、智能化的解决方案，无论是复杂问题解析、多语言支持，还是专业领域咨询，都能游刃有余地满足您的期待。
+        </p>
+        <div class="space-y-2">
+          <button id="but" class="example-question bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">你能做什么?</button>
+          <button id="but" class="example-question bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">用python打印九九乘法表</button>
+          <button id="but" class="example-question bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">苏格拉底式提问方法是什么意思？</button>
+        </div>
+      </div>
+      <!-- 消息气泡将动态插入到这里 -->
+    </div>
+
+    <!-- 输入区域 -->
+    <div class="p-4 bg-white border-t border-gray-200">
+      <div class="flex items-center">
+        <textarea id="user-input" placeholder="在这里键入你要询问的信息..." class="flex-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 resize-none text-xl"></textarea>
+        <button id="send-btn" class="ml-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">键入</button>
+      </div>
+      <p class="text-center">WISDOM文殊大模型有时会犯错，请仔细甄别！</p>
+    </div>
+  </main>
+
+  <!-- 引入 marked.js -->
+  <script src="script.js"></script>
+  <script src="marked.min.js"></script>
+  
+</body>
+</html>
