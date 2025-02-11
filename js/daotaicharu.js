@@ -16,6 +16,14 @@ document.addEventListener('DOMContentLoaded', function() {
 // 新闻数据
 const newsData = [
     {
+        month: "二月",
+        year: "2025",
+        imageUrl: "/news/news_img/wisdom.jpg",
+        topic: "大模型",
+        title: "来自阿里云Qwen MAX蒸馏训练的WINDOM文殊大模型",
+        time: "2025-02-11",
+        link: "/news/2025/2/20250211_wisdom.html"
+    },{
         month: "一月",
         year: "2025",
         imageUrl: "/news/news_img/360.jpg",
