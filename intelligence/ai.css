@@ -52,6 +52,13 @@ code {
   margin: 10px 10px 10px 10px;
   border-radius: 10px;
 }
+/* 限制标题宽度并启用省略号 */
+#conversations span {
+  white-space: nowrap; /* 禁止换行 */
+  overflow: hidden; /* 超出部分隐藏 */
+  text-overflow: ellipsis; /* 显示省略号 */
+  max-width: 150px; /* 最大宽度，根据实际布局调整 */
+}
 /* 淡入淡出动画 */
 #dynamic-title {
 opacity: 0; /* 初始状态为透明 */
