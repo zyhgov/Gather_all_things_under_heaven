@@ -336,6 +336,18 @@ function updateConversationList() {
     titleSpan.textContent = conversation.title;
     titleSpan.classList.add("flex-grow");
 
+    // 截断标题逻辑
+    const maxTitleLength = 10; // 最大字符数（包括中文和英文）
+    const originalTitle = conversation.title;
+
+    // 判断是否需要截断
+    if (originalTitle.length > maxTitleLength) {
+      titleSpan.textContent = originalTitle.slice(0, maxTitleLength) + "...";
+      titleSpan.title = originalTitle; // 设置完整标题为 tooltip 提示
+    } else {
+      titleSpan.textContent = originalTitle;
+    }
+
     // 修改标题按钮
     const editButton = document.createElement("button");
     editButton.innerHTML = '<img src="edit.svg" alt="Edit" class="w-4 h-4">';
