@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>NavRes资源导航 | 联合库UNHub</title>
+<meta http-equiv="Cache-Control" content="public, max-age=31536000">
+<meta name="keywords" content="镜像,镜像站,软件开发,编译构建,maven,npm,pypi,nuget,php,rubygem,sbt,操作系统">
+<meta name="description" content="联合库UNHub NavRes团队提供的全类型镜像站服务，提供主流开发语言组件、操作系统、常用工具和库等镜像，极速下载，全站CDN，官方合作。">
+<!-- 网站图标 -->
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" href="./img/logo.png" type="image/svg+xml">
+<style>body {font-family: 'SF Pro Display','PingFang SC Medium','San Francisco', Helvetica, Arial, sans-serif;}</style>
+<link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+<script src="./3.4.16"></script>
+<script src="config.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="where.css">
+<link rel="stylesheet" href="/css/networkCheck.css">
+<script type="text/javascript" src="/js/networkCheck.js"></script>
+<script type="text/javascript" src="/js/set.js"></script>
+<script src="/js/axios.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<link rel="stylesheet" href="https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com/flag-icons-main/css/flag-icons.min.css">
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "pnjcz18od3");
+</script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+        <!-- 网络检测 -->
+        <div id="alert-box" class="alert-box">
+            <h4 id="alert-title"></h4>
+            <p id="alert-message"></p>
+        </div>
+        <div class="alert-bar"></div>
+        <!-- 网络检测 -->
+    <header class="bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
+        <nav class="container mx-auto px-4 h-16 flex items-center justify-between relative">
+            <!-- 导航栏内容 -->
+            <div class="flex items-center space-x-8">
+                <a href="/" class="flex items-center">
+                    <img src="https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com/source/img/logo2.png" alt="Logo" class="h-10">
+                </a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="/index.html" class="text-primary">联合库UNHub</a>
+                    <a href="/info/login.html" class="text-gray-600">登录注册</a>
+                    <a href="/globalnews.html" class="text-gray-600">Global News</a>
+                    <a href="/organization/index.html" class="text-gray-600">组织架构</a>
+                    <a href="https://zyhorg.notion.site/1880947e24158037bcffe525eef8125b?pvs=105" class="text-gray-600">提交宝贵建议</a>
+                </div>
+            </div>
+            <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobileMenuButton">
+                <i class="ri-menu-line text-2xl"></i>
+            </button>
+            <div class="hidden absolute top-full left-0 right-0 bg-white shadow-lg rounded-lg mt-2 p-4 md:hidden" style="z-index: 10000;" id="mobileMenu">
+                <div class="flex flex-col space-y-4">
+                    <a href="/index.html" class="text-primary">联合库UNHub</a>
+                    <a href="/info/login.html" class="text-gray-600">登录注册</a>
+                    <a href="/globalnews.html" class="text-gray-600">Global News</a>
+                    <a href="/organization/index.html" class="text-gray-600">组织架构</a>
+                    <a href="https://zyhorg.notion.site/1880947e24158037bcffe525eef8125b?pvs=105" class="text-gray-600">提交宝贵建议</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+<div class="container mx-auto px-4 py-8">
+<div class="flex flex-col lg:flex-row gap-8">
+<div class="flex-1">
+<div class="relative h-[400px] rounded-lg overflow-hidden">
+<div class="carousel relative w-full h-full">
+<div class="carousel-item absolute w-full h-full transition-opacity duration-500" style="background: linear-gradient(90deg, #f8fafc 0%, rgba(248, 250, 252, 0.8) 50%, rgba(248, 250, 252, 0) 100%), url('https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com/source/img/top_img/promo_cny25_services_appstore__eu0xo4xjws8y_large.jpg') center/cover;">
+<div class="absolute inset-0 flex items-center px-4 md:px-12">
+<div class="max-w-lg">
+<h1 class="text-2xl md:text-4xl font-bold mb-4">2025乙巳蛇年巳巳如意</h1>
+<p class="text-base md:text-lg text-gray-600 mb-8">联合库UNHub和资源导航NavRes给您拜年了</p>
+<button class="bg-primary text-white px-6 md:px-8 py-2 md:py-3 !rounded-button hover:bg-primary/90">新年快乐</button>
+</div>
+</div>
+</div>
+<div class="carousel-item absolute w-full h-full opacity-0 transition-opacity duration-500" style="background: linear-gradient(90deg, #f8fafc 0%, rgba(248, 250, 252, 0.8) 50%, rgba(248, 250, 252, 0) 100%), url('https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com/source/img/top_img/wp5424185-wallpaper-mac-pro.jpg') center/cover;">
+<div class="absolute inset-0 flex items-center px-4 md:px-12">
+<div class="max-w-lg">
+<h1 class="text-2xl md:text-4xl font-bold mb-4">联合库UNHub对NavRes提供服务器与资源技术支持</h1>
+<p class="text-base md:text-lg text-gray-600 mb-8">稳定可靠的云计算服务，助力资源数字化转型</p>
+<button class="bg-primary text-white px-6 md:px-8 py-2 md:py-3 !rounded-button hover:bg-primary/90">了解更多</button>
+</div>
+</div>
+</div>
+<div class="carousel-item absolute w-full h-full opacity-0 transition-opacity duration-500" style="background: linear-gradient(90deg, #f8fafc 0%, rgba(248, 250, 252, 0.8) 50%, rgba(248, 250, 252, 0) 100%), url('https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com/source/img/top_img/wallhaven-k9l7j1.png') center/cover;">
+<div class="absolute inset-0 flex items-center px-4 md:px-12">
+<div class="max-w-lg">
+<h1 class="text-2xl md:text-4xl font-bold mb-4">UNHub与Qwen训练的WINDOM文殊大模型</h1>
+<p class="text-base md:text-lg text-gray-600 mb-8">WISDOM文殊大模型，基于云端分布式计算架构，实时响应用户需求</p>
+<button class="bg-primary text-white px-6 md:px-8 py-2 md:py-3 !rounded-button hover:bg-primary/90">
+  <a href="/intelligence/wisdom.html" target="_blank">开始使用</a>
+</button>
+</div>
+</div>
+</div>
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+<button class="w-2 h-2 rounded-full bg-primary" data-index="0"></button>
+<button class="w-2 h-2 rounded-full bg-gray-300" data-index="1"></button>
+<button class="w-2 h-2 rounded-full bg-gray-300" data-index="2"></button>
+</div>
+</div>
+</div>
+</div>
+<div class="w-80">
+    <div class="bg-white rounded-lg border border-gray-100 p-4">
+        <h2 class="text-xl font-bold mb-4">网站最新动态</h2>
+        <div class="scroll-container">
+          <!-- 动态生成的内容将插入到这里 -->
+          <ul id="news-list" class="space-y-4"></ul>
+        </div>
+      </div>
+</div>
+</div>
+</div>
+<div class="container mx-auto px-4 py-8">
+<!-- 搜索框 -->
+<div class="relative mb-8">
+    <input type="text" placeholder="请输入关键字搜索" id="search-input"
+      class="w-full h-12 pl-12 pr-4 rounded-lg border border-gray-200 focus:outline-none focus:border-primary transition duration-300 ease-in-out">
+    <i class="ri-search-line absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+    <label for="search-input" class="absolute left-12 top-1/2 -translate-y-1/2 text-sm text-gray-400 transition-all duration-300 ease-in-out"></label>
+  </div>
+  
+  <!-- 推荐结果 -->
+  <div id="search-results" class="space-y-4 max-h-64 overflow-y-auto hidden">
+    <!-- 动态生成的推荐结果将插入到这里 -->
+  </div>
+<div class="flex flex-col md:flex-row gap-8">
+  <div class="w-full md:w-48 flex-shrink-0 sticky top-0">
+    <div class="bg-white rounded-lg shadow-sm p-4">
+      <h3 class="font-medium mb-4 text-2xl"><strong>目录分类</strong></h3>
+      <div class="space-y-2">
+        <button class="w-full text-left px-4 py-2 bg-primary/5 text-primary rounded !rounded-button filter-category" data-category="全部">全部</button>
+        <button class="w-full text-left px-4 py-2 text-gray-600 hover:bg-gray-50 rounded !rounded-button filter-category" data-category="部门网站">政府部门网站</button>
+        <button class="w-full text-left px-4 py-2 text-gray-600 hover:bg-gray-50 rounded !rounded-button filter-category" data-category="国务院部门网站">国务院部门网站</button>
+        <button class="w-full text-left px-4 py-2 text-gray-600 hover:bg-gray-50 rounded !rounded-button filter-category" data-category="文库">文库</button>
+        <button class="w-full text-left px-4 py-2 text-gray-600 hover:bg-gray-50 rounded !rounded-button filter-category" data-category="语言类">语言类</button>
+        <button class="w-full text-left px-4 py-2 text-gray-600 hover:bg-gray-50 rounded !rounded-button filter-category" data-category="工具类">工具类</button>
+        <button class="w-full text-left px-4 py-2 text-gray-600 hover:bg-gray-50 rounded !rounded-button filter-category" data-category="容器类">容器类</button>
+        <button class="w-full text-left px-4 py-2 text-gray-600 hover:bg-gray-50 rounded !rounded-button filter-category" data-category="HTML / CSS">HTML / CSS</button>
+        <button class="w-full text-left px-4 py-2 text-gray-600 hover:bg-gray-50 rounded !rounded-button filter-category" data-category="数据查找">数据查找</button>
+        <button class="w-full text-left px-4 py-2 text-gray-600 hover:bg-gray-50 rounded !rounded-button filter-category" data-category="开源镜像站">开源镜像站</button>
+        <button class="w-full text-left px-4 py-2 text-gray-600 hover:bg-gray-50 rounded !rounded-button filter-category" data-category="操作系统类">操作系统类</button>
+        <button class="w-full text-left px-4 py-2 text-gray-600 hover:bg-gray-50 rounded !rounded-button filter-category" data-category="GitHub热点汇总">GitHub热点汇总</button>
+        <button class="w-full text-left px-4 py-2 text-gray-600 hover:bg-gray-50 rounded !rounded-button filter-category" data-category="华为生态区">华为生态区</button>
+        <button class="w-full text-left px-4 py-2 text-gray-600 hover:bg-gray-50 rounded !rounded-button filter-category" data-category="文献操作">文献操作</button>
+      </div>
+    </div>
+  </div>
+      <div class="flex-1">
+        <div class="bg-white rounded-lg shadow-sm p-6">
+          <!-- 状态筛选 -->
+          <div class="flex items-center space-x-4 mb-6">
+            <button class="px-4 py-2 text-primary bg-primary/5 !rounded-button filter-status" data-status="全部">综合排序</button>
+            <button class="px-4 py-2 text-gray-600 hover:bg-gray-50 !rounded-button filter-status" data-status="可用">可用</button>
+            <button class="px-4 py-2 text-gray-600 hover:bg-gray-50 !rounded-button filter-status" data-status="失效">失效</button>
+            <button class="px-4 py-2 text-gray-600 hover:bg-gray-50 !rounded-button filter-status" data-status="等待">等待</button>
+          </div>
+  
+          <!-- 卡片容器 -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="card-container">
+            <!-- 动态生成的内容将插入到这里 -->
+          </div>
+          
+        </div>
+      </div>
+</div>
+</div>
+<footer class="bg-white mt-12 py-8 border-t">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col items-center space-y-6 text-center text-sm text-gray-500">
+        <!-- Logo -->
+        <img src="https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com/source/img/unhub_lookhere.png" alt="Look here Logo" class="w-20 h-auto">
+  
+        <!-- 版权信息 -->
+        <p>
+            Copyright © 2025 NavRes. All rights reserved. <br>
+            联合库UNHub | 杖雍皓 | zyhorg/zyhgov 提供支持
+        </p>
+  
+        <!-- 链接 -->
+        <div class="flex space-x-4">
+          <a href="#" class="hover:text-gray-700 transition-colors">隐私政策</a>
+          <a href="#" class="hover:text-gray-700 transition-colors">服务条款</a>
+          <a href="/organization/index.html" class="hover:text-gray-700 transition-colors">关于我们</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="dom.js"></script>
+<script src="news.js"></script>
+<script src="dt_card.js"></script>
+<script src="filter.js"></script>
+<script src="search.js"></script>
+<script>
+
+</script>
+</body>
+</html>

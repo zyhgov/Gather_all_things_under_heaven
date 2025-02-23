@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>资源仓库</title>
+<style>body {font-family: 'SF Pro Display','PingFang SC Medium','San Francisco', Helvetica, Arial, sans-serif;}</style>
+<link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="config.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="where.css">
+</head>
+<body class="bg-gray-50 min-h-screen">
+<header class="bg-white shadow-sm">
+<nav class="container mx-auto px-4 h-16 flex items-center justify-between">
+<div class="flex items-center space-x-8">
+<img src="./img/logo2.png" alt="LookHere" width="12%">
+<!-- <a href="/" class="text-2xl text-primary">LookHere</a> -->
+<div class="space-x-6">
+<a href="#" class="text-primary">开源镜像</a>
+<a href="#" class="text-gray-600">OS镜像</a>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<a href="#" class="text-gray-600">公众号</a>
+<a href="#" class="text-gray-600">私有镜像库</a>
+<a href="#" class="text-gray-600">会员中心</a>
+<button class="text-primary hover:text-primary/80">登录</button>
+<button class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-primary/90">注册</button>
+</div>
+</nav>
+</header>
+<div class="container mx-auto px-4 py-8">
+<div class="flex gap-8">
+<div class="flex-1">
+<div class="relative h-[400px] rounded-lg overflow-hidden">
+<div class="carousel relative w-full h-full">
+<div class="carousel-item absolute w-full h-full transition-opacity duration-500" style="background: linear-gradient(90deg, #f8fafc 0%, rgba(248, 250, 252, 0.8) 50%, rgba(248, 250, 252, 0) 100%), url('https://public.readdy.ai/ai/img_res/0feb62c2b7ba5920b34a5c365da8f8bb.jpg') center/cover;">
+<div class="absolute inset-0 flex items-center px-4 md:px-12">
+<div class="max-w-lg">
+<h1 class="text-2xl md:text-4xl font-bold mb-4">一键开启华为端到端 DevOps 实践</h1>
+<p class="text-base md:text-lg text-gray-600 mb-8">免费体验华为20年研发经验沉淀的敏捷开发方法论</p>
+<button class="bg-primary text-white px-6 md:px-8 py-2 md:py-3 !rounded-button hover:bg-primary/90">立即体验</button>
+</div>
+</div>
+</div>
+<div class="carousel-item absolute w-full h-full opacity-0 transition-opacity duration-500" style="background: linear-gradient(90deg, #f8fafc 0%, rgba(248, 250, 252, 0.8) 50%, rgba(248, 250, 252, 0) 100%), url('https://public.readdy.ai/ai/img_res/f84f6486be0ad3bac05c4a46c109301c.jpg') center/cover;">
+<div class="absolute inset-0 flex items-center px-4 md:px-12">
+<div class="max-w-lg">
+<h1 class="text-2xl md:text-4xl font-bold mb-4">高性能云服务器</h1>
+<p class="text-base md:text-lg text-gray-600 mb-8">稳定可靠的云计算服务，助力企业数字化转型</p>
+<button class="bg-primary text-white px-6 md:px-8 py-2 md:py-3 !rounded-button hover:bg-primary/90">了解更多</button>
+</div>
+</div>
+</div>
+<div class="carousel-item absolute w-full h-full opacity-0 transition-opacity duration-500" style="background: linear-gradient(90deg, #f8fafc 0%, rgba(248, 250, 252, 0.8) 50%, rgba(248, 250, 252, 0) 100%), url('https://public.readdy.ai/ai/img_res/9e3806e0692692aeb0a6fb3b8bdc25ad.jpg') center/cover;">
+<div class="absolute inset-0 flex items-center px-4 md:px-12">
+<div class="max-w-lg">
+<h1 class="text-2xl md:text-4xl font-bold mb-4">安全可靠的云存储</h1>
+<p class="text-base md:text-lg text-gray-600 mb-8">企业级数据存储方案，确保数据安全</p>
+<button class="bg-primary text-white px-6 md:px-8 py-2 md:py-3 !rounded-button hover:bg-primary/90">开始使用</button>
+</div>
+</div>
+</div>
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+<button class="w-2 h-2 rounded-full bg-primary" data-index="0"></button>
+<button class="w-2 h-2 rounded-full bg-gray-300" data-index="1"></button>
+<button class="w-2 h-2 rounded-full bg-gray-300" data-index="2"></button>
+</div>
+</div>
+</div>
+</div>
+<div class="w-80">
+    <div class="bg-white rounded-lg shadow-lg p-4">
+    <h3 class="text-lg font-medium mb-4 text-xl">最新动态</h3>
+        <div class="space-y-4">
+        <div class="flex items-start space-x-2">
+        <i class="ri-notification-line text-primary"></i>
+        <p class="text-sm text-gray-600">全新首页上线，更快更好的访问体验！</p>
+        </div>
+        <div class="flex items-start space-x-2">
+        <i class="ri-notification-line text-primary"></i>
+        <p class="text-sm text-gray-600">新增多个热门开源项目镜像，欢迎使用。</p>
+        </div>
+        <div class="flex items-start space-x-2">
+        <i class="ri-notification-line text-primary"></i>
+        <p class="text-sm text-gray-600">系统性能优化完成，访问速度提升30%。</p>
+        </div>
+        <div class="flex items-start space-x-2">
+        <i class="ri-notification-line text-primary"></i>
+        <p class="text-sm text-gray-600">系统性能优化完成，访问速度提升30%。</p>
+        </div>
+        <div class="flex items-start space-x-2">
+        <i class="ri-notification-line text-primary"></i>
+        <p class="text-sm text-gray-600">系统性能优化完成，访问速度提升30%。</p>
+        </div>
+        <div class="flex items-start space-x-2">
+            <i class="ri-notification-line text-primary"></i>
+            <p class="text-sm text-gray-600">系统性能优化完成，访问速度提升30%。</p>
+            </div>
+        <div class="flex items-start space-x-2">
+            <i class="ri-notification-line text-primary"></i>
+            <p class="text-sm text-gray-600">系统性能优化完成，访问速度提升30%。</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="container mx-auto px-4 py-8">
+<div class="relative mb-8">
+<input type="text" placeholder="请输入关键字搜索" class="w-full h-12 pl-12 pr-4 rounded-lg border border-gray-200 focus:outline-none focus:border-primary">
+<i class="ri-search-line absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+</div>
+<div class="flex gap-8">
+<div class="w-48 flex-shrink-0">
+<div class="bg-white rounded-lg shadow-sm p-4">
+<h3 class="font-medium text-2xl mb-4"><strong>分类</strong></h3>
+<div class="space-y-2">
+<button class="w-full text-left px-4 py-2 bg-primary/5 text-primary rounded !rounded-button">全部</button>
+<button class="w-full text-left px-4 py-2 text-gray-600 hover:bg-gray-50 rounded !rounded-button">语言类</button>
+<button class="w-full text-left px-4 py-2 text-gray-600 hover:bg-gray-50 rounded !rounded-button">工具类</button>
+<button class="w-full text-left px-4 py-2 text-gray-600 hover:bg-gray-50 rounded !rounded-button">操作系统</button>
+<button class="w-full text-left px-4 py-2 text-gray-600 hover:bg-gray-50 rounded !rounded-button">开发框架</button>
+</div>
+</div>
+</div>
+<div class="flex-1">
+    <div class="bg-white rounded-lg shadow-sm p-6">
+    <div class="flex items-center space-x-4 mb-6">
+    <button class="px-4 py-2 text-primary bg-primary/5 !rounded-button">综合排序</button>
+    <button class="px-4 py-2 text-gray-600 hover:bg-gray-50 !rounded-button">下载量</button>
+    <button class="px-4 py-2 text-gray-600 hover:bg-gray-50 !rounded-button">更新时间</button>
+    </div>
+    <div class="grid grid-cols-3 gap-6">
+    <div class="bg-white rounded-lg border border-gray-100 p-4 hover:shadow-md transition">
+    <div class="flex items-center space-x-3 mb-4">
+    <div class="w-12 h-12 rounded-lg overflow-hidden">
+    <img src="https://public.readdy.ai/ai/img_res/8762a6b89bfb6c6b15b2f60deeaf995d.jpg" class="w-full h-full object-cover" alt="Maven">
+    </div>
+    <div class="flex-1">
+    <div class="flex items-center gap-2 mb-1">
+    <h3 class="font-medium">Maven 仓库</h3>
+    <span class="px-2 py-0.5 text-xs bg-blue-50 text-blue-600 rounded-full">工具类</span>
+    <span class="px-2 py-0.5 text-xs bg-purple-50 text-purple-600 rounded-full">Java</span>
+    </div>
+    <p class="text-sm text-gray-500">Java 包管理工具</p>
+    </div>
+    </div>
+    <div class="flex items-center justify-between">
+    <a href="#" class="text-primary text-sm hover:text-primary/80">立即查看</a>
+    <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-50 text-green-700">可用</span>
+    </div>
+    </div>
+    <div class="bg-white rounded-lg border border-gray-100 p-4 hover:shadow-md transition">
+    <div class="flex items-center space-x-3 mb-4">
+    <div class="w-12 h-12 rounded-lg overflow-hidden">
+    <img src="https://public.readdy.ai/ai/img_res/07aa9dc07483a0d9ac52584b2e877db2.jpg" class="w-full h-full object-cover" alt="Ubuntu">
+    </div>
+    <div class="flex-1">
+    <div class="flex items-center gap-2 mb-1">
+    <h3 class="font-medium">Ubuntu 镜像</h3>
+    <span class="px-2 py-0.5 text-xs bg-orange-50 text-orange-600 rounded-full">操作系统</span>
+    <span class="px-2 py-0.5 text-xs bg-emerald-50 text-emerald-600 rounded-full">x86</span>
+    </div>
+    <p class="text-sm text-gray-500">Linux 发行版</p>
+    </div>
+    </div>
+    <div class="flex items-center justify-between">
+    <a href="#" class="text-primary text-sm hover:text-primary/80">立即查看</a>
+    <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-red-50 text-red-700">失效</span>
+    </div>
+    </div>
+    <div class="bg-white rounded-lg border border-gray-100 p-4 hover:shadow-md transition">
+    <div class="flex items-center space-x-3 mb-4">
+    <div class="w-12 h-12 rounded-lg overflow-hidden">
+    <img src="https://public.readdy.ai/ai/img_res/d4aa0dad658e0470ac8360e53281dede.jpg" class="w-full h-full object-cover" alt="Node.js">
+    </div>
+    <div class="flex-1">
+    <div class="flex items-center gap-2 mb-1">
+    <h3 class="font-medium">Node.js</h3>
+    <span class="px-2 py-0.5 text-xs bg-yellow-50 text-yellow-600 rounded-full">运行时</span>
+    <span class="px-2 py-0.5 text-xs bg-green-50 text-green-600 rounded-full">JavaScript</span>
+    </div>
+    <p class="text-sm text-gray-500">JavaScript 运行时</p>
+    </div>
+    </div>
+    <div class="flex items-center justify-between">
+    <a href="#" class="text-primary text-sm hover:text-primary/80">立即查看</a>
+    <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-50 text-green-700">可用</span>
+    </div>
+    </div>
+    <div class="bg-white rounded-lg border border-gray-100 p-4 hover:shadow-md transition">
+    <div class="flex items-center space-x-3 mb-4">
+    <div class="w-12 h-12 rounded-lg overflow-hidden">
+    <img src="https://public.readdy.ai/ai/img_res/10c7dbb95608e61b4928790abfc04bfd.jpg" class="w-full h-full object-cover" alt="MySQL">
+    </div>
+    <div class="flex-1">
+    <div class="flex items-center gap-2 mb-1">
+    <h3 class="font-medium">MySQL</h3>
+    <span class="px-2 py-0.5 text-xs bg-blue-50 text-blue-600 rounded-full">数据库</span>
+    <span class="px-2 py-0.5 text-xs bg-emerald-50 text-emerald-600 rounded-full">x86</span>
+    </div>
+    <p class="text-sm text-gray-500">关系型数据库</p>
+    </div>
+    </div>
+    <div class="flex items-center justify-between">
+    <a href="#" class="text-primary text-sm hover:text-primary/80">立即查看</a>
+    <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-yellow-50 text-yellow-700">等待</span>
+    </div>
+    </div>
+    <div class="bg-white rounded-lg border border-gray-100 p-4 hover:shadow-md transition">
+    <div class="flex items-center space-x-3 mb-4">
+    <div class="w-12 h-12 rounded-lg overflow-hidden">
+    <img src="https://public.readdy.ai/ai/img_res/4e7355da2bde3b2bdb0c59bbf21d9342.jpg" class="w-full h-full object-cover" alt="Python">
+    </div>
+    <div class="flex-1">
+    <div class="flex items-center gap-2 mb-1">
+    <h3 class="font-medium">Python</h3>
+    <span class="px-2 py-0.5 text-xs bg-indigo-50 text-indigo-600 rounded-full">语言类</span>
+    <span class="px-2 py-0.5 text-xs bg-emerald-50 text-emerald-600 rounded-full">x86</span>
+    </div>
+    <p class="text-sm text-gray-500">编程语言</p>
+    </div>
+    </div>
+    <div class="flex items-center justify-between">
+    <a href="#" class="text-primary text-sm hover:text-primary/80">立即查看</a>
+    <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-50 text-green-700">可用</span>
+    </div>
+    </div>
+    <div class="bg-white rounded-lg border border-gray-100 p-4 hover:shadow-md transition">
+    <div class="flex items-center space-x-3 mb-4">
+    <div class="w-12 h-12 rounded-lg overflow-hidden">
+    <img src="https://public.readdy.ai/ai/img_res/4b86df3b695e0aecab04e9219f2406be.jpg" class="w-full h-full object-cover" alt="Docker">
+    </div>
+    <div class="flex-1">
+    <div class="flex items-center gap-2 mb-1">
+    <h3 class="font-medium">Docker Hub</h3>
+    <span class="px-2 py-0.5 text-xs bg-blue-50 text-blue-600 rounded-full">容器</span>
+    <span class="px-2 py-0.5 text-xs bg-emerald-50 text-emerald-600 rounded-full">x86</span>
+    </div>
+    <p class="text-sm text-gray-500">容器镜像仓库</p>
+    </div>
+    </div>
+    <div class="flex items-center justify-between">
+    <a href="#" class="text-primary text-sm hover:text-primary/80">立即查看</a>
+    <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-50 text-green-700">可用</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="bg-white mt-12 py-8 border-t">
+<div class="container mx-auto px-4">
+<div class="text-center text-sm text-gray-500">
+<p>Copyright © 2025 资源仓库. All rights reserved.</p>
+<div class="mt-2 space-x-4">
+<a href="#" class="hover:text-gray-700">隐私政策</a>
+<a href="#" class="hover:text-gray-700">服务条款</a>
+<a href="#" class="hover:text-gray-700">关于我们</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobileMenuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    // 点击页面其他地方关闭菜单
+    document.addEventListener('click', (event) => {
+      if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+    const categoryButtons = document.querySelectorAll('.w-48 button');
+    categoryButtons.forEach(button => {
+    button.addEventListener('click', function() {
+    categoryButtons.forEach(btn => {
+    btn.classList.remove('bg-primary/5', 'text-primary');
+    btn.classList.add('text-gray-600');
+    });
+    this.classList.add('bg-primary/5', 'text-primary');
+    this.classList.remove('text-gray-600');
+    });
+    });
+    const sortButtons = document.querySelectorAll('.flex.items-center.space-x-4 button');
+    sortButtons.forEach(button => {
+    button.addEventListener('click', function() {
+    sortButtons.forEach(btn => {
+    btn.classList.remove('bg-primary/5', 'text-primary');
+    btn.classList.add('text-gray-600');
+    });
+    this.classList.add('bg-primary/5', 'text-primary');
+    this.classList.remove('text-gray-600');
+    });
+    });
+    // 轮播图功能
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-item');
+    const dots = document.querySelectorAll('[data-index]');
+    const totalSlides = slides.length;
+    function showSlide(index) {
+    slides.forEach(slide => slide.style.opacity = '0');
+    dots.forEach(dot => dot.classList.replace('bg-primary', 'bg-gray-300'));
+    slides[index].style.opacity = '1';
+    dots[index].classList.replace('bg-gray-300', 'bg-primary');
+    }
+    function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    showSlide(currentSlide);
+    }
+    dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+    currentSlide = index;
+    showSlide(currentSlide);
+    });
+    });
+    setInterval(nextSlide, 5000);
+    });
+    </script>
+</body>
+</html>
