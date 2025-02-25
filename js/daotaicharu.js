@@ -18,6 +18,14 @@ const newsData = [
     {
         month: "二月",
         year: "2025",
+        imageUrl: "/news/news_img/2/cities-skylines-ii-keyart-clean-3200px.jpg",
+        topic: "联合库UNHub游戏",
+        title: "城市：天际线 Cities: Skylines 豪华中文收藏版 解压即玩",
+        time: "2025-02-25",
+        link: "/news/2025/2/Cities-Skylines-i.html"
+    },{
+        month: "二月",
+        year: "2025",
         imageUrl: "/news/news_img/wisdom.jpg",
         topic: "大模型",
         title: "来自阿里云Qwen MAX蒸馏训练的WINDOM文殊大模型",
