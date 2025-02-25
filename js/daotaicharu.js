@@ -18,6 +18,14 @@ const newsData = [
     {
         month: "二月",
         year: "2025",
+        imageUrl: "/news/news_img/2/vid-placeholder.webp",
+        topic: "联合库UNHub游戏",
+        title: "世界盒子 WorldBox 0.14.2版本 解压即玩",
+        time: "2025-02-25",
+        link: "/news/2025/2/WorldBox.html"
+    },{
+        month: "二月",
+        year: "2025",
         imageUrl: "/news/news_img/2/cities-skylines-ii-keyart-clean-3200px.jpg",
         topic: "联合库UNHub游戏",
         title: "城市：天际线 Cities: Skylines 豪华中文收藏版 解压即玩",
