@@ -1,0 +1,106 @@
+@font-face {
+    font-family: 'PingFang SC Semibold';
+    src: url('/PingFangSC-main/woff2/PingFangSC-Semibold.woff2') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+    body{font-family: 'PingFang SC Semibold';}
+
+
+    @import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+    :where([class^="ri-"])::before { content: "\f3c2"; }
+    @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+    }
+    .slide {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    width: 100vw;
+    height: 100vh;
+    }
+    .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+    .slide.active {
+    opacity: 1;
+    }
+    .gradient-overlay {
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+    }
+    .glow-button {
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    transition: all 0.3s ease;
+    }
+    .glow-button:hover {
+    box-shadow: 0 0 30px rgba(255,255,255,0.5);
+    transform: translateY(-2px);
+    }
+    body {
+    font-family: 'PingFang SC Semibold','SF Pro Display', sans-serif;
+    margin: 0;
+    padding: 0;
+    }
+    /* 弹窗动画 */
+    #intro-modal {
+      animation: modalFadeIn 0.3s ease-out;
+    }
+    
+    @keyframes modalFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    /* 响应式调整 */
+    @media (max-width: 640px) {
+      #intro-modal .max-w-2xl {
+        max-width: 95%;
+        margin: 0 10px;
+      }
+      
+      #intro-modal .p-8 {
+        padding: 1.5rem;
+      }
+      
+      #close-intro {
+        right: 0;
+        top: 0;
+        background: rgba(0,0,0,0.7);
+      }
+    }
+    .animate-message {
+      animation: messageAppear 0.3s ease-out;
+    }
+    
+    @keyframes messageAppear {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    /* 关闭按钮样式 */
+    #close-intro span {
+      display: block;
+      position: absolute;
+      background: white;
+      transition: all 0.3s ease;
+    }
+    
+    #close-intro span:first-child {
+      transform: rotate(45deg);
+    }
+    
+    #close-intro span:last-child {
+      transform: rotate(-45deg);
+    }
+    
+    #close-intro:hover span {
+      background: #eee;
+    }
