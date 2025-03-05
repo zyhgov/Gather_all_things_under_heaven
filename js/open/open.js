@@ -21,15 +21,21 @@
       document.addEventListener("DOMContentLoaded", function () {
         // 获取按钮元素
         const button = document.getElementById("deepseek-button");
+        const button2 = document.getElementById("unhub");
     
         // 为目标 URL 定义变量
         const targetUrl = "https://open.zyhorg.ac.cn/";
+        const targetUrl2 = "/index.html";
     
         // 为按钮添加点击事件监听器
         button.addEventListener("click", function () {
             // 在新标签页中打开目标 URL
             window.open(targetUrl, "_blank");
         });
+        button2.addEventListener("click", function () {
+          // 在新标签页中打开目标 URL
+          window.open(targetUrl2, "_blank");
+      });
     });
     const slides = document.querySelectorAll('.slide');
     const dynamicTitles = [
