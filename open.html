@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>襄阳职业技术学院专属 DeepSeek 支持 | 联合库UNHub | 杖雍皓</title>
+<meta name="description" content="襄阳职业技术学院专属 DeepSeek 模型，基于开源 Open WebUI 构建，由张永豪(杖雍皓)搭建，用于人工智能技术学习实践。支持智能问答与上下文对话，助力职业教育创新与发展。">
+<meta name="keywords" content="襄阳职业技术学院, DeepSeek 模型, 开源 Open WebUI, 杖雍皓, 人工智能学习, 职业教育, 智能问答, 上下文对话">
+<link rel="icon" href="favicon.ico" sizes="32x32" type="image/x-icon">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="/info/tailwind.min.css">
+<link rel="stylesheet" href="/css/open/zt.css">
+<script src="/js/open/config.js"></script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "襄阳职业技术学院",
+      "url": "https://open.zyhorg.ac.cn/",
+      "logo": "/asset/icon_logo/red_by_y_1.png",
+      "description": "襄阳职业技术学院专属 DeepSeek 模型，基于开源 Open WebUI 构建，用于人工智能技术学习实践。",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+86-18833613517",
+        "email": "info@zyhorg.cn",
+        "contactType": "customer support"
+      },
+      "sameAs": [
+        "https://open.zyhorg.ac.cn/"
+      ]
+    }
+    </script>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "pnjcz18od3");
+    </script>
+</head>
+<body class="overflow-hidden w-screen h-screen">
+    <div id="intro-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-xl max-w-2xl w-full mx-4">
+          <!-- 关闭按钮 -->
+          <button id="close-intro" class="absolute -top-4 -right-4 bg-gray-500 hover:bg-gray-600 rounded-full w-8 h-8 flex items-center justify-center transition-colors">
+            <span class="absolute w-4 h-0.5 bg-white transform rotate-45"></span>
+            <span class="absolute w-4 h-0.5 bg-white transform -rotate-45"></span>
+          </button>
+          
+          <!-- 弹窗内容 -->
+          <div class="p-8 overflow-y-auto max-h-[80vh]">
+            <img src="/asset/open_img/info.svg" alt="系统说明" class="mx-auto mb-2" style="width: 350px;">
+            <h2 class="text-2xl font-bold text-center mb-4">服务情况说明</h2>
+            <div class="space-y-4 text-gray-600">
+              <p>1. 本平台基于开源Open WebUI项目构建，用于人工智能技术学习实践</p>
+              <p>2. 通过Cloudflare内网穿透实现服务发布，模型训练结果仅供参考</p>
+              <p>3. 点击输入框下方示例问题可快速体验对话功能</p>
+              <p>4. 支持上下文关联对话，点击「新对话」按钮可重置会话</p>
+          
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <p class="text-blue-600">🕒 服务时段说明：</p>
+                <ul class="list-disc pl-6 mt-2">
+                  <li>每日 <span class="font-medium">7:00-23:00</span> 提供服务</li>
+                  <li>夜间维护时段（23:00-7:00）暂停访问</li>
+                  <li>教学实验需要时可能临时调整服务时间</li>
+                </ul>
+              </div>
+          
+              <div class="bg-orange-50 p-4 rounded-lg">
+                <p class="text-orange-600">⚠️ 重要须知：</p>
+                <ul class="list-disc pl-6 mt-2">
+                  <li>本平台为我个人为爱发电制作的襄阳职业技术学院DeepSeek</li>
+                  <li>非盈利性服务，服务器资源有限可能出现响应延迟</li>
+                  <li>请勿上传任何敏感信息或个人信息</li>
+                  <li>本人为襄职信息院学生，不存在盈利侵权行为</li>
+                </ul>
+              </div>
+          
+              <div class="mt-6 text-center text-sm">
+                <p>技术问题反馈：</p>
+                <p class="mt-1">QQ: <a href="tencent://message/?uin=1932674426" class="text-blue-500">1932674426</a></p>
+                <p class="mt-1">邮箱: <a href="mailto:info@zyhorg.cn" class="text-blue-500">info@zyhorg.cn</a></p>
+                <p class="mt-2 text-gray-400 text-xs">本平台基于学习目的开发，不保证服务持续性</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-10 backdrop-blur-sm"
+    >
+      <div class="container mx-auto px-4 md:px-6 lg:px-8">
+        <div class="flex items-center h-16">
+          <div class="flex items-center">
+            <a href="https://open.zyhorg.ac.cn/" target="_blank" class="flex items-center gap-2">
+                <img
+                src="/asset/open_img/xyzyjsxy.svg"
+                alt="Logo"
+                class="object-contain" style="width: 120px;"
+              />
+                <span class="text-white" style="line-height:1.2;font-size: 1.35em;">襄阳职业技术学院<br>DeepSeek 模型</span>
+              </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+<div id="slideContainer" class="relative w-screen h-screen">
+<div class="slide active">
+<img src="/asset/open_img/0001.jpg" class="object-cover w-full h-full" alt="开启智慧新纪元">
+</div>
+<div class="slide">
+<img src="/asset/open_img/0002.jpg" class="object-cover w-full h-full" alt="赋予学习独特个性">
+</div>
+<div class="slide">
+<img src="/asset/open_img/0003.jpg" class="object-cover w-full h-full" alt="科技注入职教灵魂">
+</div>
+<div class="slide">
+<img src="/asset/open_img/0004.jpg" class="object-cover w-full h-full" alt="面向未来人才培养">
+</div>
+<div class="absolute inset-0 gradient-overlay"></div>
+<div class="absolute inset-x-0 bottom-0 pb-20 flex flex-col items-center justify-end text-white text-center z-10">
+<div class="container mx-auto px-4 md:px-6 lg:px-8">
+<h1 id="dynamicTitle" class="text-4xl md:text-4xl lg:text-5xl font-bold mb-5 md:mb-4 transition-opacity duration-600">开启智慧新纪元</h1>
+<h2 class="text-5xl md:text-4xl lg:text-5xl font-bold mb-5 md:mb-8">襄阳职业技术学院专属DeepSeek</h2>
+<p class="text-base md:text-lg lg:text-xl text-gray-200 mb-8 md:mb-12 max-w-xl md:max-w-2xl mx-auto">在襄阳职业技术学院，DeepSeek开启智慧新纪元<br>以先进之力锻造专业技能，铸就新时代工匠精神，定义职业教育新高度。</p>
+<button 
+    id="deepseek-button" 
+    class="glow-button bg-white text-gray-900 px-6 md:px-8 py-3 md:py-4 rounded-button text-base md:text-lg font-semibold cursor-pointer whitespace-nowrap">
+    体验专属 DeepSeek
+</button>
+<button 
+    id="deepseek-button" 
+    class="glow-button bg-white text-gray-900 px-6 md:px-8 py-3 md:py-4 rounded-button text-base md:text-lg font-semibold cursor-pointer whitespace-nowrap">
+    联合库UNHub
+</button>
+</div>
+</div>
+</div>
+<div class="absolute bottom-0 w-full text-center text-white text-sm py-4 bg-black bg-opacity-50">
+  <p>联合库 UNHub | 杖雍皓 支持</p>
+</div>
+<script src="/js/open/open.js"></script>
+</body>
+</html>
