@@ -16,6 +16,14 @@ document.addEventListener('DOMContentLoaded', function() {
 // 新闻数据
 const newsData = [
     {
+        month: "三月",
+        year: "2025",
+        imageUrl: "/asset/open_img/unhub_xytc_ds.svg",
+        topic: "大模型",
+        title: "襄阳职业技术学院专属版DeepSeek智能助手：一位职教学子的技术实践与探索",
+        time: "2025-03-06",
+        link: "/news/2025/3/xytc-DeepSeek.html"
+    },{
         month: "二月",
         year: "2025",
         imageUrl: "/news/news_img/2/vid-placeholder.webp",
