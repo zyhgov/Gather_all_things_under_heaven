@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>襄阳职业技术学院专属版DeepSeek智能助手：一位职教学子的技术实践与探索 | Archive | Global News | 联合库UNHub</title>
+      <!-- 页面描述 -->
+  <meta name="description" content="在人工智能技术席卷全球的今天，作为襄阳职业技术学院信息技术学院大数据技术专业的学生，我始终思考如何将前沿技术与职业教育深度融合。当看到国产大模型DeepSeek在国际舞台崭露头角，而多所高校已率先接入其技术生态时，我决定以个人之力，打造一款专属于襄阳职业技术学院的定制化智能助手。以下，我将从技术实践、项目价值与未来愿景三个维度，分享这段充满挑战的探索历程。">
+  <!-- 关键字 -->
+  <meta name="keywords" content="襄阳职业技术学院, DeepSeek,UNHub, 联合库UNHub, 人工智能技术,职教学子">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="../../../news/news.css">
+        <!-- Font Awesome 图标库 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "pnjcz18od3");
+    </script>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    
+</head>
+<body>
+    
+    <div class="wrapper">
+        <!-- Top Navigation -->
+        <header class="navbar">
+            <div class="logo">
+                <img src="/asset/icon_logo/hei_by_y_1.png" alt="UNHub logo" class="unhub_logo">
+                <div class="text-container">
+                    <span>Global News</span>
+                    <!-- <span class="of"><em>of</em></span> -->
+                    <span>UNHub</span>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="/index.html">联合库UNHub</a>
+                <a href="/globalnews.html">Global News</a>
+                <a href="/archive.html" style="margin-right: 25px; ">存档页面</a>
+            </div>
+        </header>
+
+
+        <div class="main-content">
+            <div id="news-container">
+                <div id="news_top">
+                    <p class="huati">大模型</p>
+                    <p class="time">2025 年 3 月 6 日</p>
+                    <h1 class="title">襄阳职业技术学院专属版DeepSeek智能助手<br>一位职教学子的技术实践与探索</h1>
+                    <p class="yy">文章：张永豪  襄阳职业技术学院信息技术学院大数据技术专业</p>
+                </div>
+                
+                <div id="zhengwen">
+                    <img src="/asset/open_img/unhub_xytc_ds.svg" alt="miaoshujiem1" class="news-image">
+                    <p class="bt">
+                        襄阳职业技术学院专属版DeepSeek智能助手简介
+                    </p>
+                    <p class="zw">
+                        在人工智能技术席卷全球的今天，作为襄阳职业技术学院信息技术学院大数据技术专业的学生，我始终思考如何将前沿技术与职业教育深度融合。当看到国产大模型DeepSeek在国际舞台崭露头角，而多所高校已率先接入其技术生态时，我决定以个人之力，打造一款专属于襄阳职业技术学院的定制化智能助手。以下，我将从技术实践、项目价值与未来愿景三个维度，分享这段充满挑战的探索历程。</p>
+                    <p class="bt">
+                        <img src="/asset/open_img/2.jpg" alt="miaoshujiem1" class="news-image">
+                        一、从0到1：技术落地的破局之路
+                    </p>
+                    <p class="zw">
+                        作为一名在校学生，搭建专业级AI服务并非易事。在硬件资源有限的情况下，我选择以个人电脑作为服务器，通过Cloudflare Tunnel内网穿透技术 将服务暴露至二级域名https://open.zyhorg.ac.cn/。为保障服务稳定性，系统采用Nginx反向代理 实现流量调度，并设置自动熔断机制（当错误率超过10%时切换备用节点）。尽管本地服务器受限于每日23点至次日7点的维护窗口，但通过优化Docker容器配置与GPU资源分配（NVIDIA RTX 3080 + CUDA 12.1加速），仍实现了单次请求1.2-2.8秒 的响应速度。
+                    </p>
+                    <p class="zw">
+                        模型训练方面，我基于DeepSeek R1闭源基座模型 ，结合院校公开课程资料、技术文档等3.2GB特色数据集，采用LoRA低秩适配技术 进行微调。为确保数据合规性，团队设计了三级过滤流程：首先通过正则表达式剔除敏感信息，再利用Sentence-BERT模型进行语义去重，最后进行人工抽检。训练过程中，联合库UNHub自主研发的分布式框架发挥了关键作用，使多节点协同训练效率提升40%。
+                    </p>
+                    <img src="/asset/open_img/3.jpg" alt="miaoshujiem1" class="news-image">
+                    <p class="bt">
+                        二、技术赋能教育：场景化落地的价值探索
+                    </p>
+                    <p class="zw">
+                        这款智能助手并非简单复刻通用大模型，而是深度融入职业教育场景：教学辅助 ：支持课程知识点解析、实验报告生成、技术问题解答，上下文保持能力达8192 tokens；学习路径规划 ：结合学院专业课程体系，提供个性化学习建议；多模态交互 ：兼容Markdown文档解析、代码高亮、LaTeX公式渲染，满足工科生多样化需求。
+                    </p>
+                    <p class="zw">
+                        在安全合规层面，系统采用AES-256加密存储临时数据 ，并通过PrivacyEngine实现差分隐私保护，确保对话内容不留存、不可追溯。所有技术方案均严格遵循DeepSeek社区版协议，且训练数据已通过《联合库UNHub信息公开管理办法》审查。
+                    </p>
+                    <p class="bt">
+                        三、开源协作与未来展望
+                    </p>
+                    <p class="zw">
+                        作为非营利性项目，我们始终秉持开放共享理念：提供标注工具（label.unhub.cn）邀请社区共同优化训练数据；接受符合SLA标准的硬件赞助，用于升级算力基础设施。
+                    </p>
+                    <p class="bt">
+                        结语：技术理想与现实的碰撞
+                    </p>
+                    <p class="zw">
+                        这个项目诞生于一名职教学子对技术的热忱，也暴露出个人开发的局限性：算力瓶颈导致模型容量受限，维护窗口影响服务连续性，数据获取渠道仍需拓展……但正如DeepSeek团队所言：“大模型的未来在于场景化落地。” 我期待以此次实践为起点，与更多技术爱好者携手，共同探索人工智能赋能职业教育的无限可能。
+                    </p>
+                    
+                    <p class="bt">
+                        点击下方专线链接进入襄阳职业技术学院专属DeepSeek
+                    </p>
+                    <p class="zw">
+                        <a href="https://zyhorg.ac.cn/open.html" target="_blank" style="text-decoration: none;color: grey;">
+                            <strong>点击跳转 https://zyhorg.ac.cn/open.html</strong> 
+                        </a>
+                    </p>
+
+                    
+                    
+                    </div>
+
+                
+            </div>
+        </div>
+        <div class="read-more" style="margin-top: 10%;">
+            <a href="../../../archive.html" class="read-more-btn">阅读更多历史文章</a>
+        </div>
+        <p class="yy">
+            值得一提的是，我们的内容来源于网络，若您认为本页面有侵权内容，请发送邮件至
+            <a href="mailto:info@zyhorg.cn" style="text-decoration: none;color: grey;">info@zyhorg.cn</a>，我们将会在两到三个工作日回复到您。
+        </p>
+        <!-- Footer -->
+        <footer class="footer">
+            <img src="/asset/icon_logo/red_b_y_2.png" alt="Logo" class="footer-logo">
+            <div class="footer-info">Global News &copy; 2025 | 保留所有权利
+                <br>
+                zyhorg zyhgov 联合库UNHub 监制
+            </div>
+        </footer>
+    </div>
+
+    <script src="../../../js/globalnews.js"></script>
+</body>
+</html>
