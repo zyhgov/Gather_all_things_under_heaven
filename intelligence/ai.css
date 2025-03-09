@@ -19,6 +19,104 @@
   max-width: 100%;
   word-break: break-word; /* 自动换行 */
 }
+  @media (max-width: 768px) {
+    /* 移动端侧边栏隐藏时的主内容区域补白 */
+    main {
+      margin-left: 0 !important;
+      transition: margin-left 0.3s;
+    }
+    
+    /* 展示移动端顶部导航栏 */
+    #mobile-navbar {
+      display: flex !important;
+    }
+    
+    /* 侧边栏展开时的主内容区域偏移 */
+    body.sidebar-open main {
+      margin-left: 200px;
+    }
+  }
+  /* 添加到样式表 */
+body.sidebar-open {
+  overflow-x: hidden;
+}
+
+#sidebar {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  transition: transform 0.3s;
+}
+/* 侧边栏展开状态 */
+.sidebar-open #sidebar {
+  transform: translateX(0);
+}
+body.sidebar-open #sidebar {
+  transform: translateX(0);
+}
+
+@media (min-width: 769px) {
+  #sidebar {
+    transform: translateX(0) !important;
+  }
+}  @media (max-width: 768px) {
+  /* 移动端侧边栏隐藏时的主内容区域补白 */
+  main {
+    margin-left: 0 !important;
+    transition: margin-left 0.3s;
+  }
+  
+  /* 展示移动端顶部导航栏 */
+  #mobile-navbar {
+    display: flex !important;
+  }
+  
+  /* 侧边栏展开时的主内容区域偏移 */
+  body.sidebar-open main {
+    margin-left: 200px;
+  }
+}
+/* 添加到样式表 */
+body.sidebar-open {
+overflow-x: hidden;
+}
+
+/* 移动端优先策略 */
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 50;
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+}
+
+body.sidebar-open #sidebar {
+transform: translateX(0);
+}
+
+/* 移动端优先策略 */
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 50;
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+}
+
+/* 桌面端显示规则 */
+@media (min-width: 768px) {
+  #sidebar {
+    position: relative !important;
+    transform: translateX(0) !important;
+    height: 100vh;
+    display: flex !important;
+  }
+}
 
   /* 公式样式 */
   .formula {
@@ -33,26 +131,126 @@
   border-radius: 10px;
 }
 
-/* 代码块样式 */
+/* ========== 代码块增强样式 ========== */
 pre {
-  font-family: 'JetBrains Mono', sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
-  max-width: 100%;
-  overflow-x: auto; /* 横向滚动条 */
-  margin: 10px 10px 10px 10px;
-  background-color: gainsboro;
-  border-radius: 20px;
+  --code-bg: #2d2d2d; /* 深色背景 */
+  --code-accent: #3a3a3a; /* 辅助色 */
+  --code-text: #f8f8f2; /* 主文本色 */
+  --scrollbar-thumb: #555; /* 滚动条颜色 */
+  
+  font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  font-size: 0.925rem;
+  line-height: 1.6;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  background: var(--code-bg);
+  border-radius: 12px;
+  color: var(--code-text);
+  position: relative;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  /* 滚动条优化 */
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--code-bg);
+
+  &::-webkit-scrollbar {
+    height: 8px;
+    background: var(--code-bg);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 4px;
+  }
+
+  /* 移动端优化 */
+  @media (max-width: 768px) {
+    font-size: 0.875rem;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem -1rem;
+  }
+
+  /* 代码高亮装饰线 */
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, 
+      #ff79c6 0%, 
+      #bd93f9 25%, 
+      #8be9fd 50%, 
+      #50fa7b 75%, 
+      #ffb86c 100%
+    );
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.15);
+  }
 }
 
 code {
-  font-family: 'JetBrains Mono', sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
-  margin: 10px 10px 10px 10px;
-  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.9em;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  background: var(--code-accent);
+  color: var(--code-text);
+  /* color: #eb5757; */
+  white-space: pre-wrap; /* 自动换行 */
+  word-wrap: break-word;
+  /* background-color: #ececec; */
+  /* box-shadow: 0 6px 12px -2px rgba(255, 255, 255, 0.15); */
 }
-/* 限制标题宽度并启用省略号 */
+
+/* 行号支持 */
+pre[data-line-numbers] {
+  counter-reset: line;
+
+  code {
+    display: block;
+    padding-left: 2.5em;
+
+    &::before {
+      counter-increment: line;
+      content: counter(line);
+      position: absolute;
+      left: 0;
+      width: 2em;
+      padding-right: 0.5em;
+      color: #666;
+      text-align: right;
+      user-select: none;
+    }
+  }
+}
+
+/* 深色/浅色模式适配 */
+@media (prefers-color-scheme: light) {
+  pre {
+    --code-bg: #f8f9fa;
+    --code-accent: #e9ecef;
+    --code-text: #495057;
+    --scrollbar-thumb: #adb5bd;
+
+    &::before {
+      background: linear-gradient(to bottom, 
+        #ff6b6b 0%, 
+        #cc5de8 25%, 
+        #339af0 50%, 
+        #51cf66 75%, 
+        #fcc419 100%
+      );
+    }
+  }
+}/* 限制标题宽度并启用省略号 */
 #conversations span {
   white-space: nowrap; /* 禁止换行 */
   overflow: hidden; /* 超出部分隐藏 */
@@ -68,7 +266,66 @@ transition: opacity 0.5s ease-in-out; /* 平滑过渡效果 */
 #dynamic-title.visible {
 opacity: 1; /* 显示状态 */
 }
+/* 弹窗动画 */
+#intro-modal {
+  animation: modalFadeIn 0.3s ease-out;
+}
 
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* 响应式调整 */
+@media (max-width: 640px) {
+  #intro-modal .max-w-2xl {
+    max-width: 95%;
+    margin: 0 10px;
+  }
+  
+  #intro-modal .p-8 {
+    padding: 1.5rem;
+  }
+  
+  #close-intro {
+    right: 0;
+    top: 0;
+    background: rgba(0,0,0,0.7);
+  }
+}
+.animate-message {
+  animation: messageAppear 0.3s ease-out;
+}
+
+@keyframes messageAppear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* 关闭按钮样式 */
+#close-intro span {
+  display: block;
+  position: absolute;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+#close-intro span:first-child {
+  transform: rotate(45deg);
+}
+
+#close-intro span:last-child {
+  transform: rotate(-45deg);
+}
+
+#close-intro:hover span {
+  background: #eee;
+}
 
 /* From Uiverse.io by G4b413l */ 
 .three-body {
@@ -86,6 +343,8 @@ animation: spin78236 calc(var(--uib-speed) * 2.5) infinite linear;
 position: absolute;
 height: 100%;
 width: 30%;
+animation: pulse 1.2s infinite ease-in-out;
+backface-visibility: hidden;
 }
 
 .three-body__dot:after {
@@ -184,4 +443,265 @@ opacity: 0.8;
 #js{
   font-size: 0.8em;
 }
+}
+/* 确保思考状态指示器正确显示 */
+.thinking-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.three-body {
+  --uib-size: 18px;
+  --uib-color: var(--ios-blue);
+}
+/**************** 苹果设计系统变量 ****************/
+:root {
+  --ios-blue: #007AFF;
+  --ios-gray-1: #F5F5F7;
+  --ios-gray-2: #E5E5EA;
+  --ios-label: #1D1D1F;
+  --ios-secondary: #86868B;
+  --ios-surface: rgba(255, 255, 255, 0.8);
+  --ios-blur: saturate(180%) blur(20px);
+}
+
+/**************** 消息基础架构 ****************/
+.message {
+  margin: 1.25rem 0;
+  opacity: 0;
+  animation: iosEntry 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+@keyframes iosEntry {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/**************** 消息容器设计 ****************/
+.message-content {
+  position: relative;
+  padding: 1rem 1.25rem;
+  border-radius: 18px;
+  background: var(--ios-surface);
+  backdrop-filter: var(--ios-blur);
+  /* box-shadow: 
+    0 1px 1px rgba(0, 0, 0, 0.04),
+    0 4px 8px rgba(0, 0, 0, 0.04),
+    inset 0 -0.5px 0.5px rgba(255, 255, 255, 0.5); */
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  background-color: rgb(255, 255, 255);
+  font-size: 1em;
+}
+
+.message-content:hover {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 2px 2px rgba(0, 0, 0, 0.04),
+    0 8px 16px rgba(0, 0, 0, 0.06),
+    inset 0 -0.5px 0.5px rgba(255, 255, 255, 0.6);
+}
+
+/**************** 思考消息专属样式 ****************/
+/* 思考过程样式 */
+.message.thinking {
+  /* 主容器优化 */
+  background: rgba(245, 245, 247, 0.712);
+  border: 0.5px solid rgba(0, 0, 0, 0.06);
+  border-radius: 18px 18px 4px 4px; /* 右下角保持小圆角增加设计细节 */
+  color: #68686D; /* Apple 标准辅助灰色 */
+  margin: 1px 0;
+  overflow: hidden; /* 确保内部圆角生效 */
+  padding: 15px;
+  font-size: 1em;
+  /* 三维层次 */
+  box-shadow: 
+    0 1px 1px rgba(0, 0, 0, 0.02),
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    inset 0 0.5px 0.5px rgba(255, 255, 255, 0.6);
+}
+.message.thinking .message-content {
+  /* 内容容器间距系统 */
+  padding: 16px 20px 20px; /* 上 16px 左右 20px 下 20px */
+}
+
+.message.thinking .message-header {
+  color: #007AFF;
+  font-size: 1.25em;
+}
+
+.message.thinking .message-body {
+  color: #6E6E73;
+  
+}
+
+/**************** 最终回答样式 ****************/
+.message.bot {
+  /* 主容器优化 */
+  background: rgba(255, 255, 255, 0.85);
+  border: 0.5px solid rgba(0, 0, 0, 0.06);
+  border-radius: 4px 4px 18px 18px; /* 右下角保持小圆角增加设计细节 */
+  color: #1e1e1f; /* Apple 标准辅助灰色 */
+  margin: 1px 0;
+  overflow: hidden; /* 确保内部圆角生效 */
+  padding: 15px;
+  font-size: 1em;
+  
+  /* 三维层次 */
+  box-shadow: 
+    0 1px 1px rgba(0, 0, 0, 0.02),
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    inset 0 0.5px 0.5px rgba(255, 255, 255, 0.6);
+}
+
+.message.bot .message-header {
+  color: #0071e3;
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+.message.bot .message-body {
+  color: #2C2C2E;
+  
+}
+/**************** 增强对比度的辅助样式 ****************/
+.message.thinking .message-content:hover {
+  transform: translateY(-1px) scale(1.005);
+  box-shadow: 
+    0 2px 3px rgba(0, 0, 0, 0.04),
+    0 10px 16px rgba(0, 0, 0, 0.05),
+    inset 0 -0.5px 0.5px rgba(255, 255, 255, 0.7);
+}
+
+.message.bot .message-content:hover {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 
+    0 3px 4px rgba(0, 0, 0, 0.05),
+    0 12px 20px rgba(0, 0, 0, 0.06),
+    inset 0 -0.5px 0.5px rgba(255, 255, 255, 0.8);
+}
+/**************** 状态指示器强化 ****************/
+.thinking-status {
+  color: #8A8A8E; /* 更柔和的状态文字 */
+}
+
+.thinking-status::before {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23007AFF"><path d="M12 2A10 10 0 1 0 22 12 10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 7a1 1 0 0 1 1 1v4a1 1 0 0 1-2 0V8a1 1 0 0 1 1-1zm0 8a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>');
+}
+/**************** 内容排版系统 ****************/
+.message-body {
+  color: var(--ios-label);
+  line-height: 1.7;
+  font-size: 1.05em;
+  padding: 0.75rem 0;
+  font-weight: 500;
+}
+
+.message-body p {
+  margin: 0.8em 0;
+  letter-spacing: -0.08px;
+}
+
+.message-body pre {
+  background: rgba(0, 0, 0, 0.85) !important;
+  padding: 1.1rem !important;
+  border-radius: 12px !important;
+  margin: 1.2rem 0 !important;
+  font-family: 'SF Mono', Menlo, monospace;
+  font-size: 0.9em;
+  color: #fff;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.message-body code:not(pre code) {
+  background: rgba(0, 122, 255, 0.12);
+  color: var(--ios-blue);
+  padding: 0.2em 0.4em;
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+
+.message-body blockquote {
+  border-left: 3px solid var(--ios-gray-2);
+  padding-left: 1rem;
+  margin: 1.2rem 0;
+  color: var(--ios-secondary);
+}
+
+/**************** 加载状态动效 ****************/
+.three-body {
+  --uib-size: 24px;
+  --uib-color: var(--ios-blue);
+  --uib-speed: 1.4s;
+}
+
+.loading-indicator {
+  padding: 12px;
+  background: rgba(0, 122, 255, 0.08);
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/**************** 移动端优化 ****************/
+@media (max-width: 768px) {
+  .message.thinking .message-content {
+    background: rgba(240, 240, 245, 0.75);
+  }
+  
+  .message.bot .message-content {
+    background: rgba(255, 255, 255, 0.92);
+  }
+}
+/**************** 深度交互反馈 ****************/
+.message-content:active {
+  transform: scale(0.98);
+  transition-duration: 0.15s;
+}
+
+.message-body a {
+  color: var(--ios-blue);
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 122, 255, 0.3);
+  transition: all 0.2s ease;
+}
+
+.message-body a:hover {
+  text-decoration-color: currentColor;
+}
+
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  color: white;
+  z-index: 1000;
+}
+
+.info { background: #007AFF; }
+.warning { background: #FF9500; }
+.error { background: #FF3B30; }
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideOut {
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
 }

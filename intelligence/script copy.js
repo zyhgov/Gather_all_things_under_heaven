@@ -14,7 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
       loadConversation(lastConversation.id);
     }
   }
-  initKnowledgeBase(); 
+  if (conversations.length === 0) {
+    startNewConversation("初始对话");
+    addMessage("bot", "UNHub智能助手为您服务，本系统基于DeepSeek架构和私有化知识库训练");
+  }
 });
 // 动态标题切换逻辑
 const dynamicTitle = document.getElementById("dynamic-title");
@@ -126,62 +129,7 @@ const conversationList = document.getElementById("conversations");
 const welcomeArea = document.getElementById("welcome-area");
 const STORAGE_KEY = "wisdom_conversations_v2"; // 所有存储操作使用此常量
 // 在现有代码基础上修改以下部分
-// ========== 配置部分 ==========
-const KNOWLEDGE_FILE = 'http://127.0.0.1:5500/intelligence/knowledge-base.txt'; // 预置知识库文件路径
-const KNOWLEDGE_CONFIG = {
-  chunkSize: 500,
-  maxResults: 3,
-  minScore: 0.75
-};
-// ========== 知识库初始化 ==========
-async function initKnowledgeBase() {
-  try {
-    let allChunks = [];
-    
-    for (const file of KNOWLEDGE_FILES) {
-      const response = await fetch(file);
-      const content = await response.text();
-      const chunks = await processKnowledgeContent(content);
-      allChunks = allChunks.concat(chunks);
-    }
-    
-    knowledgeBase = allChunks;
-  } catch (error) {
-    console.error('知识库加载失败:', error);
-  }
-}
-// 知识处理流程（移除了文件上传相关逻辑）
-async function processKnowledgeContent(content) {
-  // 文本预处理
-  const cleanedContent = content
-    .replace(/[^\u4e00-\u9fa5a-zA-Z0-9\s]/g, '')
-    .replace(/\s+/g, ' ');
 
-  // 分块处理
-  const chunks = [];
-  for (let i = 0; i < cleanedContent.length; i += KNOWLEDGE_CONFIG.chunkSize) {
-    const chunk = cleanedContent.substr(i, KNOWLEDGE_CONFIG.chunkSize);
-    const embedding = await getEmbedding(chunk);
-    chunks.push({ text: chunk, vector: embedding });
-  }
-  return chunks;
-}
-function checkKnowledgeHealth() {
-  if (knowledgeBase.length === 0) {
-    console.warn('知识库为空，请检查文件路径');
-    return false;
-  }
-  
-  const avgLength = knowledgeBase.reduce((sum, chunk) => 
-    sum + chunk.text.length, 0) / knowledgeBase.length;
-  
-  console.log(`知识库健康状态：
-    - 总片段数: ${knowledgeBase.length}
-    - 平均长度: ${avgLength.toFixed(1)}字符
-    - 最新更新时间: ${getFileUpdateTime()}
-  `);
-  return true;
-}
 // 添加消息到聊天框
 // 增强的 addMessage 函数
 // 修改后的 addMessage 函数
@@ -250,6 +198,13 @@ setTimeout(() => controller.abort(), 30000); // 30秒超时
 async function sendMessageToAI(userMessage) {
   try {
     const loadingBubble = showLoading();
+    
+    // 新增知识检索
+    const knowledge = await searchKnowledge(userMessage);
+    const systemPrompt = knowledge ? 
+      `你是由UNHub训练的深度智能助手，请严格根据知识库内容回答。知识库内容：\n${knowledge}\n\n当前问题：` : 
+      "你是由UNHub训练的深度智能助手";
+
     const response = await fetch("https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions", {
       method: "POST",
       headers: {
@@ -258,7 +213,16 @@ async function sendMessageToAI(userMessage) {
       },
       body: JSON.stringify({
         model: "deepseek-r1",
-        messages: [{ role: "user", content: userMessage }],
+        messages: [
+          {
+            role: "system",
+            content: systemPrompt
+          },
+          {
+            role: "user",
+            content: userMessage
+          }
+        ],
         stream: true
       })
     });
@@ -312,6 +276,39 @@ async function sendMessageToAI(userMessage) {
     addMessage("bot", `请求出错：${error.message}`);
   }
 }
+// 优化向量生成（使用TextEncoder模拟）
+async function getEmbedding(text) {
+  // 更合理的文本向量化方法
+  const encoder = new TextEncoder();
+  const encoded = encoder.encode(text.toLowerCase());
+  const normalized = new Array(128).fill(0);
+  
+  // 生成更合理的向量
+  encoded.forEach((val, index) => {
+    normalized[index % 128] += val;
+  });
+
+  // 归一化处理
+  const magnitude = Math.sqrt(normalized.reduce((sum, val) => sum + val * val, 0));
+  return normalized.map(val => val / magnitude);
+}
+
+// 增强系统提示模板
+const SYSTEM_PROMPTS = {
+  IDENTITY: `你是由UNHub智能平台训练的深度语言模型，具备以下特性：
+  1. 基于DeepSeek架构的千亿参数模型
+  2. 训练数据包含企业知识库和专业领域数据
+  3. 回答问题时优先使用预置知识库内容
+  4. 遇到不确定的内容应明确告知"根据UNHub知识库，..."`,
+  
+  DEFAULT: `你是UNHub智能平台训练的AI助手，请始终遵循：
+  1. 用中文简洁回答
+  2. 知识库优先级高于通用知识
+  3. 涉及技术问题必须引用知识库内容
+  4. 回答以"UNHub智能助手为您解答"开头`
+};
+// 在知识检索函数中添加调试
+
 // 辅助函数：创建消息容器
 function createMessageContainer(role) {
   const div = document.createElement("div");
@@ -361,7 +358,9 @@ function showEmptyChatPrompt() {
       <p>您还没有任何对话。</p>
       <p>请点击<span style="color: #007AFF;">“♾️ 开启新对话”</span>开始。</p>
       <div class="space-y-2">
-          <span style="color: #007AFF;">襄阳职业技术学院专属deepseek R1大模型</span>
+          <button id="but" class="example-question bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">你能做什么?</button>
+          <button id="but" class="example-question bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">用python打印九九乘法表</button>
+          <button id="but" class="example-question bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">苏格拉底式提问方法是什么意思？</button>
         </div>
     </div>
   `;
@@ -619,9 +618,9 @@ const renderer = new marked.Renderer();
 renderer.code = function (code, language) {
   return `
     <pre class="bg-gray-900 text-white p-4 rounded-lg overflow-auto">
-      <codee class="language-${language}">
+      <code class="language-${language}">
         ${code}
-      </codee>
+      </code>
     </pre>
   `;
 };

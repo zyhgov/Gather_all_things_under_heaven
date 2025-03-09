@@ -15,6 +15,14 @@
   <link rel="stylesheet" href="ai.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <!-- 添加DNS预连接 -->
+   <!-- 在<head>中添加媒体查询 -->
+<style>
+
+  </style>
+<link rel="preconnect" href="https://dashscope.aliyuncs.com">
+<link rel="dns-prefetch" href="https://dashscope.aliyuncs.com">
   <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
           c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -28,8 +36,60 @@
   </style>
 </head>
 <body class="bg-gray-100 flex h-screen overflow-hidden">
+  <!-- 页面说明弹窗 -->
+<div id="intro-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-xl max-w-2xl w-full mx-4">
+    <!-- 关闭按钮 -->
+    <button id="close-intro" class="absolute -top-4 -right-4 bg-gray-500 hover:bg-gray-600 rounded-full w-8 h-8 flex items-center justify-center transition-colors">
+      <span class="absolute w-4 h-0.5 bg-white transform rotate-45"></span>
+      <span class="absolute w-4 h-0.5 bg-white transform -rotate-45"></span>
+    </button>
+    
+    <!-- 弹窗内容 -->
+    <div class="p-8 overflow-y-auto max-h-[80vh]">
+      <img src="deepseek r1.svg" alt="系统说明" class="w-32 mx-auto mb-6">
+      <h2 class="text-2xl font-bold text-center mb-4">WISDOM 使用说明</h2>
+      <div class="space-y-4 text-gray-600">
+        <p>1. 本平台基于DeepSeek R1模型构建，提供智能问答服务</p>
+        <p>2. 支持多轮对话上下文理解，可随时开启新对话</p>
+        <p>3. 点击示例问题快速体验核心功能</p>
+        <p>4. 生成内容需人工审核，重要决策请二次验证</p>
+        <div class="bg-blue-50 p-4 rounded-lg">
+          <p class="text-blue-600">⚠️ 注意事项：</p>
+          <ul class="list-disc pl-6 mt-2">
+            <li>请勿输入敏感个人信息</li>
+            <li>复杂问题建议分步提问</li>
+            <li>技术问题优先提供代码片段</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 在<aside>标签前添加移动端导航栏 -->
+  <div id="mobile-navbar" class="hidden fixed top-0 left-0 right-0 bg-white z-50 border-b border-gray-200">
+    <div class="flex items-center justify-between px-4 py-2">
+      <!-- 侧边栏按钮 -->
+      <button id="toggle-sidebar">
+        <img id="sidebar-toggle-icon" 
+             src="收起侧边栏.svg" 
+             class="w-6 h-6 hidden md:block" 
+             alt="Toggle Sidebar">
+        <svg class="w-6 h-6 md:hidden" fill="none" stroke="currentColor">
+          <!-- 移动端菜单图标 -->
+        </svg>
+      </button>
+      
+      <!-- 中央Logo -->
+      <!-- 带原生属性的完整写法 -->
+      <img src="deepseek r1.svg" alt="Logo" class="mx-auto max-w-full h-auto" width="50%" height="50%">
+      
+      <!-- 空占位符保持对齐 -->
+      <span class="w-6"></span>
+    </div>
+  </div>
   <!-- 左侧侧边栏 -->
-  <aside id="sidebar" class="bg-white w-20 sm:w-64 border-r border-gray-200 flex flex-col transition-all duration-300">
+  <aside id="sidebar" class="bg-white w-64 border-r border-gray-200 hidden md:flex md:flex-col transition-all duration-300">
     <!-- 顶部 Logo 和折叠按钮 -->
     <div class="flex items-center justify-between p-4 border-b border-gray-200">
       <img id="cebian_logo" src="wisdom_heng.png" alt="Logo" class="w-15 h-8">
@@ -38,21 +98,21 @@
       </button>
     </div>
 
-<!-- 对话历史记录列表 -->
-<div id="conversation-list" class="flex-1 overflow-y-auto p-4">
-  <div class="flex items-center space-x-2 mb-4">
-    <button id="new-conversation" class="text-blue-500 hover:text-blue-700">♾️ 开启新对话</button>
+  <!-- 对话历史记录列表 -->
+  <div id="conversation-list" class="flex-1 overflow-y-auto p-4">
+    <div class="flex items-center space-x-2 mb-4">
+      <button id="new-conversation" class="text-blue-500 hover:text-blue-700">♾️ 开启新对话</button>
+    </div>
+    <div class="mb-4">
+      <button id="clear-cache" class="text-red-500 hover:text-red-700">🚯 清除缓存并重置</button>
+    </div>
+    <div class="mb-4">
+      <button id="go-home" class="text-green-500 hover:text-green-700">🏠 回到联合库UNHub主页</button>
+    </div>
+    <ul id="conversations">
+      <!-- 动态生成对话列表 -->
+    </ul>
   </div>
-  <div class="mb-4">
-    <button id="clear-cache" class="text-red-500 hover:text-red-700">🚯 清除缓存并重置</button>
-  </div>
-  <div class="mb-4">
-    <button id="go-home" class="text-green-500 hover:text-green-700">🏠 回到联合库UNHub主页</button>
-  </div>
-  <ul id="conversations">
-    <!-- 动态生成对话列表 -->
-  </ul>
-</div>
 
     <!-- 版本信息 -->
     <div id="version_di" class="p-4 border-t border-gray-200 text-xs text-gray-500">
@@ -62,17 +122,17 @@
   </aside>
 
   <!-- 右侧主内容区域 -->
-  <main class="flex-1 flex flex-col overflow-hidden">
+  <main class="flex-1 flex flex-col overflow-hidden bg-white relative">
     <!-- 聊天窗口 -->
-    <div id="chat-box" class="flex-1 overflow-y-auto p-6 bg-white relative">
+    <div id="chat-box" class="flex-1 overflow-y-auto p-6 bg-white relative mx-6">
       <!-- 欢迎区域 -->
       <div id="welcome-area" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-        <img src="unhub_qwen.png" id="zhu_logo" alt="Logo" class="w-200 h-20 mx-auto mb-4">
+        <img src="deepseek r1.svg" id="zhu_logo" alt="Logo" class="w-200 h-20 mx-auto mb-4">
         <div id="title-container" class="relative">
           <h1 id="dynamic-title" class="mb-4 text-4xl font-bold text-gray-800 mb-2 opacity-0 transition-opacity duration-500"></h1>
         </div>
         <p id="js" class="text-gray-600 mb-4 text-xl">
-          联合库 UNHub Intelligence 与通义千问 Qwen MAX 大模型强强联合，推出WISDOM文殊大模型，基于云端分布式计算架构，实时响应用户需求。通过深度整合自然语言处理（NLP）、知识图谱、机器学习等前沿技术，我们为用户提供高效、精准、智能化的解决方案，无论是复杂问题解析、多语言支持，还是专业领域咨询，都能游刃有余地满足您的期待。
+          WISDOM 文殊大模型是联合库UNHub和杖雍皓联合推出的深度融合智能体平台。平台基于阿里云百炼的DeepSeek V3和R1模型，依托GitHub平台，覆盖教学、科研及生活等全场景。此平台目前在内测阶段，无需登录即可对话。
         </p>
         <div class="space-y-2">
           <button id="but" class="example-question bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">你能做什么?</button>
@@ -89,12 +149,14 @@
         <textarea id="user-input" placeholder="在这里键入你要询问的信息..." class="flex-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 resize-none text-xl"></textarea>
         <button id="send-btn" class="ml-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">键入</button>
       </div>
-      <p class="text-center">WISDOM文殊大模型有时会犯错，请仔细甄别！</p>
+      <p class="text-center">WISDOM文殊是一个预览模型，仍在更新中。</p>
     </div>
   </main>
 
   <!-- 引入 marked.js -->
+   <script src="lod.js"></script>
   <script src="script.js"></script>
+  <!-- <script src="script copy.js"></script> -->
   <script src="marked.min.js"></script>
   
 </body>
