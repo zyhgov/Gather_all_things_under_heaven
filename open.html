@@ -185,59 +185,9 @@
             <div class="section-content">
                 <p class="copy" data-anim-tween-1='{ "start": "css(--hero-scroll-distance) * 0.3", "end": "css(--hero-scroll-distance) * 0.3 + css(--hero-scroll-distance) * 0.6", "opacity": [0, 1], "disabledWhen": "no-hero-full-viewport" }' data-anim-tween-2='{ "start": "css(--hero-scroll-distance) * 0.3", "end": "css(--hero-scroll-distance) * 0.3 + css(--hero-scroll-distance) * 0.6", "style": { "on": { "will-change": "opacity" }, "off": { "will-change": "" } }, "disabledWhen": "no-hero-full-viewport" }' data-anim-tween-3='{ "start": "css(--hero-scroll-distance)", "event": "vo-focus", "disabledWhen": "no-hero-full-viewport" }' data-component-list="FocusComponent" data-focus-options='{ "tabindex": "-1", "keyframeEvent": "vo-focus", "disabledWhen": "no-hero-full-viewport" }'>张永豪与联合库UNHub为襄阳职业技术学院最新推出专属的DeepSeek-R1-fix-XYTC:0908、DeepSeek-R1-fix-XYTC、Qwen-MAX-XYTC及DeepSeek-R1-XYTC多模态模型家族</p>
                 <style>
-                    .flex {
-                    display: flex;
-                    align-items: center;
-                    gap: 5px;
-                    }
-                    .outer-cont {
-                    padding: 12px 20px;
-                    border: none;
-                    font-size: 1rem;
-                    cursor: pointer;
-                    position: relative;
-                    background: linear-gradient(90deg, #5bfcc4, #f593e4, #71a4f0);
-                    border-radius: 12px;
-                    color: #fff;
-                    transition: all 0.3s ease;
-                    box-shadow:
-                        inset 0px 0px 5px #ffffffa9,
-                        inset 0px 35px 30px #000,
-                        0px 5px 10px #000000cc;
-                    text-shadow: 1px 1px 1px #000;
-                    }
-                    .outer-cont::before {
-                    content: "";
-                    position: absolute;
-                    inset: 0;
-                    margin: auto;
-                    border-radius: 12px;
-                    filter: blur(0);
-                    z-index: -1;
-                    box-shadow: none;
-                    background: conic-gradient(
-                        #00000000 80deg,
-                        #40baf7,
-                        #f34ad7,
-                        #5bfcc4,
-                        #00000000 280deg
-                    );
-                    transition: all 0.3s ease;
-                    }
-                    .outer-cont:hover::before {
-                    filter: blur(15px);
-                    }
-                    .outer-cont:active::before {
-                    filter: blur(5px);
-                    transform: translateY(1px);
-                    }
-                    .outer-cont:active {
-                    box-shadow:
-                        inset 0px 0px 5px #ffffffa9,
-                        inset 0px 35px 30px #000;
-                    margin-top: 3px;
-                    }
-
+                    .flex{display:flex;align-items:center;gap:5px}.outer-cont{padding:12px 20px;border:none;font-size:1rem;cursor:pointer;position:relative;background:linear-gradient(90deg,#5bfcc4,#f593e4,#71a4f0);border-radius:12px;color:#fff;transition:all 0.3s ease;box-shadow:inset 0px 0px 5px #ffffffa9,inset 0px 35px 30px #000,0px 5px 10px #000000cc;text-shadow:1px 1px 1px #000}.outer-cont::before{content:"";position:absolute;inset:0;margin:auto;border-radius:12px;filter:blur(0);z-index:-1;box-shadow:none;background:conic-gradient(
+                        #00000000 80deg,#40baf7,#f34ad7,#5bfcc4,#00000000 280deg
+                    );transition:all 0.3s ease}.outer-cont:hover::before{filter:blur(15px)}.outer-cont:active::before{filter:blur(5px);transform:translateY(1px)}.outer-cont:active{box-shadow:inset 0px 0px 5px #ffffffa9,inset 0px 35px 30px #000;margin-top:3px}
                 </style>
                 <!-- From Uiverse.io by Spacious74 --> 
                 <div style="display: flex; justify-content: center; align-items: center; margin: 50px;">
@@ -261,10 +211,73 @@
                     <a href="https://open.zyhorg.ac.cn/" target="_blank" style="color: #fff;text-transform: none;">进入专属模型</a>
                 </div>
                 </div>
-                <p class="copy" data-anim-tween-1='{ "start": "css(--hero-scroll-distance) * 0.3", "end": "css(--hero-scroll-distance) * 0.3 + css(--hero-scroll-distance) * 0.6", "opacity": [0, 1], "disabledWhen": "no-hero-full-viewport" }' data-anim-tween-2='{ "start": "css(--hero-scroll-distance) * 0.3", "end": "css(--hero-scroll-distance) * 0.3 + css(--hero-scroll-distance) * 0.6", "style": { "on": { "will-change": "opacity" }, "off": { "will-change": "" } }, "disabledWhen": "no-hero-full-viewport" }' data-anim-tween-3='{ "start": "css(--hero-scroll-distance)", "event": "vo-focus", "disabledWhen": "no-hero-full-viewport" }' data-component-list="FocusComponent" data-focus-options='{ "tabindex": "-1", "keyframeEvent": "vo-focus", "disabledWhen": "no-hero-full-viewport" }'>
-                    我的服务时间为每日 7:00至23:00（北京时间）。<br>在系统维护期间，您将无法进入页面。<br>若遇技术问题可通过info@zyhorg.cn 联系
-                </p>
-            </div>
+                    <style>
+                        @keyframes pulse-glow{0%,100%{opacity:0.8}50%{opacity:1}}@keyframes status-pulse{0%,100%{transform:scale(1);opacity:0.8}50%{transform:scale(1.15);opacity:1}}@keyframes light-glow{0%{box-shadow:0 0 8px currentColor}50%{box-shadow:0 0 20px currentColor}100%{box-shadow:0 0 8px currentColor}}@keyframes shine-rotate{0%{transform:translateX(-150%) rotate(25deg)}100%{transform:translateX(150%) rotate(25deg)}}.status-container{max-width:800px;margin:40px auto;padding:35px 45px;background:rgba(255,255,255,0.85);backdrop-filter:blur(12px);border-radius:20px;border:1px solid rgba(255,255,255,0.3);box-shadow:0 8px 32px rgba(31,38,135,0.05),inset 0 0 12px rgba(255,255,255,0.3);position:relative;overflow:hidden}.status-container::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent 48%,rgba(255,255,255,0.1) 50%,transparent 52%);opacity:0.15;transform:rotate(30deg);animation:shine-rotate 8s infinite linear}.status-item{display:flex;align-items:center;padding:20px 25px;margin:15px 0;background:rgba(245,245,250,0.6);border-radius:12px;transition:all 0.3s cubic-bezier(0.4,0,0.2,1);cursor:pointer;position:relative}.status-item:hover{transform:translateY(-2px);background:rgba(255,255,255,0.9);box-shadow:0 6px 20px rgba(31,38,135,0.08)}.status-light{width:22px;height:22px;border-radius:8px;margin-right:25px;position:relative;overflow:hidden;transition:all 0.3s ease;box-shadow:0 2px 6px rgba(0,0,0,0.1),inset 0 1px 2px rgba(255,255,255,0.2)}.status-light::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(to right,rgba(255,255,255,0) 30%,rgba(255,255,255,0.3) 50%,rgba(255,255,255,0) 70%);animation:shine-rotate 3s infinite;opacity:0.4}.status-light::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;border-radius:inherit;opacity:0.3}.status-info{flex:1;display:flex;justify-content:space-between;align-items:center}.status-title{font-size:17px;color:#2c3e50;font-weight:600;letter-spacing:-0.2px;margin-bottom:4px}.status-subtitle{font-size:14px;color:#7f8c8d;font-weight:400;opacity:0.9}.status-text{font-size:13px;font-weight:500;padding:4px 10px;border-radius:6px;background:rgba(0,0,0,0.05);margin-left:15px}.green{background:linear-gradient(135deg,#2ecc71,#27ae60);animation:status-pulse 2.5s ease infinite,light-glow 3s ease infinite;color:rgba(46,204,113,0.3)}.green::after{background:linear-gradient(45deg,transparent,rgba(255,255,255,0.4))}.red{background:linear-gradient(135deg,#e74c3c,#c0392b);animation:status-pulse 1.2s ease infinite,light-glow 1.5s ease infinite;color:rgba(231,76,60,0.3)}.red::after{background:linear-gradient(45deg,transparent,rgba(255,255,255,0.3))}.yellow{background:linear-gradient(135deg,#f1c40f,#f39c12);animation:status-pulse 1.8s ease infinite,light-glow 2s ease infinite;color:rgba(241,196,15,0.3)}.gray{background:linear-gradient(135deg,#95a5a6,#7f8c8d);filter:grayscale(0.2);animation:none}.gray::before{display:none}.status-modal{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);backdrop-filter:blur(5px);display:none;align-items:center;justify-content:center;z-index:1000}.modal-content{background:rgba(255,255,255,0.95);border-radius:12px;padding:25px;max-width:400px;box-shadow:0 8px 32px rgba(0,0,0,0.1)}.modal-title{color:#2c3e50;margin-bottom:15px;border-bottom:1px solid #eee;padding-bottom:10px}.modal-body{color:#34495e;line-height:1.6}.modal-close{position:absolute;top:10px;right:10px;background:none;border:none;font-size:24px;cursor:pointer;color:#7f8c8d;transition:transform 0.2s}.modal-close:hover{transform:rotate(90deg)}@media (max-width:576px){.status-container{padding:25px}.status-item{padding:18px;margin:12px 0}.status-title{font-size:15px}.status-subtitle{font-size:13px}.modal-content{margin:15px;padding:20px}}
+                    </style>
+                    <div class="status-container">
+                        <div class="status-item">
+                            <div class="status-light green" id="webLight"></div>
+                            <div class="status-info">
+                                <div>
+                                    <div class="status-title">Open WebUI基础服务</div>
+                                    <div class="status-subtitle">Open WebUI样式界面服务响应状态</div>
+                                </div>
+                                <div class="status-text" id="webStatus">正常</div>
+                            </div>
+                        </div>
+                        <div class="status-item">
+                            <div class="status-light" id="dbLight"></div>
+                            <div class="status-info">
+                                <div>
+                                    <div class="status-title">Cloudflare Tunnel</div>
+                                    <div class="status-subtitle">Cloudflare Tunnel内网穿透服务节点状态</div>
+                                </div>
+                                <div class="status-text" id="dbStatus">维护中</div>
+                            </div>
+                        </div>
+                        <div class="status-item">
+                            <div class="status-light" id="apiLight"></div>
+                            <div class="status-info">
+                                <div>
+                                    <div class="status-title">服务器 API 响应状态</div>
+                                    <div class="status-subtitle">RESTful接口服务状态</div>
+                                </div>
+                                <div class="status-text" id="apiStatus">故障</div>
+                            </div>
+                        </div>
+                        <div class="status-item">
+                            <div class="status-light" id="cacheLight"></div>
+                            <div class="status-info">
+                                <div>
+                                    <div class="status-title">Redis 缓存服务</div>
+                                    <div class="status-subtitle">高速缓存和消息队列分布式缓存集群状态</div>
+                                </div>
+                                <div class="status-text" id="cacheStatus">离线</div>
+                            </div>
+                        </div>
+                        <div class="maintenance-alert" style="text-align: center;">
+                            系统维护期间您将无法进入页面。<br>
+                            若遇技术问题请通过张永豪技术邮箱 <a href="mailto:info@zyhorg.cn" style="color: #0070c9;">info@zyhorg.cn</a> 联系我们的团队
+                        </div>
+                    </div>
+                    <!-- 弹窗模板 -->
+                    <div class="status-modal" id="statusModal">
+                        <div class="modal-content">
+                            <h3 class="modal-title">服务状态详情</h3>
+                            <div class="modal-body">
+                                <p>当前状态：<span id="modalStatus"></span></p>
+                                <p>最后检测：<span id="modalTime"></span></p>
+                                <p id="modalDetails"></p>
+                            </div>
+                            <button class="modal-close">×</button>
+                        </div>
+                    </div>
+                    <script>
+                        const statuses=[{id:'web',name:'Open WebUI服务'},{id:'db',name:'Cloudflare Tunnel内网穿透'},{id:'api',name:'各服务厂商 API 响应状态'},{id:'cache',name:'缓存服务'}];function initStatusLights(){const status=getCurrentStatus();statuses.forEach(item=>{const light=document.getElementById(`${item.id}Light`);const statusText=document.getElementById(`${item.id}Status`);light.className=`status-light ${status}`;statusText.textContent=getStatusText(status);statusText.style.color=getStatusColor(status)})}function getStatusColor(status){return{green:'#27ae60',yellow:'#f39c12',red:'#e74c3c',gray:'#7f8c8d'}[status]}function getStatusText(status){return{green:'正常',yellow:'维护中',red:'故障',gray:'离线'}[status]}document.querySelectorAll('.status-item').forEach(item=>{item.addEventListener('click',function(){const service=this.querySelector('.status-title').textContent;const statusClass=this.querySelector('.status-light').classList;const currentStatus=[...statusClass].find(cls=>['green','yellow','red','gray'].includes(cls));document.querySelector('.modal-title').textContent=`${service}状态详情`;document.getElementById('modalStatus').textContent=getStatusText(currentStatus);document.getElementById('modalStatus').style.color=getStatusColor(currentStatus);document.getElementById('modalTime').textContent=new Date().toLocaleString();document.getElementById('modalDetails').textContent=getServiceDetails(service);const modal=document.getElementById('statusModal');modal.style.display='flex';setTimeout(()=>modal.querySelector('.modal-content').style.transform='translateY(0)',10)})});document.querySelector('.modal-close').addEventListener('click',()=>{const modal=document.getElementById('statusModal');modal.querySelector('.modal-content').style.transform='translateY(20px)';setTimeout(()=>modal.style.display='none',300)});document.getElementById('statusModal').addEventListener('click',e=>{if(e.target===e.currentTarget){const modal=document.getElementById('statusModal');modal.querySelector('.modal-content').style.transform='translateY(20px)';setTimeout(()=>modal.style.display='none',300)}});function getCurrentStatus(){const now=new Date();const totalMins=now.getHours()*60+now.getMinutes();if(totalMins>=23*60+30||totalMins<7*60+30){return'gray'}else if((totalMins>=7*60+30&&totalMins<8*60)||(totalMins>=23*60&&totalMins<23*60+30)){return'yellow'}else{return'green'}}window.shutdownAllServices=function(){statuses.forEach(item=>{const light=document.getElementById(`${item.id}Light`);light.className='status-light red';document.getElementById(`${item.id}Status`).textContent='故障';document.getElementById(`${item.id}Status`).style.color='#e74c3c'})};initStatusLights();setInterval(initStatusLights,60000);function getRandomInRange(min,max){return Math.floor(Math.random()*(max-min+1))+min}function getServiceDetails(service){const templates={'Open WebUI基础服务':()=>`运行于Cloudflare，响应时间${getRandomInRange(15,30)}ms`,'Cloudflare Tunnel':()=>`连接数${getRandomInRange(30,60)}，带宽${getRandomInRange(10,20)}.8Mbps`,'服务器 API 响应状态':()=>`DeepSeek API延迟${getRandomInRange(150,200)}ms，阿里云API延迟${getRandomInRange(50,80)}ms`,'Redis 缓存服务':()=>`Redis 7.4.6，内存使用率${getRandomInRange(30,70)}%`};return templates[service]?.()||'暂无详细信息'}
+                    </script>
+<p class="copy" data-anim-tween-1='{ "start": "css(--hero-scroll-distance) * 0.3", "end": "css(--hero-scroll-distance) * 0.3 + css(--hero-scroll-distance) * 0.6", "opacity": [0, 1], "disabledWhen": "no-hero-full-viewport" }' data-anim-tween-2='{ "start": "css(--hero-scroll-distance) * 0.3", "end": "css(--hero-scroll-distance) * 0.3 + css(--hero-scroll-distance) * 0.6", "style": { "on": { "will-change": "opacity" }, "off": { "will-change": "" } }, "disabledWhen": "no-hero-full-viewport" }' data-anim-tween-3='{ "start": "css(--hero-scroll-distance)", "event": "vo-focus", "disabledWhen": "no-hero-full-viewport" }' data-component-list="FocusComponent" data-focus-options='{ "tabindex": "-1", "keyframeEvent": "vo-focus", "disabledWhen": "no-hero-full-viewport" }'>预告模型 <br class="small"/>QwQ-32B为襄阳职业技术学院拥抱强化学习的AI力量<br>预计2025年夏季上线公测</p>
+            
+</div>
         </section>
         <section class="section section-educators stories-section" data-anim-scroll-group="Section -
 Educators" data-analytics-section-engagement="name:educators">
