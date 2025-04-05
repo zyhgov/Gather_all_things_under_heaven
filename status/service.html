@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 新增关键SEO元数据 -->
+    <meta name="description" content="实时监控ZYHORG.AC.CN服务器集群状态，查看全球节点运行情况、网络吞吐量、安全事件报告及硬件健康指标。提供7×24小时不间断监控服务，由联合库UNHub和杖雍皓信息技术中心提供技术支持。">
+    <meta name="keywords" content="服务器监控,云服务器状态,网络吞吐量监控,服务器健康指标,实时日志分析,数据中心安全">
+    
+    <!-- Open Graph 社交分享优化 -->
+    <meta property="og:title" content="ZYHORG.AC.CN 服务器集群实时监控系统 | 联合库UNHub官方运维平台">
+    <meta property="og:image" content="https://zyhorg.ac.cn/status/og-image.jpg">
+    <meta property="og:description" content="可视化监控NVIDIA A100服务器集群的实时运行状态，包含CPU/GPU温度、全球节点延迟、网络安全事件等关键指标">
+    
+    <!-- 结构化数据标记 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MonitoringSystem",
+        "name": "ZYHORG服务器集群监控系统",
+        "operatingSystem": "Linux",
+        "description": "基于Web的分布式服务器监控解决方案",
+        "mainEntity": {
+            "@type": "DataCatalog",
+            "dataset": [
+                {
+                    "@type": "Dataset",
+                    "name": "实时节点状态",
+                    "keywords": "CPU使用率,内存占用,节点延迟"
+                },
+                {
+                    "@type": "Dataset",
+                    "name": "安全事件日志",
+                    "temporalCoverage": "2023-08-01/.."
+                }
+            ]
+        }
+    }
+    </script>
+
+    <title>ZYHORG 源服务器集群实时监控 | 全球节点状态・硬件健康指标・安全事件报告</title>
+    <link rel="preload" href="https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com/font/JetBrainsMono-2.304/fonts/webfonts/JetBrainsMono-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com/status/status.css">
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "pnjcz18od3");
+    </script>
+</head>
+<body>
+    <canvas id="matrix-canvas"></canvas>
+    <div class="panel">
+        <div class="panel-header">
+            
+            <h2 class="panel-title">ZYHORG.AC.CN 源服务器集群监控系统 v25.4.5</h2>
+            <div class="pulse" style="color: var(--primary);">● 杖雍皓信息技术中心提供支持</div>
+        </div>
+        <div>网站服务器使用 NVIDIA A100 系列，域名服务由阿里云提供，安全防御由 Microsoft、Cloudflare 提供专线支持。 网站运行时间: <span id="uptime">正在计算...</span></div>
+    </div>
+    <div class="dashboard">
+        <!-- 左侧节点面板 -->
+        <div class="panel">
+            <div class="panel-header">
+                <h2 class="panel-title">全球节点集群</h2>
+                <div class="pulse" style="color: var(--primary);">● 在线</div>
+            </div>
+            <div class="node-grid" id="nodeGrid"></div>
+        </div>
+
+        <!-- 中间日志面板 -->
+        <div class="panel">
+            <div class="panel-header">
+                <h2 class="panel-title">全球实时访问与反向代理日志</h2>
+                <div class="pulse" style="color: var(--secondary);">▼ 4.8Gbps</div>
+            </div>
+            <div class="log-container" id="logContainer"></div>
+        </div>
+
+        <!-- 右侧系统指标 -->
+        <div class="panel">
+            <div class="panel-header">
+                <h2 class="panel-title">系统指标</h2>
+                <div class="pulse" style="color: var(--alert);">▲ 警告</div>
+            </div>
+            <div id="systemMetrics">
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <span>CPU 负载</span>
+                        <span class="metric-value" id="cpuMetric">0%</span>
+                    </div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" id="cpuBar"></div>
+                    </div>
+                </div>
+                
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <span>内存使用</span>
+                        <span class="metric-value" id="memMetric">0%</span>
+                    </div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" id="memBar"></div>
+                    </div>
+                </div>
+
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <span>网络吞吐</span>
+                        <span class="metric-value" id="netMetric">0 Mbps</span>
+                    </div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" id="netBar"></div>
+                    </div>
+                </div>
+            
+                <!-- 新增指标 -->
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <span>CPU 温度</span>
+                        <span class="metric-value" id="cpuTemp">0°C</span>
+                    </div>
+                    <div class="temperature-bar">
+                        <div class="metric-fill" id="cpuTempBar"></div>
+                    </div>
+                </div>
+            
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <span>GPU 温度</span>
+                        <span class="metric-value" id="gpuTemp">0°C</span>
+                    </div>
+                    <div class="temperature-bar">
+                        <div class="metric-fill" id="gpuTempBar"></div>
+                    </div>
+                </div>
+            
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <span>主板电压</span>
+                        <span class="metric-value voltage-value" id="voltage">0V</span>
+                    </div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" id="voltageBar"></div>
+                    </div>
+                </div>
+            
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <span>当前带宽</span>
+                        <span class="metric-value" id="bandwidth">0 Gbps</span>
+                    </div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" id="bandwidthBar"></div>
+                    </div>
+                </div>
+            
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <span>丢包率</span>
+                        <span class="metric-value" id="packetLoss">0%</span>
+                    </div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" id="packetLossBar"></div>
+                    </div>
+                </div>
+            
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <span>并发连接</span>
+                        <span class="metric-value" id="connections">0</span>
+                    </div>
+                    <div class="metric-bar">
+                        <div class="metric-fill" id="connectionsBar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <!-- 在原有代码最后一行前添加以下内容 -->
+        <div class="panel">
+            <div class="panel-header">
+                <h2 class="panel-title">网站网络全局安全事件报告</h2>
+                <div class="pulse" style="color: var(--secondary);">● 过去一段时间</div>
+            </div>
+            <div id="securityTimeline" class="security-timeline"></div>
+        </div>
+    
+<p class="info">联合库UNHub 杖雍皓信息技术中心提供支持</p>
+<script src="https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com/status/status.js"></script>
+<!-- <script src="/status/status.js"></script> -->
+</body>
+</html>
