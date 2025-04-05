@@ -306,6 +306,12 @@
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/status/service.html</loc>
+      <lastmod>2025-04-05</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+   </url>
    
    <!-- 继续添加更多页面 -->
 </urlset>
