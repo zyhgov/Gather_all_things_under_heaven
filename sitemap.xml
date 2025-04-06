@@ -312,6 +312,42 @@
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/2025/faq/relationship.html</loc>
+      <lastmod>2025-04-06</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/2025/faq/code.html</loc>
+      <lastmod>2025-04-06</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/2025/faq/server.html</loc>
+      <lastmod>2025-04-06</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/2025/faq/vpn.html</loc>
+      <lastmod>2025-04-06</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/2025/faq/contact.html</loc>
+      <lastmod>2025-04-06</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/2025/faq/help.html</loc>
+      <lastmod>2025-04-06</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+   </url>
    
    <!-- 继续添加更多页面 -->
 </urlset>
