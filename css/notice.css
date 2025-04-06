@@ -1,0 +1,61 @@
+.system-notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(90%, 400px);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
+    color: #1d1d1f;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+.close-button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.close-button::before,
+.close-button::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 1.5px;
+    background: #424245;
+    left: 50%;
+    top: 50%;
+}
+
+.close-button::before { transform: translate(-50%, -50%) rotate(45deg); }
+.close-button::after { transform: translate(-50%, -50%) rotate(-45deg); }
+
+.notification-content {
+    margin: 16px 8px;
+    font-size: 0.93em;
+    line-height: 1.4;
+}
+
+.notification-title {
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 2em;
+    color: #1d1d1f;
+}
+
+.notification-text {
+    color: #424245;
+    margin-bottom: 4px;
+    font-size: 1.2em;
+}
