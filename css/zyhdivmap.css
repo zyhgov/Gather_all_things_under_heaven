@@ -1,10 +1,19 @@
+@font-face {
+    font-family: 'MiSans';
+    src: url('/font/MiSans-Medium.woff2') format('woff2');
+    /* src: url('/asset/new_website_assets/font/PingFang.woff2') format('woff2'); */
+    font-weight: 500; /* 根据字体实际权重调整 */
+    font-style: normal;
+    font-display: swap; /* 避免布局抖动 */
+  }
+
 .rounded-box {
     border-radius: 20px;
     background-color: #f5f5f7;
-    margin: 5px auto;
+    margin: 10px auto;
     padding: 5px;
     width: 100%;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     display: flex; /* 使用Flexbox布局 */
     flex-direction: column; /* 初始为垂直排列 */
@@ -13,23 +22,26 @@
 .rounded-iframe {
     border-radius: 20px;
     background-color: #f5f5f7;
-    margin: 5px auto;
+    margin: 10px auto;
     padding: 5px;
     width: 100%;
     height: 220px;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     display: flex; /* 使用Flexbox布局 */
     flex-direction: column; /* 初始为垂直排列 */
     align-items: center; /* 水平居中对齐 */
 }
 
 .rounded-box h1 {
-    font-size: 2em;
+    font-size: 3em;
     color: #1d1d1f;
     letter-spacing: 2px;
     display: flex; /* 使h1标签内的元素并排显示 */
     align-items: center; /* 垂直居中对齐 */
+    font-family: 'MiSans';
+    font-weight: bold;
 }
+
 
 .current {
     width: 4%;
@@ -39,7 +51,7 @@
 
 iframe {
     width: 100%;
-    height: 500px;
+    height: 600px;
     border: none;
     border-radius: 20px;
 }
@@ -49,9 +61,10 @@ iframe {
         width: 90%;
     }
     .rounded-iframe {
-        width: 90%;
+        display: none;
     }
     .current {
         width: 10%;
     }
+    
 }
