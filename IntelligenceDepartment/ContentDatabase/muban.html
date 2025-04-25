@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在恐霸客户差事与机动作战任务中累积双倍奖励</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.staticfile.net/echarts/5.4.3/echarts.min.js"></script>
+    <link rel="stylesheet" href="/IntelligenceDepartment/ContentDatabase/buju.css">
+</head>
+<body class="bg-white">
+    <!-- 粘性导航栏 -->
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-neutral-200 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <img src="/IntelligenceDepartment/logo_unhub_02.png" alt="Logo" class="h-14">
+            <div class="relative">
+                <button class="header-search-trigger" type="button" onclick="toggleSearch()">
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="/IntelligenceDepartment/id/搜索2.svg">
+                        <img class="h-10 w-30" src="/IntelligenceDepartment/id/搜索.svg" alt="搜索">
+                    </picture>
+                </button>
+                <div class="search-box" id="header-search">
+                    <form class="flex gap-2" action="" method="get" >
+                        <input class="border rounded-lg px-4 py-2 w-64" name="q" type="text" placeholder="站点内搜索">
+                        <button class="bg-black text-white px-4 py-2 rounded-lg" type="submit">搜索</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容容器 -->
+    <main class="max-w-3xl mx-auto px-4 py-8 mt-4" style="margin-top: 80px;">
+        <!-- 标题区域 -->
+        <h1 class="text-5xl font-semibold mb-6 leading-tight">在恐霸客户差事与机动作战任务中累积双倍奖励</h1>
+        
+        <!-- 元信息 -->
+        <div class="flex items-center text-gray-600 mb-8">
+            <span class="mr-4">来源：Rockstar Games</span>
+            <span class="mr-4">2024年4月24日</span>
+            <div class="flex space-x-2">
+                <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">Rockstar Games</span>
+                <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">GTA在线模式</span>
+                <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">活动</span>
+            </div>
+        </div>
+
+        <!-- 正文内容 -->
+        <article class="prose lg:prose-xl">
+            <!-- 一级标题 -->
+            <h2 class="text-3xl font-semibold mt-8 mb-4">第一部分：行业背景</h2>
+            
+            <!-- 正文段落 -->
+            <p class="mb-6 leading-relaxed">近年来，随着人工智能技术的快速发展，全球科技行业正在经历前所未有的变革。各大科技企业持续加大研发投入，推动技术创新...</p>
+
+            <!-- 二级标题 -->
+            <h3 class="text-2xl font-medium mt-6 mb-4">技术细节分析</h3>
+            
+            <!-- 引用内容 -->
+            <blockquote class="border-l-4 border-gray-300 pl-4 text-gray-600 my-6 rounded-r-lg">
+                “技术创新是企业发展的核心动力，我们需要持续投入基础研究领域。”——某科技公司CEO
+            </blockquote>
+
+            <!-- 图片 -->
+            <div class="my-8">
+                <div class="image-container relative" onclick="toggleImage(this)">
+                    <img src="/unhub.jpg" alt="示例图片" class="rounded-xl shadow-lg w-full">
+                </div>
+                <p class="text-sm text-gray-500 mt-2" style="margin-left: 20px;">图1：最新科技产品展示图</p>
+                <div class="close-button" onclick="closeImage()"></div>
+            </div>
+
+            <!-- 三级标题 -->
+            <h4 class="text-xl font-medium mt-6 mb-4">具体实施方案</h4>
+
+            <!-- 视频 -->
+            <div class="my-8">
+                <video src="/asset/MP4/405078372-1-208.mp4" controls autoplay muted class="w-full rounded-xl shadow-lg"></video>
+                <p class="text-sm text-gray-500 mt-2" style="margin-left: 20px;">视频1：产品功能演示视频</p>
+            </div>
+
+            <!-- 表格 -->
+            <div class="my-8 overflow-x-auto rounded-xl shadow-lg">
+                <table class="min-w-full divide-y divide-gray-200 table-hover">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-sm font-medium text-gray-500">年份</th>
+                            <th class="px-6 py-3 text-left text-sm font-medium text-gray-500">研发投入</th>
+                            <th class="px-6 py-3 text-left text-sm font-medium text-gray-500">专利数量</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4 whitespace-nowrap">2022</td>
+                            <td class="px-6 py-4">$120亿</td>
+                            <td class="px-6 py-4">1500</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="px-6 py-4">2023</td>
+                            <td class="px-6 py-4">$150亿</td>
+                            <td class="px-6 py-4">1800</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="text-sm text-gray-500 mt-2" style="margin-left: 20px;">表格1：最新科技产品展示图</p>
+            </div>
+
+            <!-- 图表容器 -->
+            <div class="my-8 rounded-xl shadow-lg overflow-hidden">
+                <div id="chart" class="h-96 w-full"></div>
+                <p class="text-sm text-gray-500 px-4 pb-2" style="margin-left: 20px;">图表1：年度研发投入趋势图</p>
+            </div>
+        </article>
+    </main>
+
+    <!-- 底部信息 -->
+    <footer class="bg-gray-50 mt-12 py-8">
+        <div class="max-w-6xl mx-auto px-4 text-gray-600">
+            <div class="flex justify-between items-center">
+                <div class="space-y-2">
+                    <p class="text-sm">© 2025 联合库UNHub 情报本厅</p>
+                    <p class="text-sm">联系方式: info@zyhorg.cn</p>
+                </div>
+                <img src="/IntelligenceDepartment/logo_unhub_02.png" alt="Logo" class="h-12 opacity-90">
+            </div>
+        </div>
+    </footer>
+
+<script src="/IntelligenceDepartment/ContentDatabase/yiban.js"></script>
+<script src="/IntelligenceDepartment/ContentDatabase/tu.js"></script>
+</body>
+</html>

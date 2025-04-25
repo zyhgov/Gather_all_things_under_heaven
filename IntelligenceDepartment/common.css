@@ -1,0 +1,633 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap");
+
+/* =====================================
+	normalize
+===================================== */
+:root {
+	--color-black: #000000;
+	--color-gray-dark: #040505;
+	--color-gray: #a7a7a7;
+	--color-white: #ffffff;
+	--color-blue: #00489e;
+	--color-purple-vivid: #630099;
+	/* --color-purple: #21093c; */
+	--color-purple: #3a001e;
+	--color-purple-light: #d2cdd8;/* 20% */
+	--color-purple-light-x: #f4f3f6;
+	--color-red: #b60000;
+	--weight-normal: 400;
+	--weight-bold: 700;
+	--inner-padding: max(calc(50% - 480px), 24px);
+	--inner-padding-large: max(calc(50% - 600px), 24px);
+}
+
+/* all */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* html */
+html {
+	font-size: 62.5%;
+}
+
+/* body */
+body {
+	text-align: left;
+	overflow-wrap: break-word;
+	color: var(--color-black);
+	background-color: var(--color-white);
+	font-family: "Noto Sans JP", sans-serif;
+	font-optical-sizing: auto;
+	font-size: 1.6rem;
+	font-weight: var(--weight-normal);
+	line-height: 1.875;
+	-webkit-text-size-adjust: 100%;
+}
+
+/* heading-2 */
+h2:not(.initial) {
+	clear: both;
+	margin: 2.25em 0 1em 0;
+	font-family: "Noto Serif JP", serif;
+	font-size: 3.6rem;
+	font-weight: var(--weight-bold);
+	line-height: 1.4375;
+}
+h2:not(.initial) + * {
+	margin-top: 0 !important;
+}
+
+/* heading-3 */
+h3 {
+	clear: both;
+	margin: 1.75em 0 0.5em 0;
+	font-family: "Noto Serif JP", serif;
+	font-size: 2.8rem;
+	font-weight: var(--weight-bold);
+	line-height: 1.4375;
+}
+h3 + * {
+	margin-top: 0 !important;
+}
+
+/* heading-4 */
+h4 {
+	clear: both;
+	margin: 1.5em 0 0.5em 0;
+	font-family: "Noto Serif JP", serif;
+	font-size: 2.0rem;
+	font-weight: var(--weight-bold);
+}
+h4 + * {
+	margin-top: 0 !important;
+}
+
+/* p */
+p:empty {
+	min-height: 1.875em;
+}
+
+/* list */
+ol,
+ul {
+	padding-left: 2em;
+}
+ul > li::marker {
+	color: var(--color-purple);
+}
+
+/* link */
+a {
+	text-decoration: underline;
+	color: var(--color-blue);
+
+	text-underline-offset: 0.375em;
+}
+a:has(img) {
+	display: inline-block;
+}
+a:visited {
+	color: var(--color-purple-vivid);
+}
+@media (hover: hover) {
+	a:hover {
+		text-decoration: none;
+	}
+}
+
+/* link icon */
+a[target="_blank"]:not(:has(img)):not(:has(.link-icon))::after
+a[target="_blank"] .link-icon::after {
+	margin-left: 8px;
+	content: url("https://www.mod.go.jp/dih/ico_link_blank_01.svg");
+}
+a[href*=".pdf"]:not(:has(img)):not(:has(.link-icon))::after,
+a[href*=".pdf"] .link-icon::after {
+	margin-left: 8px;
+	content: url("https://www.mod.go.jp/dih/ico_link_pdf_01.svg");
+}
+a[href*=".doc"]:not(:has(img)):not(:has(.link-icon))::after,
+a[href*=".doc"] .link-icon::after {
+	margin-left: 8px;
+	content: url("https://www.mod.go.jp/dih/ico_link_word_01.svg");
+}
+a[href*=".xls"]:not(:has(img)):not(:has(.link-icon))::after,
+a[href*=".xls"] .link-icon::after {
+	margin-left: 8px;
+	content: url("https://www.mod.go.jp/dih/ico_link_excel_01.svg");
+}
+a[href*=".ppt"]:not(:has(img)):not(:has(.link-icon))::after,
+a[href*=".ppt"] .link-icon::after {
+	margin-left: 8px;
+	content: url("https://www.mod.go.jp/dih/ico_link_power-point_01.svg");
+}
+a[href*=".zip"]:not(:has(img)):not(:has(.link-icon))::after,
+a[href*=".zip"] .link-icon::after {
+	margin-left: 8px;
+	content: url("https://www.mod.go.jp/dih/ico_link_zip_01.svg");
+}
+
+/* img */
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+
+/* table */
+table:not(.search-result table) {
+	width: 100%;
+	margin: 1.875em 0;
+	border-spacing: 0;
+	border-collapse: collapse;
+	border-top: 1px solid var(--color-purple-light);
+	font-size: 1.4rem;
+}
+caption {
+	text-align: left;
+}
+thead {
+	background-color: var(--color-purple-light-x);
+}
+:where(td, th):not(.search-result td) {
+	min-height: calc(1.875em + 30px);
+	padding: 15px;
+	text-align: left;
+	vertical-align: top;
+	border-bottom: 1px solid var(--color-purple-light);
+}
+thead > tr > th {
+	white-space: nowrap;
+}
+:where(td, th) > :first-child {
+	margin-top: 0;
+}
+:where(td, th) > :last-child {
+	margin-bottom: 0;
+}
+
+/* table-scroll */
+.table-scroll-text {
+	font-size: 1.2rem;
+}
+.table-scroll-wrap {
+	position: relative;
+	overflow-x: auto;
+	margin: 1.875em 0;
+}
+.table-scroll-wrap > .table-scroll {
+	margin: 0;
+}
+@media (max-width: 1023px) {
+	.table-scroll-text + .table-scroll-wrap {
+		margin-top: 0;
+	}
+	.table-scroll-wrap--shadow {
+		box-shadow: inset -10px 0 10px -10px rgba(0, 0, 0, 0.1);
+	}
+	.table-scroll-wrap > .table-scroll {
+		width: 960px;
+	}
+}
+@media (min-width: 1024px) {
+	.table-scroll-text {
+		display: none;
+	}
+}
+
+/* form */
+input,
+button,
+select,
+textarea {
+	margin: 0;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+button:not(:disabled),
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled) {
+	cursor: pointer;
+}
+
+/* iframe */
+iframe {
+	border: 0;
+}
+iframe[src*=maps] {
+	aspect-ratio: 3 / 2;
+	width: 100%;
+	height: 100%;
+}
+
+
+/* =====================================
+	mt
+===================================== */
+.mt-image-left {
+	float: left;
+	margin: 0 20px 20px 0;
+}
+.mt-image-center {
+	display: block;
+	margin: 0 auto 20px;
+	text-align: center;
+}
+.mt-image-right {
+	float: right;
+	margin: 0 0 20px 20px;
+}
+@media (max-width: 1023px) {
+	.mt-image-left,
+	.mt-image-right {
+		display: block;
+		float: none !important;
+		margin: 0 auto 20px !important;
+		text-align: center;
+	}
+}
+@media (min-width: 1024px) {
+	.mt-image-left,
+	.mt-image-right {
+		max-width: 50%;
+	}
+}
+
+
+/* =====================================
+	box
+===================================== */
+.box {
+	margin: 1.875em 0;
+	border: 1px solid var(--color-purple-light);
+}
+.box__heading {
+	margin: 20px 0;
+	font-family: "Noto Serif JP", serif;
+	font-size: 2.6rem;
+	font-weight: var(--weight-bold);
+}
+.box > .box__heading:first-child {
+	margin-top: -10px !important;
+}
+.box__heading + * {
+	margin-top: 0 !important;
+}
+.box > :first-child {
+	margin-top: 0 !important;
+}
+.box > :last-child {
+	margin-bottom: 0 !important;
+}
+@media (max-width: 1023px) {
+	.box {
+		padding: 40px 20px;
+	}
+}
+@media (min-width: 1024px) {
+	.box {
+		padding: 40px;
+	}
+}
+
+/* =====================================
+	list
+===================================== */
+/* list-link */
+.list-link {
+	display: grid;
+	gap: 0 30px;
+	margin: 40px 0;
+	padding: 0;
+	list-style: none;
+	font-weight: var(--weight-bold);
+}
+.list-link > li {
+	margin-top: -1px;
+	border-top: 1px solid var(--color-purple-light);
+	border-bottom: 1px solid var(--color-purple-light);
+}
+.list-link > li > a {
+	display: grid;
+	align-items: center;
+	height: 100%;
+	text-decoration: none;
+	color: inherit !important;
+	background: no-repeat url("https://www.mod.go.jp/dih/ico_circle-arrow_purple_right_01.svg");
+	transition: background-color 0.3s, background-image 0.3s;
+}
+@media (max-width: 1023px) {
+	.list-link > li > a {
+    	padding: 30px 74px 30px 20px;
+		background-position: right 20px center;
+	}
+}
+@media (min-width: 1024px) {
+	.list-link {
+		grid-template-columns: 1fr 1fr;
+	}
+	.list-link > li > a {
+		padding: 30px 94px 30px 30px;
+		background-position: right 30px center;
+	}
+}
+@media (hover: hover) {
+	.list-link > li > a:hover {
+		background-image: url("https://www.mod.go.jp/dih/ico_circle-arrow_purple-fill_right_01.svg");
+		background-color: var(--color-purple-light-x);
+	}
+}
+
+/* list-link-large */
+.list-link-large {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	border-top: 1px solid rgba(255, 255, 255, 0.3);
+	font-family: "Noto Serif JP", serif;
+	font-weight: var(--weight-bold);
+}
+.list-link-large > li {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.list-link-large > li > a {
+	display: block;
+	text-decoration: none;
+	color: inherit !important;
+	background: no-repeat url("https://www.mod.go.jp/dih/ico_circle-arrow-large_white_right_01.svg");
+	transition: background-color 0.3s, background-image 0.3s;
+}
+@media (max-width: 1023px) {
+	.list-link-large {
+		font-size: 2.4rem;
+	}
+	.list-link-large > li > a {
+		padding: 52px 100px 52px 20px;
+		background-position: right 20px center;
+	}
+}
+@media (min-width: 1024px) {
+	.list-link-large {
+		font-size: 3.4rem;
+	}
+	.list-link-large > li > a {
+		padding: 43px 120px 43px 30px;
+		background-position: right 30px center;
+	}
+}
+@media (hover: hover) {
+	.list-link-large > li > a:hover {
+		background-color: rgba(255, 255, 255, 0.05);
+		background-image: url("https://www.mod.go.jp/dih/ico_circle-arrow-large_white-fill_right_01.svg");
+	}
+}
+
+/* list-katakana */
+.list-katakana {
+	list-style: none;
+
+	counter-reset: custom-counter;
+}
+.list-katakana > li {
+	position: relative;
+
+	counter-increment: custom-counter;
+}
+.list-katakana > li::before {
+	position: absolute;
+	left: -2em;
+	content: counter(custom-counter, katakana);
+}
+
+/* list-parenthesized-katakana */
+.list-parenthesized-katakana {
+	list-style: none;
+
+	counter-reset: custom-counter;
+}
+.list-parenthesized-katakana > li {
+	position: relative;
+
+	counter-increment: custom-counter;
+}
+.list-parenthesized-katakana > li::before {
+	position: absolute;
+	left: -2em;
+	content: "(" counter(custom-counter, katakana) ")";
+}
+
+/* list-pamphlet */
+.list-pamphlet {
+	margin: 40px 0;
+	padding: 0;
+	list-style: none;
+	border-top: 1px solid var(--color-purple-light);
+}
+.list-pamphlet__item {
+	border-bottom: 1px solid var(--color-purple-light);
+}
+.list-pamphlet__link {
+	display: grid;
+	gap: 0 30px;
+	text-decoration: none;
+	color: inherit !important;
+	background: no-repeat url("https://www.mod.go.jp/dih/ico_circle-arrow-large_purple_right_01.svg");
+	transition: background-color 0.3s, background-image 0.3s;
+}
+.list-pamphlet__image {
+	grid-row: 1 / 3;
+	object-fit: contain;
+	width: 234px;
+	margin: auto;
+	aspect-ratio: 234 / 166;
+}
+.list-pamphlet__heading {
+	align-self: end;
+	font-weight: bold;
+}
+@media (max-width: 1023px) {
+	.list-pamphlet__heading {
+		margin-top: 20px;
+	}
+	.list-pamphlet__link {
+		padding: 45px 100px 45px 20px;
+		background-position: right 20px center;
+	}
+}
+@media (min-width: 1024px) {
+	.list-pamphlet__link {
+		grid-template-columns: auto 1fr;
+		padding: 45px 120px 45px 30px;
+		background-position: right 30px center;
+	}
+}
+@media (hover: hover) {
+	.list-pamphlet__link:hover {
+		background-image: url("https://www.mod.go.jp/dih/ico_circle-arrow-large_purple-fill_right_01.svg");
+		background-color: var(--color-purple-light-x);
+	}
+}
+
+/* list-news */
+.list-news {
+	display: grid;
+	margin: 40px 0;
+	padding: 0;
+	list-style: none;
+}
+.list-news__item {
+	display: flex;
+	gap: 5px 30px;
+	align-items: center;
+}
+.list-news__date {
+	width: 8em;
+}
+.list-news__category {
+	width: 10.0rem;
+	text-align: center;
+	border: 1px solid var(--color-black);
+	font-size: 1.4rem;
+	line-height: 1.6428;
+}
+.list-news__link {
+	width: 100%;
+	padding: 2px 0;
+	text-decoration: none;
+	background: no-repeat url("https://www.mod.go.jp/dih/ico_circle-arrow_purple_right_01.svg") right center;
+	transition: background-image 0.3s;
+}
+@media (max-width: 1023px) {
+	.list-news {
+		gap: 38px;
+	}
+	.list-news__item {
+		flex-wrap: wrap;
+	}
+	.list-news__date {
+		font-size: 1.4rem;
+	}
+	.list-news__link {
+		padding-right: 56px;
+	}
+}
+@media (min-width: 1024px) {
+	.list-news {
+		gap: 18px;
+	}
+	.list-news__link {
+		flex: 1;
+		padding-right: 66px;
+	}
+}
+@media (hover: hover) {
+	.list-news__link:hover {
+		text-decoration: underline;
+	}
+}
+
+/* list-update */
+.list-update {
+	display: grid;
+	margin: 40px 0;
+	padding: 0;
+	list-style: none;
+}
+.list-update__item {
+	display: flex;
+	gap: 5px 15px;
+}
+.list-update__date {
+	width: 8em;
+}
+.list-update__heading {
+	width: 100%;
+}
+@media (max-width: 1023px) {
+	.list-update {
+		gap: 20px;
+	}
+	.list-update__item {
+		flex-wrap: wrap;
+	}
+}
+@media (min-width: 1024px) {
+	.list-update {
+		gap: 10px;
+	}
+	.list-update__heading {
+		flex: 1;
+	}
+}
+
+
+/* =====================================
+	link
+===================================== */
+.link-arrow {
+	color: inherit !important;
+	font-weight: var(--weight-bold);
+}
+.link-arrow::after {
+	margin-left: 8px;
+	content: url("https://www.mod.go.jp/dih/ico_arrow_purple_right_01.svg");
+	vertical-align: middle;
+}
+.link-arrow--white::after {
+	content: url("https://www.mod.go.jp/dih/ico_arrow_white_right_01.svg");
+}
+
+
+/* =====================================
+	utility
+===================================== */
+/* color */
+.color-caution {
+	color: var(--color-red);
+}
+
+/* clearfix */
+.clearfix::after {
+	display: block;
+	clear: both;
+	content: "";
+}
+
+/* visually-hidden */
+.visually-hidden {
+	position: absolute !important;
+	overflow: hidden !important;
+	clip: rect(0, 0, 0, 0) !important;
+	width: 1px !important;
+	height: 1px !important;
+	margin: -1px !important;
+	padding: 0 !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+}

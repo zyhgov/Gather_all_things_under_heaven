@@ -1,0 +1,442 @@
+:root {
+    --intel-primary: #1a365d;
+    --intel-secondary: #2c5282;
+    --intel-accent: #c53030;
+    --intel-text: #2d3748;
+    --card-bg: rgba(255, 255, 255, 0.95);
+}
+
+body {
+    font-family: 'SF Pro Text', -apple-system, system-ui;
+    background: linear-gradient(15deg, #f7fafc 0%, #edf2f7 100%);
+    min-height: 100vh;
+    margin: 0;
+    color: var(--intel-text);
+}
+
+.intel-header {
+    background: var(--intel-primary);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.intel-brand {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.intel-logo {
+    width: 200px;
+    height: 60px;
+    margin-right: 1.5rem;
+    object-fit: contain;
+}
+
+.intel-title {
+    color: white;
+    font: 500 1.5rem/1.2 'SF Pro Display';
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.intel-title small {
+    display: block;
+    font-size: 0.8em;
+    opacity: 0.9;
+    margin-top: 0.3em;
+}
+
+.theme-switcher {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 0.8rem;
+}
+
+.theme-switcher button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.theme-switcher button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.intel-search-box {
+position: relative; /* 新增此行 */
+max-width: 800px;
+margin: 3rem auto;
+padding: 0 1rem;
+}
+
+.intel-search-input {
+    width: 100%;
+    padding: 1.2rem 2rem;
+    border: 2px solid var(--intel-secondary);
+    border-radius: 50px;
+    font-size: 1.1rem;
+    background: var(--card-bg);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s;
+}
+
+.intel-search-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+.intel-search-btn {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--intel-accent);
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.intel-search-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-50%) scale(0.98);
+}
+
+.search-results {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.intel-document-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap; /* 允许小屏幕自动换行 */
+    align-items: flex-start;
+    gap: 1.5rem; /* 左右间距 */
+    padding: 1.5rem;
+}
+
+.intel-document-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.document-title {
+    font-size: 1.6rem;
+    margin: 0 0 0.8rem;
+    color: var(--intel-primary);
+}
+
+.document-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: var(--intel-secondary);
+    margin-bottom: 1rem;
+}
+
+.document-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.document-tag {
+    background: rgba(197, 48, 48, 0.1);
+    color: var(--intel-accent);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+}
+
+.document-abstract {
+    line-height: 1.6;
+    margin: 1rem 0;
+}
+
+.intel-marker {
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+
+.no-results {
+    text-align: center;
+    padding: 3rem;
+    color: var(--intel-secondary);
+    font-size: 2.5rem;
+    margin-bottom: 200px;
+}
+
+.highlight {
+    background-color: rgba(255, 235, 59, 0.3);
+    padding: 0 0.2em;
+    border-radius: 0.2em;
+}
+
+.search-suggestions {
+position: absolute;
+width: 100%; /* 与搜索框同宽 */
+max-width: 1000px; /* 与搜索框最大宽度一致 */
+background: white;
+border-radius: 0 0 15px 15px;
+box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+z-index: 100;
+top: 100%; /* 紧贴搜索框底部 */
+/* left: 0; */
+margin-top: 0.5rem; /* 与搜索框保持微小间距 */
+display: none;
+}
+
+.suggestion-item {
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.suggestion-item:hover {
+    background: #f8f9fa;
+    transform: translateX(5px);
+}
+
+.suggestion-title {
+    font-weight: 600;
+    color: var(--intel-primary);
+}
+
+.suggestion-tags {
+    margin-top: 0.5rem;
+    opacity: 0.8;
+}
+
+.search-stats {
+    text-align: center;
+    color: var(--intel-secondary);
+    margin: 2rem 0;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 2rem 0;
+}
+
+.page-item {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--intel-secondary);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.page-item.active {
+    background: var(--intel-accent);
+    color: white;
+    border-color: var(--intel-accent);
+}
+.sort-controls {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    align-items: center;
+}
+
+.sort-select {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--intel-secondary);
+    border-radius: 20px;
+    background: var(--card-bg);
+    cursor: pointer;
+}
+
+.result-image {
+flex: 0 0 300px; /* 固定宽度 */
+height: 200px; /* 保持原有高度 */
+object-fit: cover;
+border-radius: 12px;
+}
+/* 右侧内容容器 */
+.card-content-wrapper {
+flex: 1;
+min-width: 300px; /* 防止过窄 */
+}
+
+/* 标题区域调整 */
+.title-section {
+margin-bottom: 1rem;
+}
+
+/* 元数据间距调整 */
+.document-meta {
+margin-bottom: 0.5rem;
+}
+
+/* 摘要内容间距 */
+.document-abstract {
+margin: 1rem 0 0;
+}
+
+/* 响应式处理 */
+@media (max-width: 768px) {
+.intel-document-card {
+    flex-direction: column;
+}
+.result-image {
+    width: 100%;
+    height: 250px;
+}
+}
+/* 新增响应式样式 */
+@media (max-width: 768px) {
+.intel-title, .theme-switcher {
+display: none !important;
+}
+
+.intel-brand {
+justify-content: center;
+padding: 10px 0;
+}
+
+.intel-logo {
+margin-right: 0;
+width: 180px;
+height: 50px;
+}
+
+.intel-search-box {
+/* margin: 1.5rem auto; */
+padding: 0 15px;
+margin-top: 20px;
+margin-left: 20px;
+margin-right: 20px;
+max-width: 300px;
+}
+
+.intel-search-input {
+padding: 1rem 1.5rem;
+font-size: 1rem;
+}
+
+.intel-document-card {
+flex-direction: column;
+padding: 1rem;
+}
+
+.result-image {
+width: 100%;
+height: 200px;
+flex: none;
+}
+}
+
+/* 新增底部样式 */
+.intel-footer {
+background: var(--intel-primary);
+color: rgba(255,255,255,0.8);
+padding: 2rem 1rem;
+margin-top: 3rem;
+}
+
+.footer-content {
+max-width: 1200px;
+margin: 0 auto;
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+gap: 2rem;
+}
+
+.footer-section {
+flex: 1;
+min-width: 250px;
+padding: 1rem;
+}
+
+.footer-section h4 {
+color: var(--intel-accent);
+margin-bottom: 1rem;
+font-size: 1.1rem;
+}
+
+@media (max-width: 600px) {
+.footer-content {
+flex-direction: column;
+text-align: center;
+}
+
+.footer-section {
+padding: 1rem 0;
+border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+}
+
+/* 优化现有元素的响应式 */
+@media (max-width: 480px) {
+.intel-search-btn {
+position: relative;
+width: 100%;
+top: auto;
+transform: none;
+margin-top: 1rem;
+display: none;
+}
+
+.document-title {
+font-size: 1.3rem;
+}
+
+.document-meta {
+flex-direction: column;
+align-items: flex-start;
+gap: 0.5rem;
+}
+}
+/* 防止移动端点击延迟 */
+@media (hover: none) {
+button, .document-card {
+touch-action: manipulation;
+}
+}
+
+/* 优化折叠状态下的间距 */
+@media (max-width: 480px) {
+.intel-header {
+padding: 1rem;
+}
+
+.search-results {
+margin: 1rem auto;
+}
+}
+.title-link {
+color: var(--intel-primary);
+text-decoration: none;
+transition: color 0.2s;
+}
+
+.title-link:hover {
+color: var(--intel-accent);
+text-decoration: underline;
+}

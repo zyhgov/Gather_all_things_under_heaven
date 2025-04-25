@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'MiSans';
+    src: url('/font/MiSans-Semibold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+body {
+    font-family: 'MiSans', system-ui, -apple-system, sans-serif;
+}
+.image-container {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.image-container.fullscreen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    max-width: 90vw;
+    max-height: 90vh;
+    background: #f4f2f3;
+    padding: 8px;
+    border-radius: 12px;
+}
+.close-button {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1001;
+}
+.close-button::before,
+.close-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    background: #000;
+}
+.close-button::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.close-button::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.search-box {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: #e8e8ed;
+    padding: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.search-box.active {
+    display: block;
+}
+.table-hover tr:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+h1 h2{
+    color:#1d1d1f;
+}
+p{
+    color: #1d1d1f;
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻详情 - 联合库UNHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .image-zoomed {
+            @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+                   z-[1001] cursor-zoom-out shadow-2xl bg-white p-2;
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+    </style>
+</head>
+<body class="bg-neutral-50 text-neutral-900">
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-neutral-200 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center">
+            <img src="/IntelligenceDepartment/logo_unhub_01.png" 
+                 class="h-10 mr-4" 
+                 alt="UNHub Logo">
+        </div>
+    </nav>
+
+    <!-- 正文内容 -->
+    <main class="max-w-3xl mx-auto px-4 pt-24 pb-12">
+        <!-- 标题区 -->
+        <header class="mb-12">
+            <h1 class="text-4xl font-semibold text-neutral-900 mb-6">
+                量子加密通信网络正式投入商用
+            </h1>
+            <div class="flex items-center text-sm text-neutral-500 space-x-6 mb-4">
+                <span>来源：信息安全前沿</span>
+                <span>发布日期：2024-03-09</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+                    量子密钥
+                </span>
+                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+                    城域网络
+                </span>
+                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
+                    信息安全
+                </span>
+            </div>
+        </header>
+
+        <!-- 正文内容 -->
+        <article class="prose lg:prose-lg max-w-none">
+            <!-- 一级标题 -->
+            <h2 class="text-2xl font-semibold mt-12 mb-6">技术实现突破</h2>
+            
+            <!-- 段落 -->
+            <p class="text-neutral-700 leading-relaxed mb-6">
+                我国科学家在量子通信领域取得重大进展...
+            </p>
+
+            <!-- 图片 -->
+            <img src="/unhub.jpg" 
+                 class="w-full rounded-xl shadow-lg cursor-zoom-in transition-all"
+                 onclick="toggleZoom(this)">
+
+            <!-- 二级标题 -->
+            <h3 class="text-xl font-medium mt-12 mb-4 text-neutral-600">核心技术创新</h3>
+            
+            <!-- 引用 -->
+            <blockquote class="border-l-4 border-blue-500 bg-neutral-50 px-6 py-4 my-6 text-neutral-600">
+                量子密钥分发技术实现单光子级别加密传输
+            </blockquote>
+
+            <!-- 三级标题 -->
+            <h4 class="text-lg font-medium mt-8 mb-3 text-neutral-500">技术细节</h4>
+
+            <!-- 视频 -->
+            <div class="my-8 rounded-xl overflow-hidden shadow-lg">
+                <video controls autoplay muted loop class="w-full">
+                    <source src="/asset/MP4/405078372-1-208.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <!-- 表格 -->
+            <table class="w-full my-8 border-collapse">
+                <thead class="bg-neutral-50">
+                    <tr>
+                        <th class="px-4 py-3 text-left border-b border-neutral-200">指标</th>
+                        <th class="px-4 py-3 text-left border-b border-neutral-200">传统加密</th>
+                        <th class="px-4 py-3 text-left border-b border-neutral-200">量子加密</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="hover:bg-neutral-50">
+                        <td class="px-4 py-3 border-b border-neutral-200">破解难度</td>
+                        <td class="px-4 py-3 border-b border-neutral-200">可破解</td>
+                        <td class="px-4 py-3 border-b border-neutral-200">理论上不可破解</td>
+                    </tr>
+                    <tr class="hover:bg-neutral-50">
+                        <td class="px-4 py-3">传输速率</td>
+                        <td class="px-4 py-3">1.2Gbps</td>
+                        <td class="px-4 py-3">800Mbps</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- 自定义柱状图 -->
+            <div class="my-12 p-6 bg-white rounded-xl shadow-lg">
+                <h2 class="text-xl font-semibold mb-6">技术应用增长趋势</h2>
+                <div id="barChart" class="flex items-end h-64 gap-4 border-b border-neutral-200 pb-4">
+                    <!-- 通过JavaScript动态生成 -->
+                </div>
+                <div class="flex justify-between mt-4 text-neutral-500 text-sm">
+                    <span>2021</span>
+                    <span>2022</span>
+                    <span>2023</span>
+                    <span>2024</span>
+                    <span>2025</span>
+                    <span>2026</span>
+                    <span>2027</span>
+                    <span>2028</span>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        // 图片缩放功能
+        function toggleZoom(img) {
+            img.classList.toggle('image-zoomed')
+            document.body.style.overflow = img.classList.contains('image-zoomed') ? 'hidden' : ''
+        }
+
+        // 生成柱状图
+        const chartData = [
+            { year: '2021', value: 35 },
+            { year: '2022', value: 60 },
+            { year: '2023', value: 85 },
+            { year: '2024', value: 120 },
+            { year: '2025', value: 10 },
+            { year: '2026', value: 20 },
+            { year: '2027', value: 80 },
+            { year: '2028', value: 20 }
+        ]
+
+        function createBar(value, max) {
+            const bar = document.createElement('div')
+            bar.className = 'flex-1 bg-neutral-800 hover:bg-neutral-900 transition-all rounded-t'
+            bar.style.height = `${(value / max) * 100}%`
+            bar.innerHTML = `
+                <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-neutral-900 text-white px-3 py-1 rounded-lg 
+                            text-sm opacity-0 transition-opacity pointer-events-none" data-value>
+                    ${value}
+                </div>
+            `
+            bar.addEventListener('mouseover', () => {
+                bar.querySelector('[data-value]').classList.add('opacity-100')
+            })
+            bar.addEventListener('mouseout', () => {
+                bar.querySelector('[data-value]').classList.remove('opacity-100')
+            })
+            return bar
+        }
+
+        // 初始化图表
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('barChart')
+            const maxValue = Math.max(...chartData.map(d => d.value))
+            
+            chartData.forEach(data => {
+                container.appendChild(createBar(data.value, maxValue))
+            })
+        })
+    </script>
+</body>
+</html>

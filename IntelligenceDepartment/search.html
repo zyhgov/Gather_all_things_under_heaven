@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="intel-theme">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>情报本厅 | 联合库UNHub 智能检索系统</title>
+    <link rel="preload" href="/font/MiSans-Semibold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="./font.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./search.css">
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "url": "https://zyhorg.ac.cn/IntelligenceDepartment/centre.html",
+        "logo": "https://zyhorg.ac.cn/IntelligenceDepartment/apple-touch-icon.png",
+        "name": "情報本部",
+        "telephone": "+81-3-3268-3111"
+        }
+        </script>
+        <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "TOP",
+        "item": "https://zyhorg.ac.cn/IntelligenceDepartment/centre.html"
+        }]
+        }
+    </script>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "pnjcz18od3");
+    </script>
+    <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+    <script>LA.init({id:"Kg8KQJs3VUpgJFYj",ck:"Kg8KQJs3VUpgJFYj",autoTrack:true,hashMode:true,screenRecord:true})</script>
+</head>
+<body>
+    <header class="intel-header">
+        <div class="intel-brand">
+            <a href="/IntelligenceDepartment/centre.html" target="_blank">
+            <img src="/IntelligenceDepartment/logo_unhub_01.png" alt="UNHub" class="intel-logo">
+            </a>
+            <h1 class="intel-title">
+                最新信息来自情报本厅
+                <small>联合库UNHub 机密级检索系统</small>
+            </h1>
+        </div>
+        <div class="theme-switcher">
+            <button onclick="toggleTheme('day')">日间模式</button>
+            <button onclick="toggleTheme('night')">夜间模式</button>
+        </div>
+    </header>
+
+    <form class="intel-search-box" action="search.html" method="get">
+        <input type="text" 
+               name="q" 
+               id="searchInput"
+               class="intel-search-input"
+               placeholder="输入加密检索指令..."
+               autocomplete="off"
+               value="">
+        <button type="submit" class="intel-search-btn">搜索本站</button>
+        <div class="search-suggestions" id="searchSuggestions" style="display:none"></div>
+    </form>
+    
+
+    <div id="searchResults" class="search-results">
+        <div class="sort-controls">
+            <span>排序方式：</span>
+            <select class="sort-select" id="sortOrder" onchange="updateSort()">
+                <option value="relevance">相关性排序</option>
+                <option value="date_asc">时间升序</option>
+                <option value="date_desc">时间降序</option>
+            </select>
+        </div>
+    </div>
+    <!-- 在<body>末尾添加底部信息 -->
+<footer class="intel-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>关于我们</h4>
+            <p>联合库UNHub 机密级检索系统</p>
+            <p>最新信息来自情报本厅</p>
+        </div>
+        <div class="footer-section">
+            <h4>联系我们</h4>
+            <p>服务热线：188 3361 3517</p>
+            <p>电子邮箱：info@zyhorg.cn</p>
+        </div>
+        <div class="footer-section">
+            <h4>法律声明</h4>
+            <p>© 2025 UNHub 版权所有</p>
+            <p><script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src="https://v6-widget.51.la/v6/Kg8KQJs3VUpgJFYj/quote.js?theme=0&f=12&display=1,0,0,0,0,0,0,1"></script></p>
+        </div>
+    </div>
+</footer>
+    <script src="./search.js"></script>
+</body>
+
+</html>
