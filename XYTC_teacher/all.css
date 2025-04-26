@@ -1,0 +1,114 @@
+@font-face {
+    font-family: 'MiSans';
+    src: url('./font/PingFangSC-Semibold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+:root {
+    --text-primary: #1d1d1f;
+    --text-secondary: #e8e8ed;
+    --text-bg: #f5f5f7;
+    --button-primary: #0071e3;
+    --xytc-loding:#00817f;
+}
+
+body {
+    font-family: 'MiSans', system-ui, -apple-system, sans-serif;
+    color: var(--text-primary);
+    position: relative;
+    min-height: 100vh;
+}
+
+  footer {
+    position: relative; /* 确保页脚在背景之上 */
+    background: white; /* 给页脚添加背景色 */
+  }
+.card-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.nav-link {
+    color: var(--text-primary);
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--button-primary);
+}
+    /* 新增高亮样式 */
+mark {
+    background-color: #f0fff0;  /* 浅绿色背景 */
+    padding: 0 2px;
+    border-radius: 3px;
+    color: inherit;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+/* 加载动画 */
+@keyframes floating {
+    0% { transform: translateY(0px); opacity: 1; }
+    50% { transform: translateY(-20px); opacity: 0.5; }
+    100% { transform: translateY(0px); opacity: 1; }
+}
+
+@keyframes gradientRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#loadingOverlay {
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(8px);
+    transition: opacity 0.3s ease;
+}
+
+.loader-container {
+    perspective: 1000px;
+}
+
+.gradient-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: conic-gradient(
+        var(--xytc-loding) 0%,
+        rgba(0, 227, 159, 0.2) 25%,
+        rgba(0, 227, 132, 0.1) 50%,
+        rgba(0, 227, 189, 0.05) 75%,
+        transparent 100%
+    );
+    animation: gradientRotate 1.6s linear infinite;
+    position: relative;
+}
+
+.gradient-circle::after {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 113, 227, 0.1);
+}
+
+.loading-text {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--xytc-loding);
+    letter-spacing: 0.05em;
+    position: relative;
+}
+
+.loading-text::after {
+    content: '...';
+    display: inline-block;
+    width: 1.2em;
+    text-align: left;
+    animation: dots 1.5s infinite;
+}
+
+/* 在现有CSS代码末尾添加 */

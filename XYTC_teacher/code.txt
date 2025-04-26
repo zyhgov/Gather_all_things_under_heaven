@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>襄阳职业技术学院师资队伍</title>
+    <meta name="description" content="襄阳职业技术学院医学院王伟教授的个人主页，临床医学教授、博士生导师，学科带头人，国家级教材主编。主持国家自然科学基金项目3项，在《新英格兰医学杂志》发表SCI论文23篇。">
+    <meta name="keywords" content="襄阳职业技术学院,医学院教授,临床医学专家,博士生导师,学科带头人,王伟,医学教育,科研项目">
+    <meta name="author" content="襄阳职业技术学院信息中心">
+    <!-- Open Graph 协议 -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="王伟教授 - 襄阳职业技术学院医学院临床医学系主任">
+    <meta property="og:description" content="临床医学教授、博士生导师，国家级教材主编，主持国家自然科学基金项目3项，累计科研经费超800万元">
+    <meta property="og:image" content="https://zyhorg.ac.cn/XYTC_teacher/img/teachers/yulongbao.jpg">
+    <meta property="og:url" content="https://zyhorg.ac.cn/XYTC_teacher/teacher_info/ceshi.html">
+    <meta property="og:site_name" content="襄阳职业技术学院">
+    <!-- 规范链接 -->
+    <link rel="canonical" href="https://www.xyvtc.edu.cn/teachers/wangwei.html">
+    <!-- 网站图标 -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="../font/PingFangSC-Semibold.woff2" as="font" type="font/woff2" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./all.css">
+</head>
+<body class="bg-[var(--text-secondary)]">
+    <!-- 在body开头添加加载状态 -->
+    <div id="loadingOverlay" class="fixed inset-0 z-[9999] flex flex-col items-center justify-center">
+        <div class="loader-container relative mb-4">
+            <div class="gradient-circle"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+                <img src="./img/绿色透明格式.png" alt="" class="w-12 h-12">
+            </div>
+        </div>
+        <div class="loading-text font-medium">教师数据加载中</div>
+    </div>
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-neutral-200 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <img src="./img/绿色全部透明格式.png" alt="校徽" class="h-12 w-auto">
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="nav-link">首页</a>
+                    <a href="#" class="nav-link">学院概况</a>
+                    <a href="#" class="nav-link">师资队伍</a>
+                    <a href="#" class="nav-link">联系我们</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主体内容 -->
+    <main class="pt-24 pb-12 max-w-7xl mx-auto px-4">
+        <!-- 搜索区域 -->
+        <div class="mb-8">
+            <div class="flex gap-2">
+                <input id="searchInput" type="text" placeholder="搜索教师..." 
+                       class="flex-1 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--button-primary)]">
+                <button onclick="filterTeachers()" class="px-6 py-3 bg-[var(--button-primary)] text-white rounded-lg hover:bg-[#0077ed]">
+                    搜索
+                </button>
+                <button id="advancedToggle" class="px-4 py-2 border rounded-lg hover:bg-gray-50">
+                    高级搜索
+                </button>
+            </div>
+            
+            <!-- 高级搜索 -->
+            <div id="advancedSearch" class="mt-4 hidden bg-white p-4 rounded-lg shadow-sm">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <select id="collegeSelect" class="border rounded p-2">
+                        <option value="">所有学院</option>
+                        <option>医学院</option>
+                        <option>师范学院</option>
+                        <option>信息技术学院</option>
+                    </select>
+                    <select id="departmentSelect" class="border rounded p-2">
+                        <option value="">所有行政单位</option>
+                        <option>教务处</option>
+                        <option>学生处</option>
+                        <option>科研处</option>
+                    </select>
+                    <select id="genderSelect" class="border rounded p-2">
+                        <option value="">所有性别</option>
+                        <option>男</option>
+                        <option>女</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- 搜索结果统计 -->
+            <div class="mt-8 font-bold text-sm text-gray-500">
+                找到约 <span id="resultCount" class="text-[var(--button-primary)]">0</span> 条结果（用时 <span id="searchTime" class="text-[var(--button-primary)]">0.00</span> 秒）
+            </div>
+        </div>
+
+        <!-- 教师卡片容器 -->
+        <div id="teacherContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"></div>
+
+        <!-- 分页 -->
+<!-- 分页区域 -->
+
+<div class="flex flex-col md:flex-row justify-center items-center gap-4 mt-20">
+    <!-- 基础分页控件 -->
+    <div class="flex items-center gap-2">
+        <button 
+            id="prevPage" 
+            class="px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100 
+                   disabled:opacity-50 disabled:hover:bg-white"
+        >
+            ← 上一页
+        </button>
+        
+        <div class="flex items-center gap-1">
+            <input 
+                id="pageInput" 
+                type="number" 
+                min="1" 
+                class="w-16 px-2 py-1 text-center border rounded 
+                       focus:outline-none focus:ring-2 focus:ring-[var(--button-primary)]"
+            >
+            <span>/</span>
+            <span id="totalPages" class="px-2 py-1">1</span>
+        </div>
+
+        <button 
+            id="nextPage" 
+            class="px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100 
+                   disabled:opacity-50 disabled:hover:bg-white"
+        >
+            下一页 →
+        </button>
+    </div>
+
+    <!-- 快速跳转 -->
+    <div class="flex items-center gap-2">
+        <button 
+            id="jumpButton" 
+            class="px-4 py-2 bg-[var(--button-primary)] text-white rounded-full 
+                   hover:bg-[#0077ed] focus:outline-none"
+        >
+            跳转
+        </button>
+    </div>
+</div>
+    </main>
+<!-- 在页脚上方添加消息提示区域 -->
+<div id="toastContainer" class="fixed bottom-8 right-8 space-y-4 hidden"></div>
+    <!-- 底部 -->
+    <footer class="bg-white border-t mt-12">
+        <div class="max-w-7xl mx-auto px-4 py-6 text-center text-gray-500">
+            <p>襄阳职业技术学院 © 2023 版权所有</p>
+            <p>地址：湖北省襄阳市襄城区隆中路18号</p>
+        </div>
+    </footer>
+
+    <script>
+// 全局配置
+const CONFIG = {
+    pageSize: 12,
+    jsonPath: './teacher.json',
+    defaultAvatar: './img/teachers/default.jpg'
+};
+
+// 全局状态
+const STATE = {
+    currentPage: 1,
+    teachers: [],
+    filteredTeachers: [],
+    isLoading: false,
+    isError: false
+};
+
+// 页面初始化
+async function initialize() {
+    try {
+        showLoading();
+        await loadTeachers();
+        setupEventListeners();
+        
+        // 处理URL参数
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchQuery = urlParams.get('q') || '';
+        document.getElementById('searchInput').value = searchQuery;
+        
+        filterTeachers(true);
+    } catch (error) {
+        handleLoadError(error);
+    } finally {
+        hideLoading();
+    }
+}
+
+// 数据加载
+async function loadTeachers() {
+    try {
+        const response = await fetch(CONFIG.jsonPath);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        
+        // 数据校验
+        if (!data?.teachers?.length) throw new Error('教师数据为空');
+        
+        STATE.teachers = data.teachers.map(teacher => ({
+            ...teacher,
+            avatar: teacher.avatar || CONFIG.defaultAvatar
+        }));
+        
+    } catch (error) {
+        console.error('数据加载失败:', error);
+        throw error;
+    }
+}
+
+// 事件监听器设置
+function setupEventListeners() {
+    // 搜索输入防抖
+    let timeout;
+    const searchInput = document.getElementById('searchInput');
+    
+    // 输入防抖
+    searchInput.addEventListener('input', () => {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => filterTeachers(true), 300);
+    });
+
+    // 回车搜索
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            filterTeachers(true);
+        }
+    });
+
+    // 高级搜索切换
+    document.getElementById('advancedToggle').addEventListener('click', () => {
+        const advSearch = document.getElementById('advancedSearch');
+        advSearch.classList.toggle('hidden');
+    });
+
+    // 高级筛选
+    document.querySelectorAll('#advancedSearch select').forEach(select => {
+        select.addEventListener('change', () => filterTeachers(true));
+    });
+
+    // 分页控制
+    setupPaginationControls();
+}
+
+// 分页控制逻辑
+function setupPaginationControls() {
+    document.getElementById('prevPage').addEventListener('click', () => {
+        if (STATE.currentPage > 1) {
+            STATE.currentPage--;
+            filterTeachers(false);
+        }
+    });
+
+    document.getElementById('nextPage').addEventListener('click', () => {
+        const totalPages = Math.ceil(STATE.filteredTeachers.length / CONFIG.pageSize);
+        if (STATE.currentPage < totalPages) {
+            STATE.currentPage++;
+            filterTeachers(false);
+        }
+    });
+
+    document.getElementById('jumpButton').addEventListener('click', () => {
+        handlePageJump();
+    });
+
+    document.getElementById('pageInput').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') handlePageJump();
+    });
+
+    document.getElementById('pageInput').addEventListener('input', (e) => {
+        e.target.value = e.target.value.replace(/[^0-9]/g, '');
+    });
+}
+
+// 分页跳转处理
+function handlePageJump() {
+    const pageInput = document.getElementById('pageInput');
+    const pageNumber = parseInt(pageInput.value, 10);
+    const totalPages = Math.ceil(STATE.filteredTeachers.length / CONFIG.pageSize);
+    
+    if (pageNumber >= 1 && pageNumber <= totalPages) {
+        STATE.currentPage = pageNumber;
+        filterTeachers(false);
+    } else {
+        pageInput.value = STATE.currentPage;
+        showToast(`请输入1-${totalPages}之间的页码`, 'warning');
+    }
+}
+
+// 搜索过滤逻辑
+function filterTeachers(resetPage = true) {
+    if (STATE.isError) return;
+
+    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+    const college = document.getElementById('collegeSelect').value;
+    const department = document.getElementById('departmentSelect').value;
+    const gender = document.getElementById('genderSelect').value;
+
+    const startTime = performance.now();
+    
+    // 过滤逻辑
+    STATE.filteredTeachers = STATE.teachers.filter(teacher => {
+        const nameMatch = teacher.name.toLowerCase().includes(searchTerm);
+        const introMatch = teacher.intro.toLowerCase().includes(searchTerm);
+        return (nameMatch || introMatch) &&
+            (!college || teacher.college === college) &&
+            (!department || teacher.department === department) &&
+            (!gender || teacher.gender === gender);
+    });
+
+    // 更新统计
+    document.getElementById('resultCount').textContent = STATE.filteredTeachers.length;
+    document.getElementById('searchTime').textContent = 
+        (performance.now() - startTime).toFixed(2);
+
+    // 重置分页
+    if (resetPage) {
+        STATE.currentPage = 1;
+        document.getElementById('pageInput').value = 1;
+    }
+
+    updatePagination();
+    renderTeachers();
+}
+
+// 分页状态更新
+function updatePagination() {
+    const totalPages = Math.ceil(STATE.filteredTeachers.length / CONFIG.pageSize);
+    document.getElementById('totalPages').textContent = totalPages;
+    document.getElementById('pageInput').value = STATE.currentPage;
+    
+    document.getElementById('prevPage').disabled = STATE.currentPage === 1;
+    document.getElementById('nextPage').disabled = STATE.currentPage === totalPages;
+}
+
+// 渲染教师卡片
+function renderTeachers() {
+    const container = document.getElementById('teacherContainer');
+    const start = (STATE.currentPage - 1) * CONFIG.pageSize;
+    const end = start + CONFIG.pageSize;
+    const teachersToShow = STATE.filteredTeachers.slice(start, end);
+    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+    if (!teachersToShow.length) {
+        container.innerHTML = `
+            <div class="col-span-full text-center py-12">
+                <div class="text-gray-400 text-2xl mb-4">🔍 没有找到匹配的教师</div>
+                <button onclick="clearSearch()" 
+                    class="px-4 py-2 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 transition-colors">
+                    ✕ 清除搜索条件
+                </button>
+            </div>`;
+        return;
+    }
+
+    container.innerHTML = teachersToShow.map(teacher => `
+        <div class="bg-white rounded-xl shadow-md p-4 relative card-hover">
+            <div class="aspect-[3/4] overflow-hidden rounded-lg mb-4 bg-gray-100">
+                <img src="${teacher.avatar}" 
+                     loading="lazy"
+                     class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                     alt="${teacher.name}照片">
+            </div>
+            <h3 class="text-xl font-bold mb-2">${highlightText(teacher.name, searchTerm)}</h3>
+            <div class="text-sm text-gray-500 mb-2">
+                <span>${teacher.department}</span> | 
+                <span>${teacher.college}</span>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-3">
+                ${teacher.tags.map(tag => `
+                    <span class="px-2 py-1 bg-blue-50 text-blue-600 text-xs rounded-full">
+                        ${tag}
+                    </span>
+                `).join('')}
+            </div>
+            <p class="text-sm text-gray-600 line-clamp-3 mb-4">
+                ${highlightText(teacher.intro, searchTerm)}
+            </p>
+            <a href="${teacher.link}" 
+               class="inline-block w-full text-center py-2 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 transition-colors">
+               查看详情 →
+            </a>
+        </div>
+    `).join('');
+}
+
+// 工具函数
+function highlightText(text, term) {
+    return term ? text.replace(new RegExp(term, 'gi'), '<mark>$&</mark>') : text;
+}
+
+function clearSearch() {
+    document.getElementById('searchInput').value = '';
+    document.getElementById('collegeSelect').value = '';
+    document.getElementById('departmentSelect').value = '';
+    document.getElementById('genderSelect').value = '';
+    filterTeachers(true);
+}
+
+// 全局搜索联动
+function handleGlobalSearch() {
+    const searchInput = document.getElementById('globalSearch');
+    const keyword = searchInput.value.trim();
+    if (keyword) {
+        window.location.href = `all.html?q=${encodeURIComponent(keyword)}`;
+    }
+}
+
+// 加载状态管理
+function showLoading() {
+    document.getElementById('loadingOverlay').classList.remove('hidden');
+}
+
+function hideLoading() {
+    document.getElementById('loadingOverlay').classList.add('hidden');
+}
+
+// 错误处理
+function handleLoadError(error) {
+    STATE.isError = true;
+    document.getElementById('teacherContainer').innerHTML = `
+        <div class="col-span-full text-center py-12">
+            <div class="text-red-500 text-2xl mb-4">⚠️ 数据加载失败</div>
+            <div class="text-sm text-gray-400 mb-4">${error.message}</div>
+            <button onclick="window.location.reload()" 
+                    class="px-4 py-2 bg-red-100 text-red-500 rounded-lg hover:bg-red-200">
+                重新加载
+            </button>
+        </div>`;
+}
+
+// 消息提示
+function showToast(message, type = 'info') {
+    const toast = document.createElement('div');
+    toast.className = `px-4 py-2 rounded-lg ${{
+        success: 'bg-green-100 text-green-700',
+        error: 'bg-red-100 text-red-700',
+        info: 'bg-blue-100 text-blue-700'
+    }[type]}`;
+    toast.textContent = message;
+    
+    const container = document.getElementById('toastContainer');
+    container.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+}
+
+// 启动初始化
+document.addEventListener('DOMContentLoaded', initialize);
+    </script>
+</body>
+</html>
