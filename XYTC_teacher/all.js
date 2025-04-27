@@ -250,6 +250,9 @@ function renderTeachers() {
 
     container.innerHTML = teachersToShow.map(teacher => `
         <div class="bg-white rounded-xl shadow-md p-4 relative card-hover">
+            <div class="absolute right-5 top-5">
+                <img src="./img/白色透明格式.png" class="w-10 h-10">
+            </div>
             <div class="aspect-[3/4] overflow-hidden rounded-lg mb-4 bg-gray-100">
                 <img src="${teacher.avatar}" 
                      loading="lazy"
