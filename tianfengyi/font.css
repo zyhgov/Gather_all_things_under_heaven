@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'MiSans';
+    /* src: url('/font/MiSans-Medium.woff2') format('woff2'); */
+    src: url('/font/MiSans-Semibold.woff2') format('woff2');
+    font-weight: 500; /* 根据字体实际权重调整 */
+    font-style: normal;
+    font-display: swap; /* 避免布局抖动 */
+  }
+/* 全局强制覆盖 */
+html, body, *::before, *::after,
+div, span, p, h1, h2, h3, h4, h5, h6,
+ul, ol, li, a, button, input, textarea, select {
+  font-family: 'MiSans', sans-serif !important;
+}
+/* 保留图标字体 */
+.fa, .fas, .far, .fab, .fal, .fad {
+    font-family: 'Font Awesome 5 Free' !important;
+  }
