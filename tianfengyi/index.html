@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="bg-gray-50">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="田封义职务含权量计算器 | 联合库UNHub">
+  <meta property="og:site_name" content="田封义职务含权量计算器">
+  <meta property="og:title" content="田封义职务含权量计算器">
+  <meta property="og:type" content="tool">
+  <meta property="og:image" content="https://zyhorg.ac.cn/tianfengyi/tianfengyi.jpg">
+  <meta property="og:url" content="https://zyhorg.ac.cn/tianfengyi/index.html">
+  <meta property="og:description" content="田封义职务含权量计算器 | 联合库UNHub">
+  <title>田封义职务含权量计算器 | 联合库UNHub</title>
+  <!-- 新增SEO元数据 -->
+  <meta name="description" content="田封义职务含权量计算器，基于《我主沉浮》电视剧经典模型，提供精准的职场权力量化评估。输入模拟职务即可获得Q值计算结果，适用于公务员晋升分析、企业管理层竞争力评估">
+  <meta name="keywords" content="田封义模型,职务含权量,权力计算,Q值公式,职场竞争力评估">
+    <!-- 新增结构化数据 -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "田封义职务含权量计算器",
+        "operatingSystem": "所有平台",
+        "applicationCategory": "BusinessApplication",
+        "screenshot": "https://zyhorg.ac.cn/tianfengyi/tianfengyi.jpg",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "356"
+        }
+      }
+      </script>
+      <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "url": "https://zyhorg.ac.cn/tianfengyi/index.html",
+        "logo": "https://zyhorg.ac.cn/tianfengyi/tfy_logo.png",
+        "name": "田封义职务含权量计算器",
+        "telephone": "+86-188-3361-3517"
+        }
+        </script>
+  <link rel="preload" href="/font/MiSans-Semibold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="font.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.5/es5/tex-mml-chtml.js"></script>
+  <script type="78cf14a1283611b80e0f73ef-text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "pnjcz18od3");
+  </script>
+  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+  <script>LA.init({id:"Kg8KQJs3VUpgJFYj",ck:"Kg8KQJs3VUpgJFYj",autoTrack:true,hashMode:true,screenRecord:true})</script>
+  <style>
+    /* 添加断点控制 */
+    @media (max-width: 640px) {
+      .mathjax {
+        font-size: 0.8rem; /* 小屏幕公式缩放 */
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .glass-card {
+        backdrop-filter: blur(12px); /* 大屏增强玻璃效果 */
+      }
+    }
+    .gradient-text {
+      background: linear-gradient(to right, #2563eb, #3b82f6);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased min-h-screen">
+<!-- 添加汉堡菜单（移动端显示） -->
+<nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-neutral-200 z-50">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex items-center space-x-3">
+        <img src="./tfy_logo.png" 
+             alt="权力分析研究院" 
+             class="h-8 md:h-10 w-auto transition-opacity hover:opacity-80"
+             onerror="this.src='./logo.png'">
+        <div class="text-black-700 font-bold text-xl">田封义职务含权量计算器</div>
+      </div>
+      <!-- 汉堡菜单按钮 -->
+      <button id="menuBtn" class="md:hidden text-white p-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+        </svg>
+      </button>
+      <!-- 导航链接（桌面端显示） -->
+      <div id="navLinks" class="hidden md:flex space-x-4">
+        <a href="#theory" class="text-black hover:bg-blue-600 px-3 py-2 rounded">理论解析</a>
+        <a href="#calculator" class="text-black hover:bg-blue-600 px-3 py-2 rounded">计算器</a>
+        <a href="#cases" class="text-black hover:bg-blue-600 px-3 py-2 rounded">案例库</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+  <!-- 页面头部 -->
+  <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-12 mt-12">
+    <div class="container mx-auto px-4 text-center mt-12 mb-12">
+      <h1 class="text-white text-4xl md:text-5xl font-bold mb-4 gradient-text">田封义职务含权量计算器</h1>
+      <p class="text-xl md:text-2xl max-w-3xl mx-auto">"同样是正厅级岗位，经济部门的Q值可达行政岗位的2.3倍"</p>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 -mt-8 relative z-10">
+    <!-- 理论解析模块 -->
+    <section id="theory" class="mb-16">
+      <div class="bg-white glass-card rounded-xl shadow-xl p-8 mb-8">
+        <h2 class="text-3xl font-bold text-blue-700 mb-6">田封义理论基础解析</h2>
+        <div class="prose prose-blue max-w-none">
+          <p class="text-lg mb-6">田封义职务含权量（Q）模型是评估职场影响力的核心工具，其公式为：</p>
+          <div class="text-center my-8">
+            <p class="text-2xl mathjax">$$ Q = \frac{S（实际权力支配力） + C（财政支配力）}{Z（职级）} $$</p>
+          </div>
+          
+          <div class="grid md:grid-cols-3 gap-6 my-8">
+            <div class="bg-blue-50 p-4 rounded-lg">
+              <h3 class="font-bold text-blue-600 mb-2">权力维度(S)</h3>
+              <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                <li>重大决策参与权</li>
+                <li>人事任免决定权</li>
+                <li>资源调配主导权</li>
+              </ul>
+            </div>
+            <div class="bg-blue-50 p-4 rounded-lg">
+              <h3 class="font-bold text-blue-600 mb-2">财政维度(C)</h3>
+              <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                <li>预算审批权</li>
+                <li>资金分配权</li>
+                <li>项目投资决策权</li>
+              </ul>
+            </div>
+            <div class="bg-blue-50 p-4 rounded-lg">
+              <h3 class="font-bold text-blue-600 mb-2">职级维度(Z)</h3>
+              <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                <li>国家级（Z=5）</li>
+                <li>省级（Z=4）</li>
+                <li>厅局级（Z=3）</li>
+                <li>县处级（Z=2）</li>
+                <li>乡科级（Z=1）</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-8 p-6 bg-indigo-50 rounded-lg border-l-4 border-indigo-500">
+            <h3 class="font-bold text-indigo-700 mb-3">背景介绍</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li>• 剧中，文山市市长田封义根据自己在体制内混迹多年的经验，提出了官员职务含权量这一概念，并发明了职务含权量公式：Q（职务含权量）={S（实际权力支配力）+C（财政支配力）}／Z（职级）。</li>
+              <li>• S(实际权力支配力)‌：主要包括人事任命权和决策权。</li>
+              <li>• ‌C(财政支配力)‌：财政权力以及能够动员的资源。</li>
+              <li>• ‌Z(职级)‌：职级代表了一个职位在体制内的等级或层次。通常职级越高，权力越大。</li>
+              <li>• 职务含权量公式为分析官员的实际权力提供了一个量化工具，可以帮助理解不同职务之间的权力差异。理解这一概念有助于更好地分析权力运行机制。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  <!-- 人物介绍模块 -->
+  <section class="bg-white glass-card container mx-auto px-4 py-8 md:py-16">
+    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-center">
+      <!-- 左侧图片 -->
+      <div class="w-full md:w-1/3 lg:w-1/4">
+        <img src="./tianfengyi.jpg" 
+             alt="田封义剧照" 
+             class="w-full h-auto object-cover rounded-xl shadow-lg transition-transform"
+             onerror="this.src='./tianfengyi.jpg'">
+        <p class="mt-4 text-center text-gray-500 text-sm">电视剧《我主沉浮》田封义剧照</p>
+      </div>
+
+      <!-- 右侧介绍 -->
+      <div class="w-full md:w-2/3 lg:w-3/4 space-y-4">
+        <h2 class="text-2xl md:text-3xl font-bold gradient-text">职务含权量公式创始人：田封义</h2>
+        <div class="prose prose-lg text-gray-700">
+          <p class="text-base md:text-lg leading-relaxed">
+            <span class="bg-blue-100 px-2 py-1 rounded">田封义</span> 
+            是周梅森政治小说改编电视剧《我主沉浮》中的经典角色，由著名演员方舟波饰演。该角色曾任：
+          </p>
+          <ul class="list-disc pl-8 space-y-2 my-6 text-blue-800">
+            <li><span class="font-semibold">文山市委副书记兼市长</span>（Z=3，Q值约65）</li>
+            <li><span class="font-semibold">省作家协会党组书记</span>（Z=3，Q值骤降至28）</li>
+          </ul>
+          
+          <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+            <h3 class="font-bold text-blue-700 mb-3">权力计算的实践者</h3>
+            <p class="leading-relaxed">
+              通过精确计算职务含权量，田封义发现：
+              <span class="text-blue-600 font-semibold">"同样是正厅级岗位，经济部门的Q值可达行政岗位的2.3倍"</span>。
+              其发明的计算公式深刻揭示了中国政治生态中的权力运行规律，成为分析职务影响力的量化标尺。
+            </p>
+          </div>
+
+          <div class="mt-6 bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
+            <h3 class="font-bold text-red-700 mb-2">警示案例</h3>
+            <p class="text-sm leading-relaxed">
+              该角色最终因：
+              <span class="text-red-600">① 过度追求Q值最大化 
+              ② 忽视政治伦理建设 
+              ③ 错误预估权力博弈走向</span>
+              导致从实权岗位调任虚职，成为政治生态研究的典型案例。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- 计算器模块 -->
+    <section id="calculator" class="mb-12 md:mb-16">
+      <div class="bg-white glass-card rounded-xl shadow-xl p-4 md:p-8">
+        <h2 class="text-2xl md:text-3xl font-bold text-blue-700 mb-4 md:mb-6">职务含权量智能计算器</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- 左侧表单 -->
+          <div class="space-y-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">选择行政层级</label>
+              <select id="level-select" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                <option value="">请选择层级</option>
+                <option value="central">国家级正副职（中央）</option>
+                <option value="province">省部级正副职（省级）</option>
+                <option value="city">厅局级正副职（地市级）</option>
+                <option value="county">县处级正副职（县级）</option>
+                <option value="township">乡科级正副职（基层）</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">选择模拟职务</label>
+              <select id="position-select" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" disabled>
+                <option value="">请先选择层级</option>
+              </select>
+            </div>
+
+            <div id="position-desc" class="hidden p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+              <p id="desc-text" class="text-gray-700"></p>
+            </div>
+
+            <button onclick="calculateQ()" 
+                    id="calc-btn"
+                    disabled
+                    class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 disabled:opacity-50 disabled:cursor-not-allowed">
+              立即计算含权量
+            </button>
+          </div>
+
+          <!-- 右侧结果 -->
+          <div id="result-card" class="hidden p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl shadow-inner border border-blue-100">
+            <h3 class="text-xl font-bold text-blue-800 mb-4">当前职务计算结果</h3>
+            <div class="mathjax mb-6">
+              <p class="text-lg text-center mathjax">$$ Q = \frac{<span id="s-value"></span> + <span id="c-value"></span>}{<span id="z-value"></span>} = <span id="q-result" class="text-blue-600 font-bold"></span> $$</p>
+            </div>
+            <div class="space-y-4">
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <h4 class="font-semibold text-gray-800 mb-2">指标解析</h4>
+                <div class="grid grid-cols-3 gap-4 text-center">
+                  <div><div class="text-sm text-gray-500">权力值(S)</div><div id="s-detail" class="font-medium"></div></div>
+                  <div><div class="text-sm text-gray-500">财政值(C)</div><div id="c-detail" class="font-medium"></div></div>
+                  <div><div class="text-sm text-gray-500">职级(Z)</div><div id="z-detail" class="font-medium"></div></div>
+                </div>
+              </div>
+              <div id="analysis" class="text-gray-700 leading-relaxed"></div>
+              <div id="recommendation" class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500 text-yellow-800 text-sm"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- 横向对比模块 -->
+<section id="compare" class="mb-16">
+    <div class="bg-white glass-card rounded-xl shadow-xl p-8">
+      <h2 class="text-3xl font-bold text-blue-700 mb-6">多职位横向对比</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8 mb-6">
+        <!-- 职位1 -->
+        <div class="space-y-4">
+          <label class="block text-sm font-medium text-gray-700">选择职位1</label>
+          <div class="space-y-2">
+            <select id="compare-level1" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+              <option value="">请选择层级</option>
+              <option value="central">中央级</option>
+              <option value="province">省级</option>
+              <option value="city">地市级</option>
+              <option value="county">县级</option>
+              <option value="township">基层</option>
+            </select>
+            <select id="compare-position1" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+              <option value="">请选择职位</option>
+            </select>
+          </div>
+        </div>
+  
+        <!-- 职位2 -->
+        <div class="space-y-4">
+          <label class="block text-sm font-medium text-gray-700">选择职位2</label>
+          <div class="space-y-2">
+            <select id="compare-level2" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+              <option value="">请选择层级</option>
+              <option value="central">中央级</option>
+              <option value="province">省级</option>
+              <option value="city">地市级</option>
+              <option value="county">县级</option>
+              <option value="township">基层</option>
+            </select>
+            <select id="compare-position2" class="w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+              <option value="">请选择职位</option>
+            </select>
+          </div>
+        </div>
+      </div>
+  
+      <button onclick="comparePositions()" 
+              class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50">
+        开始对比
+      </button>
+  
+      <!-- 对比结果 -->
+      <div id="compare-result" class="mt-8 hidden">
+        <h3 class="text-xl font-semibold text-blue-800 mb-4">对比结果</h3>
+        
+        <!-- 表格 -->
+        <div class="overflow-x-auto">
+          <table class="min-w-full bg-white rounded-lg overflow-hidden shadow">
+            <thead class="bg-blue-100">
+              <tr>
+                <th class="py-3 px-6 text-left">维度</th>
+                <th id="compare-name1" class="py-3 px-6 text-center"></th>
+                <th id="compare-name2" class="py-3 px-6 text-center"></th>
+                <th class="py-3 px-6 text-center">差异分析</th>
+              </tr>
+            </thead>
+            <tbody id="compare-table-body" class="divide-y divide-gray-200">
+              <!-- 动态插入数据 -->
+            </tbody>
+          </table>
+        </div>
+  
+        <!-- 综合分析 -->
+        <div id="compare-analysis" class="mt-6 p-4 bg-indigo-50 rounded-lg border-l-4 border-indigo-500 text-indigo-800 text-sm hidden"></div>
+      </div>
+    </div>
+  </section>
+    <!-- 案例对比模块 -->
+    <section id="cases" class="mb-16">
+      <div class="bg-white glass-card rounded-xl shadow-xl p-8">
+        <h2 class="text-3xl font-bold text-blue-700 mb-8">田封义经典案例分析</h2>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- 案例1 -->
+          <div class="bg-gradient-to-br from-indigo-50 to-blue-50 p-6 rounded-xl border border-indigo-100">
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">央企副总 vs 省政府秘书长</h3>
+            <p class="text-gray-600 mb-4">同为正厅级岗位，权力结构差异显著</p>
+            <button onclick="presetCase('case1')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow transition duration-200">
+              立即对比
+            </button>
+          </div>
+          
+          <!-- 案例2 -->
+          <div class="bg-gradient-to-br from-indigo-50 to-blue-50 p-6 rounded-xl border border-indigo-100">
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">地市级市长 vs 省作协书记</h3>
+            <p class="text-gray-600 mb-4">同级不同权的典型代表</p>
+            <button onclick="presetCase('case2')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow transition duration-200">
+              立即对比
+            </button>
+          </div>
+        </div>
+
+        <!-- 对比结果 -->
+        <div id="case-result" class="mt-8 hidden">
+          <div class="overflow-x-auto">
+            <table class="min-w-full bg-white rounded-lg overflow-hidden shadow">
+              <thead class="bg-blue-100">
+                <tr>
+                  <th class="py-3 px-6 text-left">职务名称</th>
+                  <th class="py-3 px-6 text-center">S值</th>
+                  <th class="py-3 px-6 text-center">C值</th>
+                  <th class="py-3 px-6 text-center">Z值</th>
+                  <th class="py-3 px-6 text-center">Q值</th>
+                  <th class="py-3 px-6 text-center">影响力评级</th>
+                </tr>
+              </thead>
+              <tbody id="case-table-body" class="divide-y divide-gray-200">
+                <!-- 动态插入数据 -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 应用场景模块 -->
+    <section class="mb-16">
+      <div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-8 text-white">
+        <h2 class="text-3xl font-bold mb-6">职务含权量公式应用场景</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+            <div class="text-blue-200 text-4xl mb-4">📊</div>
+            <h3 class="text-xl font-semibold mb-2">职业规划</h3>
+            <p>比较不同岗位的含权量，选择最优发展路径</p>
+          </div>
+          <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+            <div class="text-blue-200 text-4xl mb-4">🚀</div>
+            <h3 class="text-xl font-semibold mb-2">晋升评估</h3>
+            <p>量化评估岗位价值，制定晋升策略</p>
+          </div>
+          <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+            <div class="text-blue-200 text-4xl mb-4">🔍</div>
+            <h3 class="text-xl font-semibold mb-2">组织优化</h3>
+            <p>分析权力结构，优化资源配置</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-4 text-center">
+      <p>© 2025 田封义职务含权量计算器 · 数据仅供参考 · 联合库UNHub与杖雍皓协同维护开发</p>
+      <p><script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src="https://v6-widget.51.la/v6/Kg8KQJs3VUpgJFYj/quote.js?theme=#1690FF,#F9FAFB,#F9FAFB,#F9FAFB,#FFFFFF,#1690FF,14&f=14&display=1,0,0,0,0,0,0,1"></script></p>
+    </div>
+  </footer>
+
+  <!-- 数据与逻辑脚本 -->
+   <script src="hb.js"></script>
+   <script src="data.js"></script>
+</body>
+</html>
