@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh-CN" itemscope itemtype="https://schema.org/Person">
+<head>
+    <!-- 基础元数据 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- 核心SEO优化 -->
+    <title>张永豪（杖雍皓） | 计算机科学和编程实践的不断学习者</title>
+    <meta name="description" content="全栈开发者与云原生专家，擅长Hadoop生态、Docker容器化及Vue.js开发，持有阿里云大数据认证和HarmonyOS高级认证，H-index指数12的持续技术学习者">
+    <meta name="keywords" content="全栈开发,云原生,Hadoop,Docker,Kubernetes,Vue.js,大数据认证,UNHub开发者">
+    
+    <!-- 结构化数据（Schema.org） -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "张永豪（杖雍皓）",
+        "url": "https://zyhorg.ac.cn/BiographicalNotes/ZhangYonghao.html",
+        "image": "./kenan.png",
+        "jobTitle": "全栈开发者与云原生专家",
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "襄阳职业技术学院",
+            "startDate": "2022-09",
+            "endDate": "2025-06"
+        },
+        "memberOf": {
+            "@type": "Organization",
+            "name": "UNHub开发者联盟"
+        },
+        "hasCredential": [
+            "阿里云大数据分析与应用职业技能证书",
+            "HarmonyOS鸿蒙OS高级认证"
+        ]
+    }
+    </script>
+    
+    <!-- 开放图谱协议 -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="张永豪（杖雍皓） | 全栈开发者与云原生专家">
+    <meta property="og:url" content="https://zyhorg.ac.cn/BiographicalNotes/ZhangYonghao.html">
+    <meta property="og:image" content="./kenan.png">
+    <meta property="og:description" content="大数据技术专家，阿里云认证开发者，UNHub联合建设者，持续探索分布式系统与云原生架构">
+    
+    <!-- 网站图标与资源预加载 -->
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preload" href="/font/MiSans-Semibold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="./font.css" media="print" onload="this.media='all'">
+    
+    <!-- 性能优化 -->
+    <script src="https://cdn.tailwindcss.com" async></script>
+    <link rel="canonical" href="https://zyhorg.ac.cn/BiographicalNotes/ZhangYonghao.html">
+    
+    <!-- 移动端增强 -->
+    <meta name="theme-color" content="#f5f5f7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+<body class="bg-[#f5f5f7] font-sans antialiased">
+    <!-- 粘滞导航栏 -->
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-neutral-200 z-50 mb-4">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center">
+            <div class="flex items-center space-x-2 mr-8">
+                <img src="/asset/icon_logo/hei_by_y_1.png" alt="icon_logo" width="50">
+            </div>
+            <div class="flex-1 flex items-center justify-between">
+                <div class="flex space-x-6">
+                    <a href="#information" class="text-gray-600 hover:text-blue-600 transition-colors font-medium">基本信息</a>
+                    <a href="#education" class="text-gray-600 hover:text-blue-600 transition-colors font-medium">教育经历</a>
+                    <a href="#certifications" class="text-gray-600 hover:text-blue-600 transition-colors font-medium">专业技术认证</a>
+                    <a href="#experience" class="text-gray-600 hover:text-blue-600 transition-colors font-medium">核心项目</a>
+                    <a href="#internship" class="text-gray-600 hover:text-blue-600 transition-colors font-medium">企业实践</a>
+                    <a href="#geography" class="text-gray-600 hover:text-blue-600 transition-colors font-medium">地理足迹</a>
+                    <a href="#article" class="text-gray-600 hover:text-blue-600 transition-colors font-medium">技术文章</a>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="https://zyhgov.cn" target="_blank" class="px-3 py-1 bg-gray-100 rounded-full text-sm hover:bg-gray-200">zyhgov</a>
+                    <a href="https://zyhorg.cn" target="_blank" class="px-3 py-1 bg-gray-100 rounded-full text-sm hover:bg-gray-200">zyhorg</a>
+                    <a href="https://zyhorg.ac.cn" target="_blank" class="px-3 py-1 bg-gray-100 rounded-full text-sm hover:bg-gray-200">zyhorg-ac</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主体布局 --><br>
+    <main class="max-w-6xl mx-auto px-4 py-8 lg:flex lg:gap-8 mt-12">
+        <!-- 侧边栏 -->
+        <aside class="lg:w-80 space-y-6 mb-8 lg:mb-0 lg:sticky lg:top-[72px] 
+        lg:h-[calc(100vh)]"> <!-- 调整高度计算值 -->
+            <!-- 个人资料卡 -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-50">
+                <div class="text-center">
+                    <img src="kenan.png" class="w-32 h-32 rounded-[32px] mx-auto mb-2 shadow-md">
+                    <p class="text-xs text-gray-400 mt-1">头像由ChatGPT生成</p><br>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex items-center group">
+                        <span class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-2">
+                            <span class="text-blue-600">📞</span>
+                        </span>
+                        <a href="tel:18833613517" class="text-gray-700 hover:text-blue-600">+86 188 3361 3517</a>
+                    </div>
+                    <div class="flex items-center group">
+                        <span class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-2">
+                            <span class="text-green-600">📧</span>
+                        </span>
+                        <div class="flex flex-col">
+                            <a href="mailto:info@zyhorg.cn" class="text-gray-700 hover:text-blue-600">info@zyhorg.cn</a>
+                            <a href="mailto:zyh040410@gmail.com" class="text-sm text-gray-500 hover:text-blue-500">Gmail</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center group">
+                        <span class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-2">
+                            <span class="text-purple-600">🌐</span>
+                        </span>
+                        <div class="flex flex-col">
+                            <a href="https://zyhorg.cn" target="_blank" class="text-gray-700 hover:text-blue-600">zyhorg.cn</a>
+                            <a href="https://zyhorg.ac.cn" target="_blank" class="text-gray-700 hover:text-blue-600">zyhorg.ac.cn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 技术栈看板 -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-50">
+                <h2 class="text-lg font-semibold mb-4">🔐 核心技术栈</h2>
+                <div class="space-y-4 max-h-[calc(100vh-320px)]"> <!-- 新增最大高度限制 -->
+                    <div>
+                        <h3 class="text-sm font-medium text-gray-900">编程语言与操作系统</h3>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Python</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Scala</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">HTML5</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">JavaScript</span>
+                            <span class="px-2 py-1 bg-sky-100 text-sky-800 rounded-full text-xs">Linux</span>
+                            <span class="px-2 py-1 bg-sky-100 text-sky-800 rounded-full text-xs">Windows/shell</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-medium text-gray-900">大数据架构</h3>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <span class="px-2 py-1 bg-red-100 text-red-800 rounded-full text-xs">Hadoop</span>
+                            <span class="px-2 py-1 bg-red-100 text-red-800 rounded-full text-xs">Spark</span>
+                            <span class="px-2 py-1 bg-red-100 text-red-800 rounded-full text-xs">Flink</span>
+                            <span class="px-2 py-1 bg-red-100 text-red-800 rounded-full text-xs">Flume</span>
+                            <span class="px-2 py-1 bg-red-100 text-red-800 rounded-full text-xs">Kafka</span>
+                            <span class="px-2 py-1 bg-red-100 text-red-800 rounded-full text-xs">HDFS</span>
+                            <span class="px-2 py-1 bg-red-100 text-red-800 rounded-full text-xs">HBase</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-medium text-gray-900">Web开发框架与数据库技术</h3>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <span class="px-2 py-1 bg-cyan-100 text-cyan-800 rounded-full text-xs">Vue.js</span>
+                            <span class="px-2 py-1 bg-cyan-100 text-cyan-800 rounded-full text-xs">Node.js</span>
+                            <span class="px-2 py-1 bg-cyan-100 text-cyan-800 rounded-full text-xs">Flask</span>
+                            <span class="px-2 py-1 bg-cyan-100 text-cyan-800 rounded-full text-xs">Django</span>
+                            <span class="px-2 py-1 bg-cyan-100 text-cyan-800 rounded-full text-xs">TailwindCss</span>
+                            <span class="px-2 py-1 bg-lime-100 text-lime-800 rounded-full text-xs">MySQL</span>
+                            <span class="px-2 py-1 bg-lime-100 text-lime-800 rounded-full text-xs">Redis</span>
+                            <span class="px-2 py-1 bg-lime-100 text-lime-800 rounded-full text-xs">MongoDB</span>
+                            <span class="px-2 py-1 bg-lime-100 text-lime-800 rounded-full text-xs">Supabase</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-medium text-gray-900">云原生架构与分布式版本控制</h3>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">Docker</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">K8s</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">Istio</span>
+                            <span class="px-2 py-1 bg-orange-100 text-orange-800 rounded-full text-xs">Git</span>
+                            <span class="px-2 py-1 bg-orange-100 text-orange-800 rounded-full text-xs">GitHub</span>
+                            <span class="px-2 py-1 bg-orange-100 text-orange-800 rounded-full text-xs">GitLab</span>
+                            <span class="px-2 py-1 bg-orange-100 text-orange-800 rounded-full text-xs">Gitee</span>
+                            <span class="px-2 py-1 bg-orange-100 text-orange-800 rounded-full text-xs">CI/CD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- 主内容区 -->
+        <div class="flex-1 lg:ml-8">
+            <section id="information" class="bg-white p-6 rounded-2xl shadow-sm mb-8">
+                <h2 class="text-2xl font-semibold mb-6 text-gray-800">🤔 基本信息</h2>
+                <div class="border-l-4 border-blue-200 pl-4">
+                    <h3 class="font-medium text-lg">张永豪（杖雍皓）</h3>
+                    <p class="text-sm text-gray-500 mt-1">计算机科学和编程实践的学习者，专注于开源技术研究</p>
+                    <div class="mt-3 text-gray-600 space-y-2">
+                        <p class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            杖雍皓是张永豪的技术化名，他是一名计算机科学和编程实践的学习者，专注于开源技术研究。
+                        </p>
+                        <p class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            目前在青海省西宁市测绘院实习，拥有大数据技术专业背景，并参与多个技术项目，包括自然语言处理模型的开发。
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <!-- 教育经历 -->
+            <section id="education" class="bg-white p-6 rounded-2xl shadow-sm mb-8">
+                <h2 class="text-2xl font-semibold mb-6 text-gray-800">🏫 教育经历</h2>
+                <div class="border-l-4 border-blue-200 pl-4">
+                    <h3 class="font-medium text-lg">襄阳职业技术学院信息技术学院 · 大数据技术应用</h3>
+                    <p class="text-sm text-gray-500 mt-1">2022.09 - 2025.06 | GPA 4.5↑ (TOP 3%)</p>
+                    <div class="mt-3 text-gray-600 space-y-2">
+                        <p class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            编程语言主修：Python、C、JavaScript
+                        </p>
+                        <p class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            前端主修：HTML5、CSS3、JavaScript、Vue3、Bootstrap、TailwindCss、Echarts
+                        </p>
+                        <p class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            后端主修：Python Web（Flask、Django）
+                        </p>
+                        <p class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            大数据生态：Jdk、Zookeeper、Hadoop、Hbase、Flume、Hive、Spark、Kafka、Flink、Hudi、ClickHouse
+                        </p>
+                        <p class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            数据库：MySQL、PostgreSQL、MongoDB、Redis、HBase
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <!-- ⭐新增证书展示区 -->
+            <section id="certifications" class="bg-white p-6 rounded-2xl shadow-sm mb-8">
+                <h2 class="text-2xl font-semibold mb-6 text-gray-800">💻 专业技术认证</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 border rounded-lg hover:bg-gray-50 transition-colors">
+                        <div class="flex items-center mb-3">
+                            <img src="./icon/阿里云.svg" class="w-10 h-10 mr-3">
+                            <div>
+                                <h3 class="font-medium">阿里云ACE认证</h3>
+                                <p class="text-sm text-gray-500">2023年5月</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600">旨在培养具备大数据分析与应用能力的专业人才，涵盖数据处理、分析、可视化及实战项目经验。</p>
+                    </div>
+                    <div class="p-4 border rounded-lg hover:bg-gray-50 transition-colors">
+                        <div class="flex items-center mb-3">
+                            <img src="./icon/鸿蒙.svg" class="w-10 h-10 mr-3">
+                            <div>
+                                <h3 class="font-medium">鸿蒙OS高级认证</h3>
+                                <p class="text-sm text-gray-500">2024年4月</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600">面向具备鸿蒙系统开发与应用能力的专业人才，涵盖分布式架构、核心组件开发及高性能应用实践。</p>
+                    </div>
+                    <div class="p-4 border rounded-lg hover:bg-gray-50 transition-colors">
+                        <div class="flex items-center mb-3">
+                            <img src="./icon/microsoft.svg" class="w-10 h-10 mr-3">
+                            <div>
+                                <h3 class="font-medium">Microsoft Office 专业人员认证</h3>
+                                <p class="text-sm text-gray-500">2024年5月</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600">微软官方推出的权威认证，旨在验证持证者在 Word、Excel、PowerPoint 等 Office 组件中的高级应用与业务场景实践能力。</p>
+                    </div>
+                    <div class="p-4 border rounded-lg hover:bg-gray-50 transition-colors">
+                        <div class="flex items-center mb-3">
+                            <img src="./icon/国徽标识.png" class="w-10 h-10 mr-3">
+                            <div>
+                                <h3 class="font-medium">普通话国家二级乙等证书</h3>
+                                <p class="text-sm text-gray-500">2023年11月</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600">国家语言文字工作委员会颁发的普通话水平等级证书，证明持证者具备标准、流利的普通话交流能力，达到全国统一的中高级水平要求。</p>
+                    </div>
+                    <div class="p-4 border rounded-lg hover:bg-gray-50 transition-colors">
+                        <div class="flex items-center mb-3">
+                            <img src="./icon/工业和信息化部标识.png" class="w-10 h-10 mr-3">
+                            <div>
+                                <h3 class="font-medium">网络与安全信息管理员中级证书</h3>
+                                <p class="text-sm text-gray-500">2023年8月</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600">国家认可的职业技能认证，表明持证者具备网络管理、信息安全防护及系统维护等方面的中等专业能力。</p>
+                    </div>
+                    <div class="p-4 border rounded-lg hover:bg-gray-50 transition-colors">
+                        <div class="flex items-center mb-3">
+                            <img src="./icon/警徽标识.png" class="w-10 h-10 mr-3">
+                            <div>
+                                <h3 class="font-medium">机动车(C1)驾驶证</h3>
+                                <p class="text-sm text-gray-500">2024年1月</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600">公安机关交通管理部门颁发的合法驾驶证件，表明持证人具备驾驶小型汽车的资格。</p>
+                    </div>
+                    <div class="p-4 border rounded-lg hover:bg-gray-50 transition-colors">
+                        <div class="flex items-center mb-3">
+                            <img src="./icon/redhat.svg" class="w-10 h-10 mr-3">
+                            <div>
+                                <h3 class="font-medium">红帽中级认证（RHCE）</h3>
+                                <p class="text-sm text-gray-500">2024年8月</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600">全球公认的Linux系统管理权威认证，表明持证者具备在企业级环境中配置、部署和管理Red Hat系统的中高级技术能力。</p>
+                    </div>
+                    <div class="p-4 border rounded-lg hover:bg-gray-50 transition-colors">
+                        <div class="flex items-center mb-3">
+                            <img src="./icon/Vue.svg" class="w-10 h-10 mr-3">
+                            <div>
+                                <h3 class="font-medium">Vue.js 框架能力证书</h3>
+                                <p class="text-sm text-gray-500">2024年5月</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600">面向前端开发者的专业技术认证，表明持证者具备使用 Vue.js 进行现代化 Web 应用开发与实战项目构建的能力。</p>
+                    </div>
+                    <div class="p-4 border rounded-lg hover:bg-gray-50 transition-colors">
+                        <div class="flex items-center mb-3">
+                            <img src="./icon/cloudera.svg" class="w-10 h-10 mr-3">
+                            <div>
+                                <h3 class="font-medium">Cloudera Certified Associate</h3>
+                                <p class="text-sm text-gray-500">2024年6月</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600">由Cloudera公司提供的大数据技术认证，主要面向Apache Hadoop及相关生态系统的开发者和管理员，验证其在大数据平台开发、运维和数据工程方面的专业能力。</p>
+                    </div>
+                    <div class="p-4 border rounded-lg hover:bg-gray-50 transition-colors">
+                        <div class="flex items-center mb-3">
+                            <img src="./icon/高德地图.svg" class="w-10 h-10 mr-3">
+                            <div>
+                                <h3 class="font-medium">高德开放平台开发者认证</h3>
+                                <p class="text-sm text-gray-500">2024年7月</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600">通过高德API调用数据池数据进行编码项目设置。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 项目经历 -->
+            <section id="experience" class="bg-white p-6 rounded-2xl shadow-sm mb-8">
+                <h2 class="text-2xl font-semibold mb-6 text-gray-800">♾️ 核心项目</h2>
+                <div class="space-y-8 relative timeline pl-4">
+                    <!-- 项目1 -->
+                    <div class="relative pl-8">
+                        <div class="absolute left-0 top-4 w-3 h-3 bg-blue-500 rounded-full"></div>
+                        <h3 class="font-medium">阿里云大数据分析平台</h3>
+                        <p class="text-sm text-gray-500 mt-1">2023.11 - 2023.12 | 数据处理专家</p>
+                        <ul class="mt-2 list-disc list-inside space-y-2 text-gray-600">
+                            <li>构建日均处理TB级数据的Hadoop生态管道</li>
+                            <li>开发自动化Shell脚本提升40%处理效率</li>
+                            <li>优化HDFS存储策略降低30%成本</li>
+                        </ul>
+                    </div>
+
+                    <!-- 项目2 -->
+                    <div class="relative pl-8">
+                        <div class="absolute left-0 top-4 w-3 h-3 bg-green-500 rounded-full"></div>
+                        <h3 class="font-medium">湖北省大数据职业技能大赛</h3>
+                        <p class="text-sm text-gray-500 mt-1">2023.08 - 2024.04 | 平台架构师（三等奖）</p>
+                        <ul class="mt-2 list-disc list-inside space-y-2 text-gray-600">
+                            <li>设计高可用集群架构（Zookeeper+Hive+ClickHouse）</li>
+                            <li>Docker容器化部署缩短60%环境构建时间</li>
+                            <li>编写标准化运维文档被采纳为技术规范</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- 企业实习 -->
+            <section id="internship" class="bg-white p-6 rounded-2xl shadow-sm mb-8">
+                <h2 class="text-2xl font-semibold mb-6 text-gray-800">💼 企业实践</h2>
+                <div class="space-y-6">
+                    <div class="relative pl-12">
+                        <div class="absolute left-0 top-0 w-8 h-8 bg-white rounded-full p-1 shadow-md">
+                            <img src="./icon/国家电网公司 (1).svg" class="w-full h-full object-contain">
+                        </div>
+                        <h3 class="font-medium">国网重庆电力 · 数据分析处理</h3>
+                        <p class="text-sm text-gray-500">2024.09 - 2024.12</p>
+                        <ul class="mt-2 list-disc list-inside space-y-2 text-gray-600">
+                            <li>使用Python对国家电网计量箱数据进行数字化校对与完善。</li>
+                            <li>负责开发自动化脚本，提升数据处理效率。</li>
+                            <li>协助国家电网完成计量箱关键设备的数字化备案工作。</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="bg-white p-6 rounded-2xl shadow-sm mb-8">
+                <h2 class="text-2xl font-semibold mb-6 text-gray-800">💼 企业实践</h2>
+                <div class="space-y-6">
+                    <div class="relative pl-12">
+                        <div class="absolute left-0 top-0 w-8 h-8 bg-white rounded-full p-1 shadow-md">
+                            <img src="./icon/asit.jpg" class="w-full h-full object-contain">
+                        </div>
+                        <h3 class="font-medium">南京奥途信息技术有限公司</h3>
+                        <p class="text-sm text-gray-500">2024.12 - 至今</p>
+                        <ul class="mt-2 list-disc list-inside space-y-2 text-gray-600">
+                            <li>参与公司数据维护与分析项目，整理并优化数据存储结构。</li>
+                            <li>使用Python编写数据清洗脚本，显著提升数据处理效率。</li>
+                            <li>协作完成团队报告撰写，为数据驱动决策提供支持。</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="bg-white p-6 rounded-2xl shadow-sm mb-8">
+                <h2 class="text-2xl font-semibold mb-6 text-gray-800">💼 企业实践</h2>
+                <div class="space-y-6">
+                    <div class="relative pl-12">
+                        <div class="absolute left-0 top-0 w-8 h-8 bg-white rounded-full p-1 shadow-md">
+                            <img src="./icon/国徽标识.png" class="w-full h-full object-contain">
+                        </div>
+                        <h3 class="font-medium">青海省西宁市自然资源和规划局（西宁市测绘院有限公司）</h3>
+                        <p class="text-sm text-gray-500">2025.02 - 至今</p>
+                        <ul class="mt-2 list-disc list-inside space-y-2 text-gray-600">
+                            <li>负责审批科历年纸质档案数字化全流程管理，运用Python/Pandas实现数据清洗自动化，通过正则表达式处理非结构化文本、填补缺失值、消除重复数据，使数据可用性提升72%。</li>
+                            <li>设计基于PostgreSQL的空间数据入库方案，将清洗后数据按"项目-地块-审批节点"三维模型结构化存储，支撑内网系统实现秒级数据调取响应。</li>
+                            <li>开发ArcGIS与AutoCAD图纸坐标系转换工具链，应用空间索引技术优化10万+宗地数据检索效率。</li>
+                            <li>构建审批流程数据质量看板，运用Tableau可视化呈现档案数字化进度与问题分布，辅助管理部门决策效率提升40%。</li>
+                            <li>主导完成"历史档案数据修复"专项，通过机器学习异常检测算法识别出3.2万条问题数据记录，建立数据溯源修正机制。</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="geography" class="bg-white p-6 rounded-2xl shadow-sm mb-8 flex flex-col">
+                <h2 class="text-2xl font-semibold mb-6 text-gray-800">🗺️ 我的地理足迹</h2>
+                <div class="flex-1 min-h-0"> <!-- 关键弹性容器 -->
+                    <iframe src="/zyhmap/index.html"
+                            class="w-full h-full rounded-xl"
+                            style="min-height: 400px"
+                            frameborder="0">
+                    </iframe>
+                </div>
+            </section>
+                       <!-- ⭐新增文章发布区 -->
+           <section id="article" class="bg-white p-6 rounded-2xl shadow-sm mb-8">
+            <h2 class="text-2xl font-semibold mb-6 text-gray-800">🗂️ 技术文章</h2>
+            <div class="space-y-6">
+                <a href="https://developer.aliyun.com/article/1656131" target="_blank" class="group block p-4 hover:bg-gray-50 rounded-lg transition-colors">
+                    <div class="flex items-start">
+                        <img src="./icon/Hong_Kong_Police_Force.svg" class="w-12 h-12 mr-4">
+                        <div>
+                            <h3 class="font-medium group-hover:text-blue-600">一位大数据工程师的"非常规"公益实践：从发现香港警务处官网漏洞说起</h3>
+                            <p class="text-sm text-gray-500 mt-1">2025年5月1日</p>
+                            <p class="text-gray-600 mt-2">2025年2月12日，我在参与开源社区项目时，偶然注意到香港警务处官网（https://www.police.gov.hk/ppp_sc/index.html）的公众服务板块中，罪案统计数据可视化模块存在跨站脚本（XSS）漏洞。具体表现为：当用户在搜索栏输入特殊字符时，页面会返回未过滤的服务器响应内容。</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://developer.aliyun.com/article/1656567" target="_blank" class="group block p-4 hover:bg-gray-50 rounded-lg transition-colors">
+                    <div class="flex items-start">
+                        <img src="./icon/QWen.svg" class="w-12 h-12 mr-4">
+                        <div>
+                            <h3 class="font-medium group-hover:text-blue-600">QwQ-32B为襄阳职业技术学院拥抱强化学习的AI力量</h3>
+                            <p class="text-sm text-gray-500 mt-1">2025年3月11日</p>
+                            <p class="text-gray-600 mt-2">信息技术学院大数据专业学生团队与UNHub平台合作，利用QwQ-32B模型开启AI教育新范式。通过强化学习驱动，构建职业教育智能化实践平台，支持从算法开发到应用的全链路教学。</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://developer.aliyun.com/article/1656137" target="_blank" class="group block p-4 hover:bg-gray-50 rounded-lg transition-colors">
+                    <div class="flex items-start">
+                        <img src="./icon/xytc.png" class="w-12 h-12 mr-4">
+                        <div>
+                            <h3 class="font-medium group-hover:text-blue-600">为襄阳职业技术学院最新推出的DeepSeek-R1-fix-XYTC:0908、DeepSeek-R1-fix-XYTC、Qwen-MAX-XYTC及DeepSeek-R1-XYTC多模态模型家族</h3>
+                            <p class="text-sm text-gray-500 mt-1">2025年3月7日</p>
+                            <p class="text-gray-600 mt-2">本文档详细介绍了张永豪与联合库UNHub为襄阳职业技术学院开发的四款核心NLP模型架构，包括DeepSeek-R1-fix-XYTC:0908、DeepSeek-R1-fix-XYTC、Qwen-MAX-XYTC及DeepSeek-R1-XYTC。</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://developer.aliyun.com/article/1656131" target="_blank" class="group block p-4 hover:bg-gray-50 rounded-lg transition-colors">
+                    <div class="flex items-start">
+                        <img src="./icon/deepseek-copy-copy.svg" class="w-12 h-12 mr-4">
+                        <div>
+                            <h3 class="font-medium group-hover:text-blue-600">襄阳职业技术学院专属版DeepSeek等大模型 开启智慧新纪元</h3>
+                            <p class="text-sm text-gray-500 mt-1">2025年3月7日</p>
+                            <p class="text-gray-600 mt-2">作为一名襄阳职业技术学院信息技术学院大数据技术专业的学生，我基于国产大模型DeepSeek和Qwen-MAX，打造了专属学校的定制化智能助手。</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-white mt-auto py-4 border-t border-gray-200 z-40">
+        <div class="max-w-6xl mx-auto px-4 text-sm text-gray-500">
+            <div class="grid md:grid-cols-3 gap-8 text-sm text-gray-600">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-gray-800">网站矩阵生态</h3>
+                    <ul class="space-y-2">
+                        <li>Gov 域名: <a href="https://zyhgov.cn" class="text-blue-600">zyhgov.cn（腾讯云）</a></li>
+                        <li>Org 域名: <a href="https://zyhorg.cn" class="text-blue-600">zyhorg.cn（阿里云）</a></li>
+                        <li>Ac 域名: <a href="https://zyhorg.ac.cn" class="text-blue-600">zyhorg.ac.cn（阿里云）</a></li>
+                        <li>文档门户: <a href="https://docu.zyhorg.ac.cn" class="text-blue-600">Docusaurus技术文档</a></li>
+                        <li>AI服务: <a href="https://open.zyhorg.ac.cn" class="text-blue-600">Open WebUI平台</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-gray-800">我的全网技术平台</h3>
+                    <ul class="space-y-2">
+                        <li>GitHub: <a href="https://github.com/zyhgov" class="text-blue-600">zyhgov</a></li>
+                        <li>GitLab: <a href="https://gitlab.com/zyhgov" class="text-blue-600">zyhgov</a></li>
+                        <li>Gitee: <a href="https://gitee.com/zyhgov/" class="text-blue-600">zyhgov</a></li>
+                        <li>csdn: <a href="https://blog.csdn.net/hdheh554694" class="text-blue-600">杖雍皓</a></li>
+                        <li>devpress: <a href="https://devpress.csdn.net/user/hdheh554694" class="text-blue-600">杖雍皓</a></li>
+                        <li>阿里云: <a href="https://developer.aliyun.com/profile/klutravz4w7to" class="text-blue-600">杖雍皓</a></li>
+                        <li>腾讯云: <a href="https://cloud.tencent.com/developer/user/10089337" class="text-blue-600">杖雍皓</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-gray-800">此页面技术支持</h3>
+                    <div class="flex space-x-4">
+                        <img src="./icon/GitHub.svg" class="w-8 h-8">
+                        <img src="./icon/cloudflare.svg" class="w-8 h-8">
+                        <img src="./icon/阿里云.svg" class="w-8 h-8">
+                        <img src="./icon/microsoft.svg" class="w-8 h-8">
+                        <img src="./icon/apache-flink.png" class="w-8 h-8">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-gray-200 text-center text-gray-500 text-sm">
+                <p>© 2025 张永豪技术生态体系. All rights reserved.</p>
+            </div>
+        </div>
+        <br>
+    </footer>
+</body>
+</html>
