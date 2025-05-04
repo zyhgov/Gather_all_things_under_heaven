@@ -354,5 +354,11 @@
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
+      <url>
+      <loc>https://zyhorg.ac.cn/BiographicalNotes/ZhangYonghao.html</loc>
+      <lastmod>2025-05-04</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+   </url>
    <!-- 继续添加更多页面 -->
 </urlset>
