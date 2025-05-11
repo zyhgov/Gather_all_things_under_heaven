@@ -2,11 +2,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>联合库UNHub 内容发布平台 - 新闻公告</title>
+  <title>联合库UNHub 内容发布平台 - 新闻总站</title>
 
   <!-- SEO基础信息 -->
   <meta name="description" content="联合库UNHub 是张永豪（杖雍皓）创建的内容发布平台，聚合发布政府、AI科技、新闻和维基百科等信息。" />
-  <meta name="keywords" content="联合库UNHub, 张永豪, 杖雍皓, AI新闻, 政府公告, 科技信息, 新闻中心, 公告平台" />
+  <meta name="keywords" content="联合库UNHub, 张永豪, 杖雍皓, AI新闻, 新闻总站, 政府公告, 科技信息, 新闻中心, 公告平台" />
   <meta name="author" content="张永豪（杖雍皓）" />
   <link rel="canonical" href="https://zyhorg.ac.cn/news/announcements.html" />
 
@@ -47,6 +47,15 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="newsData.js"></script>
   <script src="main.js"></script>
+  <script type="574d618770bbf4ab7ac42075-text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "pnjcz18od3");
+</script>
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js" type="574d618770bbf4ab7ac42075-text/javascript"></script>
+<script type="574d618770bbf4ab7ac42075-text/javascript">LA.init({id:"Kg8KQJs3VUpgJFYj",ck:"Kg8KQJs3VUpgJFYj",autoTrack:true,hashMode:true,screenRecord:true})</script>
 </head>
 
 <body>
@@ -84,9 +93,12 @@
 </div>
 
 
-    <div id="news-list"></div>
-    <button id="load-more">加载更多</button>
-    <p id="no-more" class="no-more" style="display:none;">没有更多内容信息了。</p>
+<div id="news-list" class="news-list"></div>
+<div id="loading" class="loading" style="display: none;">
+    <span class="loader"></span>
+</div>
+<button id="load-more">加载更多</button>
+<p id="no-more" class="no-more" style="display:none;">没有更多内容信息了。</p>
   </main>
 
 
@@ -95,7 +107,6 @@
         ®2025 杖雍皓 zyhorg 联合库UNHub 保留所有权利<br>
         info@zyhorg.cn
 </footer>
-
 
 </body>
 </html>
