@@ -1,0 +1,264 @@
+@font-face {
+  font-family: 'OpenAISans-Medium';
+  src: url('/font/openai/OpenAISans-Medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'OpenAISans-Regular';
+  src: url('/font/openai/OpenAISans-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'OpenAISans-Semibold';
+  src: url('/font/openai/OpenAISans-Semibold.woff2') format('woff2');
+}
+
+body {
+  margin: 0;
+  font-family: 'OpenAISans-Regular', sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  height: 64px;
+  padding: 0 24px;
+}
+
+.logo {
+  height: 50px;
+  margin-left: 40px;
+  margin-top: 10px;
+}
+
+.container {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: 36px;
+  font-family: 'OpenAISans-Semibold';
+  margin-bottom: 24px;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.tabs .tab {
+  background: none;
+  border: none;
+  color: #999;
+  font-family: 'OpenAISans-Medium';
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+.tabs .tab.active {
+  color: #fff;
+  font-weight: bold;
+}
+
+.sort select {
+  background: #000;
+  color: #fff;
+  border: 1px solid #444;
+  padding: 4px 8px;
+}
+
+.news-item {
+  border-top: 1px solid #222;
+  padding: 16px 0;
+}
+
+.news-meta {
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 6px;
+}
+
+.news-title {
+  font-family: 'OpenAISans-Semibold';
+  font-size: 24px;
+  margin: 4px 0;
+  font-weight: bold;
+}
+
+.news-desc {
+  color: #ccc;
+  font-size: 14px;
+}
+
+#load-more {
+  display: block;
+  margin: 32px auto 12px;
+  padding: 10px 24px;
+  background: #111;
+  border-radius:25px;
+  color: #fff;
+  border: 1px solid #333;
+  font-family: 'OpenAISans-Medium';
+  cursor: pointer;
+}
+/* 动效 */
+.tab, #load-more, .news-item {
+  transition: all 0.3s ease;
+}
+
+.tab:hover, #load-more:hover {
+  color: rgb(255, 255, 255);
+  transform: scale(1.03);
+  font-size: 12;
+}
+
+.news-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding-left: 8px;
+}
+
+/* 搜索框样式 */
+.sort-search {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search input {
+  background: #111;
+  border: 1px solid #333;
+  padding: 6px 12px;
+  color: #fff;
+  font-family: 'OpenAISans-Regular';
+  border-radius: 4px;
+  width: 200px;
+}
+
+.search input:focus {
+  outline: none;
+  border-color: rgb(255, 255, 255);
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+  }
+
+  .sort-search {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search input {
+    width: 100%;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+}
+.highlight {
+  background: #fff;
+  color: #000;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+.site-footer {
+  text-align: center;
+  color: #aaa;
+  font-size: 14px;
+  padding: 20px 0;
+  border-top: 1px solid #333;
+  margin-top: 40px;
+}
+a {
+    color: #fff;         /* 白色字体 */
+    text-decoration: none; /* 去掉下划线 */
+}
+.stats-info {
+  font-size: 14px;
+  color: #969696;
+  margin: 10px 0;
+  font-weight: 400;
+  line-height: 1.5px;
+}
+
+
+/* 响应式布局：小屏幕适配 */
+@media (max-width: 768px) {
+  body {
+    padding: 0 16px;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-start;
+  }
+
+  .tab {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .sort-select {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 16px;
+  }
+
+  .logo {
+    margin-left: 0px;
+    margin-bottom: 2px;
+  }
+
+  .search-box {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .news-item {
+    padding: 16px;
+  }
+
+  .news-title {
+    font-size: 16px;
+  }
+
+  .news-desc {
+    font-size: 14px;
+  }
+
+  #load-more {
+    width: 100%;
+  }
+
+  .footer {
+    padding: 16px;
+    font-size: 12px;
+    text-align: center;
+  }
+}

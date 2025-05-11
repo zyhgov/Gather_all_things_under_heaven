@@ -1,0 +1,101 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>联合库UNHub 内容发布平台 - 新闻公告</title>
+
+  <!-- SEO基础信息 -->
+  <meta name="description" content="联合库UNHub 是张永豪（杖雍皓）创建的内容发布平台，聚合发布政府、AI科技、新闻和维基百科等信息。" />
+  <meta name="keywords" content="联合库UNHub, 张永豪, 杖雍皓, AI新闻, 政府公告, 科技信息, 新闻中心, 公告平台" />
+  <meta name="author" content="张永豪（杖雍皓）" />
+  <link rel="canonical" href="https://zyhorg.ac.cn/news/announcements.html" />
+
+  <!-- Favicon 图标 -->
+  <link rel="icon" href="/favicon2.ico" type="image/jpeg" />
+
+  <!-- Open Graph (Facebook, LinkedIn 等) -->
+  <meta property="og:title" content="联合库UNHub 内容发布平台 - 新闻公告" />
+  <meta property="og:description" content="由张永豪（杖雍皓）创建并由联合库UNHub支持的内容平台，涵盖政府、AI、维基等信息。" />
+  <meta property="og:image" content="https://zyhorg.ac.cn/unhub.jpg" />
+  <meta property="og:url" content="https://zyhorg.ac.cn/news/announcements.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card (Twitter 分享优化) -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="联合库UNHub 内容发布平台 - 新闻公告" />
+  <meta name="twitter:description" content="联合库UNHub 是由张永豪（杖雍皓）创建的发布平台，聚合政府、AI、新闻等信息。" />
+  <meta name="twitter:image" content="https://zyhorg.ac.cn/unhub.jpg" />
+
+  <!-- 结构化数据 JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsMediaOrganization",
+    "name": "联合库UNHub",
+    "url": "https://zyhorg.ac.cn/news/announcements.html",
+    "logo": "https://zyhorg.ac.cn/unhub.jpg",
+    "description": "由张永豪（杖雍皓）创建并支持的内容平台，发布新闻、政府信息、AI科技等资讯。",
+    "founder": {
+      "@type": "Person",
+      "name": "张永豪（杖雍皓）"
+    }
+  }
+  </script>
+
+  <!-- 样式和脚本 -->
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="newsData.js"></script>
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <!-- 顶部导航栏 -->
+  <header class="navbar">
+    <img src="/news/asset/logo-unhub.png" alt="Logo" class="logo">
+  </header>
+
+  <!-- 新闻容器 -->
+  <main class="container">
+    <h1>联合库UNHub 内容工作室</h1>
+    <div id="stats" class="stats-info"></div>
+<div class="filters">
+  <div class="tabs">
+    <button class="tab active" data-category="all">全部</button>
+    <button class="tab" data-category="news">新闻</button>
+    <button class="tab" data-category="research">研究</button>
+    <button class="tab" data-category="blog">博客</button>
+    <button class="tab" data-category="safety">安全</button>
+    <button class="tab" data-category="science">科技</button>
+    <button class="tab" data-category="Wiki">Wiki</button>
+  </div>
+  <div class="sort-search">
+    <div class="search">
+      <input type="text" id="searchInput" placeholder="搜索新闻标题或简介…">
+    </div>
+    <div class="sort">
+      <label for="sortSelect">排序：</label>
+      <select id="sortSelect">
+        <option value="desc">最新优先</option>
+        <option value="asc">最旧优先</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+
+    <div id="news-list"></div>
+    <button id="load-more">加载更多</button>
+    <p id="no-more" class="no-more" style="display:none;">没有更多内容信息了。</p>
+  </main>
+
+
+  <footer class="site-footer">
+        联合库UNHub 内容发布平台<br>
+        ®2025 杖雍皓 zyhorg 联合库UNHub 保留所有权利<br>
+        info@zyhorg.cn
+</footer>
+
+
+</body>
+</html>
