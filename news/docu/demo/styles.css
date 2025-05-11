@@ -1,0 +1,273 @@
+/* 基础样式 */
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'OpenAISans-Regular', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/* 顶部导航栏样式 */
+/* 基础导航栏样式 */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #000000;
+    padding: 15px 20px;
+    border-bottom: 1px solid #6e6e73;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+/* 滚动时应用的模糊背景类 */
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.8); /* 半透明黑色背景 */
+    backdrop-filter: blur(10px);         /* 高斯模糊效果 */
+    border-bottom-color: #ffffff33;       /* 更柔和的边框颜色 */
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 50px;
+    margin-left: 50px;
+    margin-right: 12px;
+}
+@media (max-width: 768px) {
+    
+    .logo-image {
+        height: 50px;
+        margin-left: 10px;
+        margin-right: 10px;
+}
+}
+.logo-text {
+    font-family: 'OpenAISans-Semibold', sans-serif;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: justify;
+}
+
+/* 标题部分 */
+.header-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.date-and-category {
+    font-size: 1rem;
+    color: #6e6e73;
+    margin-bottom: 10px;
+}
+
+.date-and-category span {
+    margin-right: 10px;
+}
+
+/* 主标题样式 */
+h1 {
+    font-size: 3.5rem;
+    font-family: 'OpenAISans-Semibold';
+    margin-top: 0;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+/* 修正后的标题样式 */
+h2 {
+    font-size: 2.5rem;          /* 约32px */
+    font-family: 'OpenAISans-Semibold', sans-serif;
+    margin: 60px 0 30px;          /* 简写语法 */
+    line-height: 1.2;
+    color: #ffffff;          /* 确保文字可见 */
+}
+
+h3 {
+    font-size: 2rem;        /* 约24px */
+    font-family: 'OpenAISans-Semibold', sans-serif;
+    margin: 50px 0 20px;     /* 上 50px | 左右 0 | 下 20px */
+    line-height: 1.2;
+    position: relative;      /* 为伪元素定位准备 */
+}
+
+/* 新增段落样式 */
+p {
+    font-size: 1.25rem;
+    font-family: 'OpenAISans-Regular', sans-serif;
+    line-height: 1.6;
+    margin: 0 0 1.5em;       /* 段落间距 */
+    max-width: 740px;        /* 最佳阅读宽度 */
+}
+
+/* 副标题样式 */
+.subheading {
+    font-size: 1.2rem;
+    color: #6e6e73;
+    margin-top: 0;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+/* 视频样式 */
+.video-container {
+    margin: 20px 0;
+}
+
+video {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* 表格样式 */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.data-table th,
+.data-table td {
+    border: 1px solid #6e6e73;
+    padding: 10px;
+    text-align: left;
+}
+
+.data-table th {
+    background-color: #6e6e73;
+    color: #ffffff;
+}
+
+/* 列表样式 */
+ul,
+ol {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* 图片样式 */
+.image-preview {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.image-preview:hover {
+    cursor: zoom-in;
+}
+
+.image-preview.enlarged {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.image-preview.enlarged img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+/* 超链接样式 */
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 底部卡片样式 */
+.footer-card {
+    /* 原有样式保留 */
+    background-color: #333333;
+    color: #ffffff;
+    padding: 20px;
+    
+    margin: 40px auto 0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    margin-bottom: 50px;
+    /* 新增居中属性 */
+    width: calc(100% - 80px); /* 与内容区左右间距匹配 */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* 添加投影增强层次 */
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+    .footer-card {
+        width: calc(90% - 40px); /* 移动端左右间距减少 */
+        flex-direction: column; /* 纵向排列 */
+        text-align: center;
+    }
+    .avatar {
+        margin: 0 0 15px 0;
+    }
+}
+.avatar {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50%; /* 圆形头像 */
+    margin-right: 20px;
+}
+
+.avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 确保图片完整显示 */
+}
+
+.author-info {
+    flex-grow: 1;
+}
+
+.label {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.author-name {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff; /* 下划线效果 */
+}
+
+.meta {
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.meta span {
+    margin-right: 10px; /* 标签之间增加间距 */
+}
+.info-footer{
+    text-align: center;
+    font-size: 16px;
+    margin: 20px 0 40px;
+}

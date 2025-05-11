@@ -1,0 +1,655 @@
+/* 基础样式 */
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'OpenAISans-Regular', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/* 顶部导航栏样式 */
+/* 基础导航栏样式 */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #000000;
+    padding: 15px 20px;
+    border-bottom: 1px solid #6e6e73;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+/* 滚动时应用的模糊背景类 */
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.8); /* 半透明黑色背景 */
+    backdrop-filter: blur(10px);         /* 高斯模糊效果 */
+    border-bottom-color: #ffffff33;       /* 更柔和的边框颜色 */
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 50px;
+    margin-left: 50px;
+    margin-right: 12px;
+}
+@media (max-width: 768px) {
+    
+    .logo-image {
+        height: 50px;
+        margin-left: 10px;
+        margin-right: 10px;
+}
+}
+.logo-text {
+    font-family: 'OpenAISans-Semibold', sans-serif;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: justify;
+}
+
+/* 标题部分 */
+.header-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.date-and-category {
+    font-size: 1rem;
+    color: #6e6e73;
+    margin-bottom: 10px;
+}
+
+.date-and-category span {
+    margin-right: 10px;
+}
+
+/* 主标题样式 */
+h1 {
+    font-size: 3.5rem;
+    font-family: 'OpenAISans-Semibold';
+    margin-top: 0;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+/* 修正后的标题样式 */
+h2 {
+    font-size: 2.5rem;          /* 约32px */
+    font-family: 'OpenAISans-Semibold', sans-serif;
+    margin: 60px 0 30px;          /* 简写语法 */
+    line-height: 1.2;
+    color: #ffffff;          /* 确保文字可见 */
+}
+
+h3 {
+    font-size: 2rem;        /* 约24px */
+    font-family: 'OpenAISans-Semibold', sans-serif;
+    margin: 50px 0 20px;     /* 上 50px | 左右 0 | 下 20px */
+    line-height: 1.2;
+    position: relative;      /* 为伪元素定位准备 */
+}
+
+/* 新增段落样式 */
+p {
+    font-size: 1.25rem;
+    font-family: 'OpenAISans-Regular', sans-serif;
+    line-height: 1.6;
+    margin: 0 0 1.5em;       /* 段落间距 */
+    max-width: 740px;        /* 最佳阅读宽度 */
+}
+
+/* 副标题样式 */
+.subheading {
+    font-size: 1.2rem;
+    color: #6e6e73;
+    margin-top: 0;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+/* 视频样式 */
+.video-container {
+    margin: 20px 0;
+}
+
+video {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* 表格样式 */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.data-table th,
+.data-table td {
+    border: 1px solid #6e6e73;
+    padding: 10px;
+    text-align: left;
+}
+
+.data-table th {
+    background-color: #6e6e73;
+    color: #ffffff;
+}
+
+/* 列表样式 */
+ul,
+ol {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* 图片样式 */
+.image-preview {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.image-preview:hover {
+    cursor: zoom-in;
+}
+
+.image-preview.enlarged {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.image-preview.enlarged img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+/* 超链接样式 */
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 底部卡片样式 */
+.footer-card {
+    /* 原有样式保留 */
+    background-color: #333333;
+    color: #ffffff;
+    padding: 20px;
+    
+    margin: 40px auto 0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    margin-bottom: 50px;
+    /* 新增居中属性 */
+    width: calc(100% - 80px); /* 与内容区左右间距匹配 */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* 添加投影增强层次 */
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+    .footer-card {
+        width: calc(90% - 40px); /* 移动端左右间距减少 */
+        flex-direction: column; /* 纵向排列 */
+        text-align: center;
+    }
+    .avatar {
+        margin: 0 0 15px 0;
+    }
+}
+.avatar {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50%; /* 圆形头像 */
+    margin-right: 20px;
+}
+
+.avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 确保图片完整显示 */
+}
+
+.author-info {
+    flex-grow: 1;
+}
+
+.label {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.author-name {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff; /* 下划线效果 */
+}
+
+.meta {
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.meta span {
+    margin-right: 10px; /* 标签之间增加间距 */
+}
+.info-footer{
+    text-align: center;
+    font-size: 16px;
+    margin: 20px 0 40px;
+}
+
+/* 代码块整体样式 */
+.code-block {
+    background-color: #002b36; /* 背景颜色 */
+    border: 1px solid #e0e0e0; /* 边框 */
+    border-radius: 8px; /* 圆角 */
+    overflow: auto; /* 当代码过长时启用滚动条 */
+    margin: 20px 0; /* 上下间距 */
+}
+
+/* 代码头部样式 */
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #f0f0f0; /* 头部背景色 */
+    border-bottom: 1px solid #e0e0e0; /* 底部边框 */
+}
+
+.file-name {
+    font-family: 'OpenAISans-Regular', monospace; /* 字体 */
+    color: #333; /* 文件名颜色 */
+    font-size: 14px; /* 字体大小 */
+}
+
+.copy-button {
+    background-color: #ccc; /* 按钮背景色 */
+    color: #333; /* 按钮文字颜色 */
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.copy-button:hover {
+    background-color: #ddd; /* 鼠标悬停时的背景色 */
+}
+
+/* 代码内容样式 */
+.code-block pre {
+    padding: 15px;
+    font-family: 'OpenAISans-Regular', monospace; /* 使用等宽字体 */
+    font-size: 14px; /* 字体大小 */
+    line-height: 1.6; /* 行高 */
+    white-space: pre-wrap; /* 自动换行 */
+}
+
+.code-block code {
+    display: block; /* 确保代码块显示为块级元素 */
+    overflow-x: auto; /* 水平滚动条 */
+}
+
+/* 语法高亮（可选） */
+.language-python .token.keyword {
+    color: #d73a49; /* 关键字颜色 */
+}
+
+.language-python .token.string {
+    color: #032f62; /* 字符串颜色 */
+}
+
+.language-python .token.comment {
+    color: #6a737d; /* 注释颜色 */
+}
+
+.language-python .token.punctuation {
+    color: #000; /* 标点符号颜色 */
+}
+@media (max-width: 768px) {
+    .file-name {
+        font-size: 12px;
+        overflow: visible;
+        text-overflow: clip;
+    }
+
+    .copy-button {
+        font-size: 11px;
+        padding: 4px 8px;
+        width: 100%;
+        margin-top: 6px;
+    }
+
+    .code-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .code-block pre {
+        font-size: 13px;
+        padding: 10px;
+    }
+}
+
+
+/* 响应式调整 - 移动端适配 */
+@media (max-width: 768px) {
+    /* 容器调整 */
+    .container {
+        max-width: 95%;
+        padding: 10px;
+    }
+
+    /* 标题调整 */
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin: 40px 0 20px;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        margin: 30px 0 15px;
+    }
+
+    /* 段落调整 */
+    p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    /* 视频调整 */
+    .video-container {
+        margin: 15px 0;
+    }
+
+    video {
+        border-radius: 4px;
+        box-shadow: none;
+    }
+
+    /* 表格调整 */
+    .data-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* 导航栏优化 */
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    /* 代码块调整 */
+    .code-block pre {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .file-name {
+        font-size: 0.85rem;
+    }
+
+    /* 底部卡片调整 */
+    .footer-card {
+        padding: 15px;
+        margin: 30px auto 40px;
+        width: calc(100% - 30px);
+    }
+
+    /* 页脚信息 */
+    .info-footer {
+        font-size: 0.9rem;
+        margin: 15px 0 30px;
+    }
+
+    /* 全局边距优化 */
+    .header-section {
+        margin-bottom: 30px;
+    }
+
+    .subheading {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    /* 图片预览调整 */
+    .image-preview {
+        border-radius: 4px;
+    }
+}
+
+/* 小屏幕手机适配 (<= 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .navbar-logo {
+        flex-wrap: wrap;
+    }
+
+    .logo-image {
+        height: 40px;
+        margin-left: 5px;
+    }
+
+    .logo-text {
+        font-size: 1rem;
+    }
+
+    /* 表格单元格调整 */
+    .data-table td {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ============ 左侧导航样式 ============ */
+
+.sidebar-nav {
+    position: fixed;
+    left: 40px;
+    top: 150px;
+    bottom: 50px;
+    width: 220px;
+    max-height: calc(100vh - 160px);
+    overflow-y: auto; /* 启用垂直滚动 */
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    border-radius: 8px;
+    /* 隐藏滚动条 */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+}
+
+/* Webkit 浏览器（Chrome、Safari）滚动条隐藏 */
+.sidebar-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.9rem;
+}
+
+.sidebar-nav li {
+    margin-bottom: 5px;
+}
+
+.sidebar-nav a.nav-link {
+    color: #888;
+    text-decoration: none;
+    display: block;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.sidebar-nav a.nav-link:hover,
+.sidebar-nav a.nav-link.active {
+    background-color: #ffffff22;
+    color: #fff !important;
+}
+
+.sidebar-nav ul ul {
+    padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .sidebar-nav {
+        display: none;
+    }
+}
+
+/* From Uiverse.io by doniaskima */ 
+.btn-23,
+.btn-23 *,
+.btn-23 :after,
+.btn-23 :before,
+.btn-23:after,
+.btn-23:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+
+.btn-23 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'OpenAISans-Regular';
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.btn-23:disabled {
+  cursor: default;
+}
+
+.btn-23:-moz-focusring {
+  outline: auto;
+}
+
+.btn-23 svg {
+  display: block;
+  vertical-align: middle;
+}
+
+.btn-23 [hidden] {
+  display: none;
+}
+
+.btn-23 {
+  border-radius: 99rem;
+  border-width: 2px;
+  overflow: hidden;
+  padding: 0.8rem 3rem;
+  position: relative;
+}
+
+.btn-23 span {
+  display: grid;
+  inset: 0;
+  place-items: center;
+  position: absolute;
+  transition: opacity 0.2s ease;
+}
+
+.btn-23 .marquee {
+  --spacing: 5em;
+  --start: 0em;
+  --end: 5em;
+  -webkit-animation: marquee 1s linear infinite;
+  animation: marquee 1s linear infinite;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+  opacity: 0;
+  position: relative;
+  text-shadow: #fff var(--spacing) 0, #fff calc(var(--spacing) * -1) 0,
+    #fff calc(var(--spacing) * -2) 0;
+}
+
+.btn-23:hover .marquee {
+  -webkit-animation-play-state: running;
+  animation-play-state: running;
+  opacity: 1;
+}
+
+.btn-23:hover .text {
+  opacity: 0;
+}
+
+@-webkit-keyframes marquee {
+  0% {
+    transform: translateX(var(--start));
+  }
+
+  to {
+    transform: translateX(var(--end));
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(var(--start));
+  }
+
+  to {
+    transform: translateX(var(--end));
+  }
+}

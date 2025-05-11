@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenAI 亚洲数据驻留公告</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* 字体系统 */
+        @font-face { font-family: 'OpenAISans'; src: url('/font/openai/OpenAISans-Regular.woff2') format('woff2'); font-weight: 400; }
+        @font-face { font-family: 'OpenAISans'; src: url('/font/openai/OpenAISans-Medium.woff2') format('woff2'); font-weight: 500; }
+        @font-face { font-family: 'OpenAISans'; src: url('/font/openai/OpenAISans-Semibold.woff2') format('woff2'); font-weight: 600; }
+
+        /* 核心结构 */
+        :root { --border-color: #333; --secondary-text: #cccccc; }
+        body {
+            background: #000;
+            color: #fff;
+            font-family: 'OpenAISans', system-ui;
+            line-height: 1.6;
+            margin: 0;
+            padding: 60px 120px;
+        }
+
+        /* 内容容器 */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 标题系统 */
+        .metadata {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .date-category {
+            font-size: 14px;
+            color: var(--secondary-text);
+            margin-bottom: 20px;
+            letter-spacing: 0.05em;
+        }
+        h1.title {
+            font-size: 42px;
+            font-weight: 600;
+            margin: 30px 0;
+            line-height: 1.2;
+        }
+
+        /* 正文内容 */
+        .content-block {
+            margin: 40px 0;
+        }
+        p.lead {
+            font-size: 18px;
+            color: var(--secondary-text);
+            margin: 0 auto 50px;
+            max-width: 700px;
+        }
+        h2.section-title {
+            font-size: 28px;
+            font-weight: 600;
+            margin: 50px 0 30px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* 交互控件 */
+        .media-controls {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 50px 0;
+        }
+        .audio-control {
+            background: #333;
+            border-radius: 6px;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+        .share-button {
+            border: 1px solid var(--border-color);
+            padding: 12px 24px;
+            border-radius: 6px;
+        }
+
+        /* 多媒体元素 */
+        .media-asset {
+            width: 100%;
+            margin: 30px 0;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+        .media-caption {
+            color: var(--secondary-text);
+            font-size: 14px;
+            margin: 10px 0 30px;
+        }
+
+        /* 响应式优化 */
+        @media (max-width: 768px) {
+            body { padding: 40px 20px; }
+            h1.title { font-size: 32px; }
+            h2.section-title { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 标题区块 -->
+        <div class="metadata">
+            <div class="date-category">
+                <span class="date">5月7, 2025</span>
+                <span class="separator">•</span>
+                <span class="category">产品</span>
+            </div>
+            <h1 class="title">在亚洲引入数据驻留</h1>
+            <p class="lead">
+                数据驻留建立在 OpenAI 的企业级数据隐私、安全性和合规性计划之上，
+                为全球客户提供支持。
+            </p>
+        </div>
+
+        <!-- 交互控件 -->
+        <div class="media-controls">
+            <div class="audio-control">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                    <path d="M8 5v14l11-7z"/>
+                </svg>
+                <span>听文章 3:17</span>
+            </div>
+            <button class="share-button">共享</button>
+        </div>
+
+        <!-- 正文内容 -->
+        <div class="content-block">
+            <p>
+                我们宣布ChatGPT Enterprise、ChatGPT Edu 和 API 平台在日本、印度、新加坡和韩国进行数据驻留。
+                这有助于在这些国家/地区运营的组织在业务中使用 OpenAI 产品并使用 AI 构建新的解决方案时满足当地数据主权要求。
+            </p>
+            <p>
+                数据驻留建立在 OpenAI 现有的企业级数据隐私、安全性和合规性功能之上。
+            </p>
+        </div>
+
+        <!-- 图片展示 -->
+        <img src="/unhub_001.png" class="media-asset" alt="数据架构">
+        <div class="media-caption">图1. 亚洲数据中心网络拓扑</div>
+
+        <!-- 核心章节 -->
+        <h2 class="section-title">API、ChatGPT Enterprise 和 ChatGPT Edu 在亚洲的数据驻留</h2>
+        <div class="content-block">
+            <p>
+                通过数据驻留，符合条件的 API 客户以及新的 ChatGPT Enterprise 和 Edu 客户可以选择将客户内容静态存储在受支持的国家/地区。
+            </p>
+        </div>
+
+        <!-- 视频展示 -->
+        <video controls class="media-asset">
+            <source src="/asset/MP4/405078372-1-208.mp4" type="video/mp4">
+        </video>
+        <div class="media-caption">视频1. 数据加密传输流程演示</div>
+    </div>
+
+    <script>
+    $(document).ready(function() {
+        // 精确还原图片点击效果
+        $('.media-asset').click(function(){
+            $(this).toggleClass('zoomed').css({
+                'cursor': $(this).hasClass('zoomed') ? 'zoom-out' : 'zoom-in',
+                'position': $(this).hasClass('zoomed') ? 'fixed' : 'static',
+                'z-index': $(this).hasClass('zoomed') ? 1000 : 'auto',
+                'top': '50%',
+                'left': '50%',
+                'transform': $(this).hasClass('zoomed') ? 'translate(-50%, -50%)' : 'none'
+            });
+        });
+
+        // 保持视频自动播放
+        $('video').each(function(){
+            if($(this).is(':visible')) this.play();
+        });
+    });
+    </script>
+</body>
+</html>
