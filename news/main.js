@@ -24,7 +24,13 @@ function categoryLabel(category) {
   }
 }
 const startTime = performance.now();  // 查询开始时间
+function showLoading() {
+    $('#loading').show();
+}
 
+function hideLoading() {
+    $('#loading').hide();
+}
 // 渲染新闻列表
 function renderNews(reset = false) {
   const $list = $('#news-list');
