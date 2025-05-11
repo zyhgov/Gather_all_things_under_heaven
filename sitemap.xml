@@ -354,9 +354,33 @@
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
-      <url>
+   <url>
       <loc>https://zyhorg.ac.cn/BiographicalNotes/ZhangYonghao.html</loc>
       <lastmod>2025-05-04</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/announcements.html</loc>
+      <lastmod>2025-05-11</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/docu/personage/StefanieSun/%E5%AD%99%E7%87%95%E5%A7%BF.html</loc>
+      <lastmod>2025-05-11</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/docu/personage/JensenJen-hsunHuang/%E9%BB%84%E4%BB%81%E5%8B%8B.html</loc>
+      <lastmod>2025-05-11</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/docu/wiki/The-US-Chinese-Exclusion-Act/%E7%BE%8E%E5%9B%BD%E6%8E%92%E5%8D%8E%E6%B3%95%E6%A1%88.html</loc>
+      <lastmod>2025-05-11</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
