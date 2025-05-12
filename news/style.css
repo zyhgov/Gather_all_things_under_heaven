@@ -319,3 +319,24 @@ a {
     opacity: 1;
   }
 }
+
+/* 在你的 style.css 文件中添加以下代码 */
+
+::selection {
+  background-color: white; /* 背景颜色 */
+  color: black;             /* 文字颜色 */
+}
+
+/* 可选：兼容旧版 WebKit 浏览器（如旧版 Safari） */
+::-webkit-selection {
+  background-color: white;
+  color: black;
+}
+
+/* 可选：火狐浏览器 */
+::-moz-selection {
+  background-color: white;
+  color: black;
+}
+
+
