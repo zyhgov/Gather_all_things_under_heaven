@@ -33,6 +33,8 @@ function hideLoading() {
 }
 // 渲染新闻列表
 function renderNews(reset = false) {
+  showLoading(); // 显示加载动画
+
   const $list = $('#news-list');
   if (reset) {
     $list.empty();
@@ -64,6 +66,7 @@ function renderNews(reset = false) {
     $list.html('<div class="no-result">没有找到相关内容。</div>');
     $('#load-more').hide();
     $('#no-more').hide();
+    hideLoading(); // 没有数据时关闭加载动画
     return;
   }
 
@@ -95,12 +98,15 @@ function renderNews(reset = false) {
   }
 
   const endTime = performance.now();
-const usedTime = ((endTime - startTime) / 1000).toFixed(2); // 秒，保留两位小数
-const totalCount = filtered.length;
+  const usedTime = ((endTime - startTime) / 1000).toFixed(2);
+  const totalCount = filtered.length;
 
-$('#stats').html(`数据库共找到 ${totalCount} 条数据，用时 ${usedTime} 秒`);
+  $('#stats').html(`数据库共找到 ${totalCount} 条数据，用时 ${usedTime} 秒`);
 
+  hideLoading(); // 渲染完成后隐藏加载动画
 }
+
+
 
 $(document).ready(function () {
   renderNews(true);
