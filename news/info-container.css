@@ -1,0 +1,166 @@
+/* IP信息容器 - 与导航栏风格统一 */
+#ip-info {
+  margin: 1.2rem 0;
+  /* padding: 1rem; */
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  animation: cardEntrance 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* 信息容器布局 - 与新闻列表对齐 */
+.info-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0px 15px;
+}
+
+/* 国旗图标 - 增强深色背景可见性 */
+#country-flag {
+  width: 32px;
+  height: 24px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#country-flag:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* 文字样式 - 与新闻标题风格统一 */
+#user-ip {
+  color: #8ab4f8; /* 使用Google蓝调整后的深色主题色 */
+  font-family: 'OpenAISans-Medium';
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  transition: opacity 0.4s cubic-bezier(0.32, 0, 0.67, 0);
+}
+
+/* 响应式调整 - 与全局断点一致 */
+@media (max-width: 768px) {
+  .info-container {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+  }
+  
+  #country-flag {
+    width: 28px;
+    height: 21px;
+  }
+  
+  #user-ip {
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
+/* 入场动画 - 与新闻卡片动画同步 */
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+/* 新增响应式断点 */
+/* 平板竖屏和小屏笔记本 (769px-1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  #ip-info {
+    margin: 1rem 0;
+    padding: 0.8rem;
+  }
+  #user-ip {
+    font-size: 16px;
+    min-width: 220px;
+    font-weight: bold;
+  }
+}
+
+/* 手机横屏/折叠屏 (600px-768px) */
+@media (max-width: 768px) {
+  #ip-info {
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+  }
+  .info-container {
+    gap: 12px;
+  }
+}
+
+/* 手机竖屏标准适配 (480px-599px) */
+@media (max-width: 599px) {
+  #country-flag {
+    width: 28px;
+    height: 21px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  }
+  #user-ip {
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    min-width: auto;
+    font-weight: bold;
+  }
+}
+
+/* 小屏手机深度适配 (320px-479px) */
+@media (max-width: 479px) {
+  #ip-info {
+    margin: 0.8rem 0;
+    padding: 0.6rem;
+    animation: mobileEntrance 0.4s ease-out;
+  }
+  .info-container {
+    gap: 8px;
+    padding: 8px;
+  }
+  #user-ip {
+    font-size: 16px;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.15);
+    font-weight: bold;
+  }
+}
+
+/* 超小屏设备适配 (0-319px) */
+@media (max-width: 319px) {
+  #country-flag {
+    width: 24px;
+    height: 18px;
+  }
+  #user-ip {
+    font-size: 14px;
+    letter-spacing: normal;
+    font-weight: bold;
+  }
+}
+
+/* 移动端专属入场动画 */
+@keyframes mobileEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 禁用移动端hover效果 */
+@media (hover: none) {
+  #country-flag:hover {
+    transform: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+}
