@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>联合库UNHub News | 政府, 资讯, 百科</title>
+  <title>联合库UNHub Global News | 政府, 资讯, 百科</title>
   <!-- SEO基础信息 -->
-  <meta name="description" content="联合库UNHub 是由张永豪（杖雍皓）创建的新闻内容发布平台，聚合政府、AI科技、新闻及百科信息，提供权威、实时的新闻资讯。" />
+  <meta name="description" content="联合库UNHub Global News是由张永豪（杖雍皓）创建的新闻内容发布平台，聚合政府、AI科技、新闻及百科信息，提供权威、实时的新闻资讯。" />
   <meta name="keywords" content="联合库UNHub, 张永豪, zyhorg, 杖雍皓, AI新闻, 政府公告, 科技新闻, 新闻聚合平台, 维基百科, 新闻总站" />
   <meta name="author" content="张永豪（杖雍皓）" />
   <link rel="canonical" href="https://zyhorg.ac.cn/news/announcements.html " />
@@ -56,6 +56,9 @@
 </script>
   <!-- 样式和脚本 -->
   <link rel="stylesheet" href="/news/style.css" />
+  <link rel="stylesheet" href="https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com/flag-icons-main/css/flag-icons.min.css">
+  <script src="/news/info-container.js"></script>
+  <link rel="stylesheet" href="/news/info-container.css">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js "></script>
   <script src="/news/newsData.js"></script>
   <script src="/news/main.js"></script>
@@ -80,7 +83,14 @@
   </header>
   <!-- 主体内容 -->
   <main class="container" role="main">
-    <h1>联合库UNHub News | 政府, 资讯, 百科</h1>
+<h1>联合库UNHub Global News | 政府, 资讯, 百科</h1>
+  <!-- IP信息展示区域 -->
+  <div id="ip-info" aria-live="polite" style="margin-top: -15px; margin-bottom: 20px;">
+    <div class="info-container">
+      <span id="country-flag" class="fi" aria-label="国家旗帜"></span>
+      <p><strong>终端信息 - </strong> <span id="user-ip">正在获取数据...</span></p>
+    </div>
+  </div>
     <div id="stats" class="stats-info" aria-live="polite"></div>
     <!-- 分类筛选与搜索 -->
     <div class="filters">
