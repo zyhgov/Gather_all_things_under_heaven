@@ -52,4 +52,8 @@ const newsData = [
     title: '心有温度 行有智慧 —— 记王朝霞老师追光的日子', 
     desc: '王朝霞老师从事职业教育工作二十二年，连续十九年担任班主任工作，期间指导和推荐多名学生参与国家级、省级专业竞赛活动，所带学生多次获得国家教育部、共青团中央、湖北省教育厅等表彰。', 
     link: '/news/docu/wiki/Xiangyang-Vocational-and-Technical-College-Information-Technology-College/WangZhaoxia.html' },
+    { category: 'Wiki', date: '2025-05-18', 
+    title: '名侦探柯南：独眼的残像', 
+    desc: '《名侦探柯南：独眼的残像》（日语：名探偵コナン 隻眼の残像フラッシュバック，英语：Detective Conan: One-eyed Flashback），是2025年4月18日上映的日本动画电影，改编自日本漫画家青山刚昌漫画系列《名侦探柯南》的第28部剧场版，由重原克也执导，樱井武晴编剧。', 
+    link: '/news/docu/wiki/DetectiveConan/名侦探柯南：独眼的残像.html' },
 ];
