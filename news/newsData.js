@@ -56,4 +56,8 @@ const newsData = [
     title: '名侦探柯南：独眼的残像', 
     desc: '《名侦探柯南：独眼的残像》（日语：名探偵コナン 隻眼の残像フラッシュバック，英语：Detective Conan: One-eyed Flashback），是2025年4月18日上映的日本动画电影，改编自日本漫画家青山刚昌漫画系列《名侦探柯南》的第28部剧场版，由重原克也执导，樱井武晴编剧。', 
     link: '/news/docu/wiki/DetectiveConan/名侦探柯南：独眼的残像.html' },
+    { category: 'Wiki', date: '2025-05-20', 
+    title: '国际刑警组织授权联合库UNHub API使用权', 
+    desc: '“联合库UNHub”平台（域名：zyhorg.ac.cn）已通过国际刑警组织依据其内部标准所进行的全面合规性与网络安全审查。审查结果表明，该系统严格满足安全API接入所需的技术规范、身份认证机制及数据防护要求。', 
+    link: '/news/docu/news/国际刑警组织授权联合库UNHub API使用权.html' },
 ];
