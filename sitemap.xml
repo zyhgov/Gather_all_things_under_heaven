@@ -432,5 +432,11 @@
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/news/docu/news/%E5%9B%BD%E9%99%85%E5%88%91%E8%AD%A6%E7%BB%84%E7%BB%87%E6%8E%88%E6%9D%83%E8%81%94%E5%90%88%E5%BA%93UNHub%20API%E4%BD%BF%E7%94%A8%E6%9D%83.html</loc>
+      <lastmod>2025-05-20</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+   </url>
    <!-- 继续添加更多页面 -->
 </urlset>
