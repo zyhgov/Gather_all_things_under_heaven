@@ -1,0 +1,105 @@
+    @font-face {
+      font-family: 'OpenAISans-Medium';
+      src: url('/font/openai/OpenAISans-Medium.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'OpenAISans-Regular';
+      src: url('/font/openai/OpenAISans-Regular.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'OpenAISans-Semibold';
+      src: url('/font/openai/OpenAISans-Semibold.woff2') format('woff2');
+    }
+
+    body {
+      font-family: 'OpenAISans-Regular', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #1c1c1e;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'OpenAISans-Semibold';
+    }
+
+    .level-bg-0 { background-color: #ffffff; }
+    .level-bg-1 { background-color: #f2f2f7; }
+    .level-bg-2 { background-color: #e5e5ea; }
+    .level-bg-3 { background-color: #d1d1d6; }
+    .level-bg-4 { background-color: #c7c7cc; }
+    .level-bg-5 { background-color: #aeaeb2; }
+    .level-bg-6 { background-color: #a5a5aa; }
+    .tree-node {
+      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: 8px;
+      transition: background 0.2s ease;
+    }
+
+    .tree-node:hover {
+      background-color: #e5e5ea;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #1c1c1e;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+    }
+
+    .toast.show {
+      opacity: 1;
+    }
+
+    mark {
+      background-color: #ffeeba;
+      color: #000;
+      padding: 0 2px;
+      border-radius: 2px;
+    }
+
+    .no-result {
+      text-align: center;
+      margin-top: 1rem;
+      color: #999;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #666;
+      background-color: #f3f4f6;
+      border-top: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    .nav-logo {
+      /* width: 32px; */
+      height: 50px;
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    /* 自定义响应式辅助类 */
+    .responsive-text {
+      font-size: clamp(0.8rem, 0.8vw + 0.8rem, 1.1rem);
+    }
+
+    .mobile-hide {
+      display: none;
+    }
+
+    @media (max-width: 767px) {
+      .mobile-hide {
+        display: block !important;
+      }
+    }

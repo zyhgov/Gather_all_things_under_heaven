@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>中文教科书免费下载 | 杖雍皓联合库UNHub教育服务中心</title>
+  <!-- SEO -->
+  <meta name="description" content="杖雍皓（张永豪）旗下联合库UNHub团队下属的教育服务中心提供中文教科书免费下载，旨在促进义务教育的普及，消除地区间的教育贫困，帮助海外华人子女了解国内教育。">
+  <meta name="keywords" content="中文教科书, 免费下载, 义务教育, 海外华人, 教育资源, UNHub, 杖雍皓, 张永豪">
+  <meta name="author" content="杖雍皓（张永豪）联合库UNHub教育服务中心">
+  <meta property="og:title" content="中文教科书免费下载 | 杖雍皓联合库UNHub教育服务中心">
+  <meta property="og:description" content="提供中文教科书免费下载，促进义务教育的普及，帮助海外华人子女了解国内教育。">
+  <meta property="og:image" content="https://zyhorg.ac.cn/Chinese-Textbooks/Chinese-Textbooks.jpg ">
+  <meta property="og:url" content="https://zyhorg.ac.cn/Chinese-Textbooks/database.html ">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://zyhorg.ac.cn/Chinese-Textbooks/database.html ">
+  <!-- CSS & Fonts -->
+  <script src="https://cdn.tailwindcss.com "></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js "></script>
+  <link rel="stylesheet" href="./Chinese-Textbooks.css">
+    <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+    <script>LA.init({id:"Kg8KQJs3VUpgJFYj",ck:"Kg8KQJs3VUpgJFYj",autoTrack:true,hashMode:true,screenRecord:true})</script>
+    <script type="f8671b2f8219b004b1a1666c-text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "pnjcz18od3");
+    </script>
+</head>
+<body class="p-4 min-h-screen flex flex-col">
+
+  <!-- 顶部导航栏 -->
+  <header class="flex items-center justify-between bg-white p-4 rounded-lg shadow mb-4">
+    <div class="flex items-center">
+      <img src="/Chinese-Textbooks/logo.png" alt="Logo" class="h-12 mr-2">
+      <h1 class="text-xl font-semibold">中文教科书免费下载<br><span class="text-xl">杖雍皓联合库UNHub教育服务中心教材局</span></h1>
+    </div>
+    <a href="https://zyhorg.ac.cn " target="_blank" class="text-blue-600 underline text-sm">访问主站</a>
+  </header>
+
+  <!-- 搜索框 -->
+  <div class="mb-4">
+    <input type="text" id="search" placeholder="搜索教科书数据文件或目录…" class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400" />
+    <div id="no-result" class="hidden no-result text-center mt-2 text-red-500">未找到相关文件或目录</div>
+  </div>
+
+  <!-- 主体内容 -->
+  <div class="flex flex-col lg:flex-row gap-4 flex-1 responsive-gap">
+    <!-- 左侧树状结构 -->
+    <div class="w-full lg:w-1/2 overflow-y-auto max-h-[80vh] border rounded-lg p-4 bg-white left-side shadow" id="file-tree"></div>
+
+    <!-- 右侧预览区域 -->
+    <div class="w-full lg:w-1/2 overflow-y-auto max-h-[80vh] border rounded-lg p-4 bg-white right-side shadow" id="preview-container">
+      <div class="p-4 text-center text-gray-500 text-2xl mobile-hide">
+        请打开 PDF 文件以查看内容
+      </div>
+    </div>
+  </div>
+  <footer class="mt-6 text-center text-sm text-gray-600">
+<p><script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src="https://v6-widget.51.la/v6/Kg8KQJs3VUpgJFYj/quote.js?theme=#FFFFFF,#333333,#262626,#333333,#FFFFFF,#1690FF,14&f=14&display=1,0,0,0,0,0,0,1"></script></p>
+    <p>© 2025 杖雍皓（张永豪）联合库UNHub教育服务中心</p>
+    <p>致力于推动全球中文教育资源共享 · 消除教育不平等</p>
+    <p class="mt-2">
+      <a href="https://github.com/TapXWorld/ChinaTextbook " target="_blank" class="text-blue-600 hover:underline">GitHub 开源地址</a>
+    </p>
+  </footer>
+
+  <!-- Toast 提示 -->
+  <div id="toast" class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-black text-white px-4 py-2 rounded shadow z-50 opacity-0 transition-opacity duration-300" style="z-index:9999;">提示信息</div>
+<!-- 小屏幕警告提示 + 背景高斯模糊 -->
+<div id="mobile-warning-wrapper" class="fixed inset-0 z-[9999] hidden">
+  <div class="absolute inset-0 backdrop-blur-md bg-black/40"></div>
+  <div class="relative z-10 flex items-center justify-center h-full">
+    <div class="bg-white rounded-xl shadow-xl p-6 max-w-xs w-full mx-4 text-center">
+      <img src="/Chinese-Textbooks/logo.png" alt="logo" class="h-18 mx-auto mb-2">
+      <h2 class="text-xl font-semibold text-red-600 mb-2">⚠️ 不支持小屏设备 ⚠️</h2>
+      <p class="text-gray-700 text-sm">请使用电脑端（PC）、大屏设备或宽度大于600px的设备查看以获得最佳浏览体验。</p>
+      <p class="text-gray-700 text-sm">如果您急需使用移动设备下载的话请点击
+        <a href="/textbook.html" target="_blank" style="color: #0071e3;">旧版本表格数据库 </a>进行下载。
+      </p>
+    </div>
+  </div>
+</div>
+
+</div>
+  <script>
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.remove('opacity-0');
+      toast.classList.add('opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0');
+      }, 3000);
+    }
+    </script>
+  <!-- JavaScript -->
+   <script src="./Chinese-Textbooks.js"></script>
+
+</body>
+</html>

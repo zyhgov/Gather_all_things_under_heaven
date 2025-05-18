@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>中文教科书免费下载 | 杖雍皓联合库UNHub教育服务中心</title>
+
+  <!-- SEO -->
+  <meta name="description" content="杖雍皓（张永豪）旗下联合库UNHub团队下属的教育服务中心提供中文教科书免费下载，旨在促进义务教育的普及，消除地区间的教育贫困，帮助海外华人子女了解国内教育。">
+  <meta name="keywords" content="中文教科书, 免费下载, 义务教育, 海外华人, 教育资源, UNHub, 杖雍皓, 张永豪">
+  <meta name="author" content="杖雍皓（张永豪）联合库UNHub教育服务中心">
+  <meta property="og:title" content="中文教科书免费下载 | 杖雍皓联合库UNHub教育服务中心">
+  <meta property="og:description" content="提供中文教科书免费下载，促进义务教育的普及，帮助海外华人子女了解国内教育。">
+  <meta property="og:image" content="https://zyhorg.ac.cn/Chinese-Textbooks/Chinese-Textbooks.jpg ">
+  <meta property="og:url" content="https://zyhorg.ac.cn/Chinese-Textbooks/database.html ">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://zyhorg.ac.cn/Chinese-Textbooks/database.html ">
+
+  <!-- CSS & Fonts -->
+  <script src="https://cdn.tailwindcss.com "></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js "></script>
+  <style>
+    @font-face {
+      font-family: 'OpenAISans-Medium';
+      src: url('/font/openai/OpenAISans-Medium.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'OpenAISans-Regular';
+      src: url('/font/openai/OpenAISans-Regular.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'OpenAISans-Semibold';
+      src: url('/font/openai/OpenAISans-Semibold.woff2') format('woff2');
+    }
+
+    body {
+      font-family: 'OpenAISans-Regular', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #1c1c1e;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'OpenAISans-Semibold';
+    }
+
+    .level-bg-0 { background-color: #ffffff; }
+    .level-bg-1 { background-color: #f2f2f7; }
+    .level-bg-2 { background-color: #e5e5ea; }
+    .level-bg-3 { background-color: #d1d1d6; }
+    .level-bg-4 { background-color: #c7c7cc; }
+    .level-bg-5 { background-color: #aeaeb2; }
+    .level-bg-6 { background-color: #8e8e93; }
+
+    .tree-node {
+      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: 8px;
+      transition: background 0.2s ease;
+    }
+
+    .tree-node:hover {
+      background-color: #e5e5ea;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #1c1c1e;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+    }
+
+    .toast.show {
+      opacity: 1;
+    }
+
+    mark {
+      background-color: #ffeeba;
+      color: #000;
+      padding: 0 2px;
+      border-radius: 2px;
+    }
+
+    .no-result {
+      text-align: center;
+      margin-top: 1rem;
+      color: #999;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #666;
+      background-color: #f3f4f6;
+      border-top: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    .nav-logo {
+      /* width: 32px; */
+      height: 50px;
+      margin-right: 10px;
+      font-weight: bold;
+    }
+    .folder-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  display: inline-block;
+  text-align: center;
+  color: #6b7280;
+}
+  </style>
+</head>
+<body class="p-4 min-h-screen flex flex-col">
+
+  <!-- 顶部导航栏 -->
+  <header class="flex items-center justify-between bg-white p-4 rounded-lg shadow mb-4">
+    <div class="flex items-center">
+      <img src="/Chinese-Textbooks/logo.png" alt="Logo" class="nav-logo">
+      <h1 class="text-xl font-semibold">中文教科书免费下载 <br> 杖雍皓联合库UNHub教育服务中心</h1>
+    </div>
+    <a href="https://zyhorg.ac.cn" target="_blank" class="text-blue-600 underline text-sm">访问主站</a>
+    
+  </header>
+
+  <!-- 搜索框 -->
+  <div class="mb-4">
+    <input type="text" id="search" placeholder="搜索教科书数据文件或目录…" class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400" />
+    <div id="no-result" class="hidden no-result text-2xl">未找到相关教科书数据或目录</div>
+  </div>
+
+  <!-- 主体内容 -->
+  <div class="flex flex-col md:flex-row gap-4 flex-1">
+    <!-- 左侧树状结构 -->
+    <div class="w-full md:w-1/2 overflow-y-auto max-h-[70vh] border rounded-lg p-4 bg-white left-side shadow" id="file-tree" style="height: 100vh;"></div>
+
+    <!-- 右侧预览区域 -->
+    <div class="w-full md:w-1/2 relative right-side bg-white border rounded-lg p-4 shadow" id="preview-container"></div>
+  </div>
+
+  <!-- 底部信息 -->
+  <footer class="mt-6">
+    <p>© 2025 杖雍皓（张永豪）联合库UNHub教育服务中心</p>
+    <p>致力于推动全球中文教育资源共享 · 消除教育不平等</p>
+    <a href="https://github.com/TapXWorld/ChinaTextbook" target="_blank" class="text-blue-600 underline text-sm">ChinaTextbook</a>
+  </footer>
+
+  <!-- Toast 提示 -->
+  <div id="toast" class="toast"></div>
+
+  <!-- JavaScript -->
+<script>
+  function showToast(message) {
+    const toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 3000);
+  }
+
+  // 显示用名称映射表
+  const displayMapping = {
+    "https://datawarehouse-7gl81i6ib89c2edd-1314221350.tcloudbaseapp.com ": "datawarehouse根服务器地址",
+    "ChinaTextbook-master": "联合库UNHub教育服务中心API"
+  };
+
+function buildTree(data) {
+  const root = {};
+  data.forEach(item => {
+    const domain = item.main_domain.trim();
+    let current = root[domain] = root[domain] || {};
+
+    item.path.forEach(p => {
+      if (!current.children) current.children = [];
+      current = current.children.find(c => c.name === p.name) ||
+                (() => {
+                  const newObj = { name: p.name, children: [], files: [] };
+                  current.children.push(newObj);
+                  return newObj;
+                })();
+    });
+
+    // 添加文件信息
+    item.content.size = item.content.size || Math.floor(Math.random() * 10 + 1) * 1024 * 1024;
+    item.content.fullPath = domain + '/' + item.path.map(p => p.name).join('/') + '/' + item.content.file;
+
+    current.files.push({
+      name: item.content.file,
+      size: item.content.size,
+      fullPath: item.content.fullPath
+    });
+  });
+  return root;
+}
+  function highlightText(text, query) {
+    if (!query) return text;
+    const regex = new RegExp(`(${query})`, 'gi');
+    return text.replace(regex, '<mark>$1</mark>');
+  }
+
+function renderTree(container, tree, level = 0, query = '') {
+  const ul = $('<ul class="pl-2 space-y-1"></ul>');
+
+  Object.keys(tree).forEach(domain => {
+    const domainNode = tree[domain];
+    const domainLi = $('<li>').addClass(`tree-node level-bg-${Math.min(level, 6)} ml-${level * 4} rounded-md`);
+    const wrapper = $(`
+      <div class="flex items-center cursor-pointer p-1 rounded hover:bg-gray-100">
+        <span class="folder-icon">▶</span>
+        <img src="/Chinese-Textbooks/text-icon/服务器.svg" class="inline w-4 h-4 mr-2" />
+        <span class="text-sm font-semibold">${domain}</span>
+      </div>
+    `);
+
+    const childrenContainer = $('<div class="ml-4 hidden"></div>');
+    const domainChildren = domainNode.children || [];
+
+    wrapper.click(() => {
+      childrenContainer.toggle('fast');
+      wrapper.find('.folder-icon').text(childrenContainer.is(':visible') ? '▼' : '▶');
+    });
+
+    domainLi.append(wrapper);
+    renderDirectory(childrenContainer, domainChildren, level + 1, query);
+    domainLi.append(childrenContainer);
+    ul.append(domainLi);
+  });
+
+  container.append(ul);
+}
+
+function renderDirectory(container, nodes, level, query) {
+  const ul = $('<ul class="pl-2 space-y-1"></ul>');
+  (nodes || []).forEach(node => {
+    const li = $('<li>').addClass(`tree-node level-bg-${Math.min(level, 6)} ml-${level * 4} rounded-md`);
+
+    const wrapper = $(`
+      <div class="flex items-center cursor-pointer p-1 rounded hover:bg-gray-100">
+        <span class="folder-icon">▶</span>
+        <img src="/Chinese-Textbooks/text-icon/文件夹.svg" class="inline w-4 h-4 mr-2" />
+        <span class="text-sm font-semibold">${highlightText(node.name, query)}</span>
+      </div>
+    `);
+
+    const childrenContainer = $('<div class="ml-4 hidden"></div>');
+
+    // 展开/折叠目录逻辑
+    wrapper.click(() => {
+      childrenContainer.toggle('fast');
+      wrapper.find('.folder-icon').text(childrenContainer.is(':visible') ? '▼' : '▶');
+    });
+
+    // 如果有子级目录，递归渲染
+    if (node.children?.length > 0) {
+      renderDirectory(childrenContainer, node.children, level + 1, query);
+    }
+
+    // 如果有文件列表，渲染所有 PDF 文件
+    if (node.files?.length > 0) {
+      node.files.forEach(file => {
+        const fileSize = file.size ? `${(file.size / 1024 / 1024).toFixed(2)} MB` : '未知';
+        const highlightedName = highlightText(file.name, query);
+        const fileEl = $(`
+          <div class="flex items-center cursor-pointer p-1 ml-4 rounded hover:bg-gray-100">
+            <img src="/Chinese-Textbooks/text-icon/PDF.svg" class="inline w-4 h-4 mr-2" />
+            <span class="text-sm">${highlightedName} (${fileSize})</span>
+          </div>
+        `).click(() => previewPDF(file)); // 绑定点击预览
+
+        childrenContainer.append(fileEl);
+      });
+    }
+
+    li.append(wrapper);
+    li.append(childrenContainer);
+    ul.append(li);
+  });
+  container.append(ul);
+}
+
+function previewPDF(fileMeta) {
+  $('#preview-container').html(`
+    <div class="bg-white border shadow-lg rounded p-4 animate-fade-in flex flex-col gap-4 preview-container">
+      <div class="flex justify-between items-center">
+        <h2 class="font-semibold text-lg">${fileMeta.name}</h2>
+        <button onclick="$('#preview-container').empty()" class="text-gray-500 hover:text-red-500">&times;</button>
+      </div>
+      <iframe src="${fileMeta.fullPath}" class="w-full h-[600px] border rounded" loading="lazy"></iframe>
+      <div class="flex gap-4 button-group">
+        <a href="${fileMeta.fullPath}" target="_blank" class="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600">新标签页打开</a>
+        <a href="${fileMeta.fullPath}" download class="bg-green-500 text-white px-4 py-1 rounded hover:bg-green-600">下载</a>
+        <button class="bg-gray-500 text-white px-4 py-1 rounded hover:bg-gray-600" onclick="navigator.clipboard.writeText('${fileMeta.fullPath}'); showToast('链接已复制')">复制链接</button>
+      </div>
+    </div>
+  `);
+}
+
+  function filterTree(query) {
+    let hasResult = false;
+    query = query.toLowerCase();
+    $('#file-tree li.tree-node').each(function () {
+      const $li = $(this);
+      const text = $li.text().toLowerCase();
+      const match = text.includes(query);
+      if (match) hasResult = true;
+      $li.toggle(match);
+      if (match) {
+        $li.parents('li.tree-node, div').show(); // 显示父节点
+      }
+    });
+    $('#no-result').toggleClass('hidden', hasResult);
+  }
+
+  $(async function () {
+    const res = await $.getJSON('/asset/data/compressed_parsed_hierarchical_structure.json');
+    const tree = buildTree(res);
+
+    function resetTree() {
+      $('#file-tree').empty();
+      renderTree($('#file-tree'), tree);
+      $('#no-result').addClass('hidden');
+      autoExpandThreeLevels(); // 页面加载后自动展开三级
+    }
+
+    function autoExpandThreeLevels() {
+      const allToggles = $('#file-tree .flex.items-center.cursor-pointer');
+      for (let i = 0; i < Math.min(allToggles.length, 2); i++) {
+        const $toggle = $(allToggles[i]);
+        const $nextDiv = $toggle.next('div');
+        if ($nextDiv.length) {
+          $toggle.find('.folder-icon').text('▼'); // 更改图标为展开
+          $nextDiv.show();
+        }
+      }
+    }
+
+    // 设置默认提示文字
+    $('#preview-container').html('<div class="p-4 text-2xl text-center text-gray-500">请打开 PDF 文件以查看内容</div>');
+
+    resetTree();
+
+    $('#search').on('input', function () {
+      const val = $(this).val().trim();
+      if (val === '') {
+        resetTree();
+      } else {
+        $('#file-tree').empty();
+        renderTree($('#file-tree'), tree, 0, val);
+        filterTree(val);
+      }
+    });
+  });
+</script>
+</body>
+</html>
