@@ -28,8 +28,91 @@
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", "pnjcz18od3");
     </script>
+            <style>
+        /* 弹窗遮罩层 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* 弹窗内容框 */
+.modal-box {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem; /* 圆角 */
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+/* 关闭按钮 */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #888;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+/* Logo 图标 */
+.modal-logo {
+  /* width: 100px; */
+  height: 80px;
+  margin-bottom: 1rem;
+  /* border-radius: 50%; */
+  object-fit: contain;
+}
+
+/* 标题与文字 */
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.modal-message {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+    </style>
     </head>
 <body>
+        <!-- 新版本提示弹窗 -->
+<div id="newVersionModal" class="modal-overlay">
+  <div class="modal-box">
+    <button class="close-btn" onclick="document.getElementById('newVersionModal').style.display = 'none'">&times;</button>
+    <img src="/Chinese-Textbooks/logo.png" alt="新版本 Logo" class="modal-logo">
+    <h2 class="modal-title">我们推出了新版本下载</h2>
+    <p class="modal-message"><a href="/Chinese-Textbooks/database.html" target="_blank" style="color: #0071e3;">中文教科书免费下载页面</a></p>
+    <p class="modal-message">
+      我们已经推出新版本的中文教科书免费下载页面。<br><br>
+      <strong>注意：</strong>新版本不支持小屏设备（如手机），建议在 PC 或平板上访问。<br><br>
+      您也可以点击右上角 × 继续使用当前旧版本。
+    </p>
+    <p class="modal-message">
+        <strong>联合库UNHub教育服务中心教材局</strong>
+    </p>
+  </div>
+</div>
     <div class="div-logo">
         <img src="/asset/jiaocai/jiaochai_logo.png" alt="Logo" class="logo-nav">
     </div>
@@ -72,6 +155,11 @@
     </footer>
     <script async src="/js/Textbook.js"></script>
     <script>
+  // 页面加载完成后显示弹窗（可选）
+  window.addEventListener('load', function () {
+    const modal = document.getElementById('newVersionModal');
+    modal.style.display = 'flex'; // 或 block，取决于你用什么布局方式
+  });
 
     </script>
 </body>
