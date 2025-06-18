@@ -516,5 +516,11 @@
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
+   <url>
+      <loc>https://zyhorg.ac.cn/Wikipedia/index.html</loc>
+      <lastmod>2025-06-18</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+   </url>
    <!-- 继续添加更多页面 -->
 </urlset>
